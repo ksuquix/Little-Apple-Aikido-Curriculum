@@ -2,152 +2,153 @@
 ```
 # Terms
 
-| Term   | Japanese   | Definition   |
-| --------------------- | --------- | ------------------------------------------------------- |
-| Arigatō-gozaimashita | 有難う御座いました | Thank you very much (very formal, past tense).   |
-| Ashi       | 足      | Foot/Leg   |
-| Ashikubi   | 足首    | Ankle.   (Lit: Leg-neck)   |
-| Atama      | 頭      | Head.   |
-| Atemi      | 当身    | Striking attack   (Lit: Hit someone)   |
-| Awase      | 合わせ  | "Blending" - Two-partner practice to instill fundamentals (Lit: joined/facing)   |
-| Bokken/Bokutō   | 木剣/木刀   | Wooden sword   |
-| Budō       | 武道    | The study of martial arts as a way of life, implying moral/spiritual aspects (Lit: military arts)   |
-| Bukiwaza   | 武器技  | Weapons technique/practice   |
-| Bushi      | 武士    | Warrior   |
-| Bushidō    | 武士道  | The way of the warrior   |
-| Bō         | 棒      | Long staff   |
-| Chūdan     | 中段    | mid-level.   As a strike, targetting stomach/solar plexus.   As a sword Kamae: Tip even with opponent's neck.   |
-| Dan        | 段      | Black belt (rank)   |
-| Deshi      | 弟子    | Disciple or follower; dedicated student of one teacher.   |
-| Dō         | 胴      | Trunk or torso. Often used to indicate the torso as a target for a sword cut.   |
-| Dō         | 道      | Path or way (also read michi).   |
-| Dōgi       | 道着    | Training uniform (also called keikogi).   |
-| Dōjō       | 道場    | A place of practice where the way is revealed. A place for the strengthening and refinement of spirit, mind and body.   |
-| Dōjō-chō   | 道場長  | Head of the dojo.   |
-| Funakogi-undō   | 舟漕ぎ運動   | Boat rowing exercise.   |
-| Furitama   | 振り玉  | Spirit shaking.   Exercise for meditation, relaxation, and center alignment.   |
-| Gedan      | 下段    | low-level   |
-| Gō-no-sen  | 後の先  | Responding after "after the beginning"   |
-| Hakama     | 袴      | Wide, pleated pants   |
-| Hanmi      | 半身    | Half-body stance.   |
-| Hanmi handachi   | 半身半立ち   | Half-body, half-standing. Uke standing and Nage sitting   |
-| Hara       | 腹      | Center - source of breath   |
-| Henkawaza  | 変化技  | Starting one technique, but finishing with another - (Lit: strange technique)   |
-| Hiji       | 肘      | Elbow.   |
-| Hiza       | 膝      | Knee.   |
-| Hombudōjō  | 本部道場 | The Aikikai Foundation dōjō in Tokyo (hombu means headquarters).   |
-| Irimi      | 入り身  | Body entering - forward movement   |
-| Jiyūwaza   | 自由技  | Interval attacks w/nage varying techniques (prescribed attacks)   |
-| Jo tori    | 杖取り  | Disarm attacker of jo   |
-| Jo waza / Jo Nage   | 杖技 / 杖投げ   | Techniques performed with jo   |
-| Jodan      | 上段    | high-level. As a strike, targetting head. As a Kamae, weapon raised diagonally back from above the forehead.   |
-| Jō         | 杖      | Wooden staff (typically 50” to 56” long).   |
-| Kaeshi waza   | 返し技 | Counter techniques.   |
-| Kaeshi/Gaeshi | 返し | Reverse/Return/Counter   |
-| Kamae/Gamae   | 構え | Stance   |
-| Kami       | 神      | A god; a spiritual being or essence.   |
-| Kamidana   | 神棚    | A shelf or small platform carrying a small Shinto shrine. Inside the dojo, this refers to the shōmen.   |
-| Kamiza     | 上座    | Seat of honor. If seated inside the dojo, the kamiza would be directly in front of the shomen.   |
-| Kata       | 型      | A formal practice form   |
-| Kata       | 肩      | Shoulder   |
-| Katatedori ryōtemochi | 片手取り両手持ち   | Grab or hold of nage’s hand (wrist or forearm) with both hands.<br>(Morotetori)   |
-| Katatetori   | 片手取り   | One hand grab to wrist (Lit: one "of a pair" hand grab)   |
-| Katatori   | 肩取り   | Shoulder grab   |
-| Katatori Menuchi   | 肩取り面打ち   | Grab to shoulder (Lapel grab) with strike to head   |
-| Keikogi    | 稽古着   | Training uniform (see dōgi).   |
-| Ken        | 剣   | Sword.   |
-| Kiai       | 気合い   | A martial shout (used to effect an opponent’s mind and to gain an advantage). Also, to be animated and energetic (literally, “to meet with ki”). Note: Kiai is generic; there are different kinds of kiai and different applications depending upon the circumstances and desired effect. |
-| Kihon      | 基本   | Foundational   |
-| Kihonwaza  | 基本技   | “Foundational techniques.” The basic technical curriculum of aikido.   |
-| Kokyū      | 呼吸   | Breath   |
-| Kokyūnage  | 呼吸投げ   | Breath throw.   |
-| Koshi      | 腰   | Hip   |
-| Kote       | 小手   | Forearm (Lit: Small hand)   |
-| Kubi       | 首   | Neck.   |
-| Kubijime   | 首締め   | Choke hold.   |
-| Kumijō     | 組杖   | Paired stick (Jo) practice of pre-established kata or forms.   |
-| Kumitachi  | 組太刀   | Paired sword practice of pre-established kata or forms.   |
-| Kuzushi    | 崩し   | The act of destabilizing an opponent by disrupting his structure.   |
-| Kyū        | 級   | A preliminary rank or degree (pre-black belt).   |
-| Kōhai      | 後輩   | Training junior (someone who started his or her training after you did yours).   |
-| Kōsadori   | 交差取り   | Cross-hand grab or hold (for example, uke grabs nage’s right wrist with his right hand).   (Gyaku Katatetori)   |
-| Ma-ai      | 間合   | The spacing and timing of an encounter. “Ma” means space or interval; “ai” means meeting. .   |
-| Mae-ukemi  | 前受け身   | Forward fall or roll.   |
-| Men        | 面   | Face.   |
-| Mentsuki   | 面突き   | Fist strike or thrust (with a weapon) to the face.   |
-| Morotetori | 諸手取り   | Two hands grab to one wrist/forearm   |
-| Mune       | 胸   | Chest.   |
-| Munedori   | 胸取り   | Chest grab or hold (uke grabs the chest of nage’s dōgi).   |
-| Munetsuki  | 胸突き   | Fist strike or thrust (with a weapon) to the midsection or solar plexus.   |
-| Mushin     | 無心   | “No mind.” The state where the mind is alert but empty of thoughts.   |
-| Musubi     | 結び   | Connection. The physical, mental, and spiritual connection between nage and uke.   |
-| Nage       | 投げ   | Throw, or one who throws   |
-| Nagewaza   | 投げ技   | “Throwing technique.” The generic term for any technique where uke is thrown, as distinguished from osaewaza, where uke is pinned.   |
-| O-Sensei   | 大先生   | “Great Teacher.” An honorific title reserved for Ueshiba Morihei, the founder of aikido.   |
-| Obi        | 帯   | Belt or sash tied over dōgi.   |
-| Omote      | 表   | Front. Omote-waza are techniques executed by entering to the opponent’s front-side.   |
-| Omotewaza  | 表技   | The frontal aspect of a technique (opposite of urawaza), generally involving an entry to uke’s front side. Where urawaza tend to be circular, omotewaza tend to be linear.   |
-| Onegaishimasu   | お願いします   | Please. Uttered at the beginning of the class, it means “please teach me;” uttered to a training partner, it means “please train with me”.   |
-| Osaewaza   | 抑え技   | “Pinning technique.” The generic term for any technique where uke is rendered imobile with a pin, as distinguished from nagewaza, where uke is thrown.   |
-| Randori    | 乱取り   | “Ran” means riotous or disorderly; “tori” means attack. In randori practice, uke may use any attack (as distinguished from jiyūwaza, where the attack is prescribed) and nage responds accordingly. Also, randori is usually practiced against multiple opponents.   |
-| Rei        | 礼   | Bow.   |
-| Ryōkatadori   | 両肩取り   | Hold, both shoulders held   |
-| Ryōtedori  | 両手取り   | Hold, both hands held   |
-| Seiza      | 正座   | Sitting–meditative posture   |
-| Sempai     | 先輩   | Training senior (someone who started his or her training before you did yours).   |
-| Sen-no-sen | 先の先   | To anticipate an attack and to take the initiative. (See go-no-sen and sen-sen-no-sen). (Before the beginning)   |
-| Sen-sen-no-sen   | 先先の先   | To anticipate and take the initiative against sen-no-sen. (See sen-no-sen and go-no-sen). (Before the beginning of the beginning)   |
-| Sensei     | 先生   | Teacher.   |
-| Shihan     | 師範   | Master instructor   |
-| Shikkō     | 膝行   | Movement (forewards, backwards, turning, and to oblique angles) on the knees from kneeling position.   |
-| Shinai     | 竹刀   | Practice sword made from split bamboo.   |
-| Shodan     | 初段   | 1st degree black belt.   |
-| Shōmen     | 正面   | Frontal alcove or panel, typically carrying a picture of O-Sensei; also called kamidana.   |
-| Shōmen-uchi   | 正面打ち   | Vertical strike to the forehead.   |
-| Sode       | 袖   | Sleeve.   |
-| Sodedori   | 袖取り   | Sleeve grab.   |
-| Soto       | 外   | Outside   |
-| Sotodeshi  | 外弟子   | A committed and dedicated student who commutes to the dojo for training (as opposed to “uchideshi,” live-in student).   |
-| Sotomawari | 外回り   | Outside turn (a turn to the outside, away from an opponent’s attack).   |
-| Suburi     | 素振り   | Unadorned Swing - Repetitive practice cuts to build muscle memory, form, and strength   |
-| Suwariwaza | 座り技   | “Seated technique.” The generic term for waza executed from a seated position against an also seated attacker (as opposed to hanmi-handachi, where nage is seated but uke is standing).   |
-| Tachi      | 太刀   | Sword (antiquated term).   |
-| Tachidori  | 太刀取り   | Sword take-away technique (generic).   |
-| Tachiware  | 太刀割れ   | The act of “splitting the sword.” Describes a sword strike that displaces an opponent’s sword to take the center line.   |
-| Tai sabaki |   | Body movement   |
-| Tai-no-henkō   | 体の変更   | The name given by the founder to a basic entering and turning exercise conducted against a one-hand wrist grab.   |
-| Taijutsu   | 体術   | “Physical arts;” empty-handed training (as opposed to bukiwaza).   |
-| Tantō      | 短刀   | Dagger or knife (practice tantō is made from wood).   |
-| Tantōdori  | 短刀取り   | Knife take-way technique (generic).   |
-| Te         | 手   | Hand.   |
-| Tegatana   | 手刀   | Hand blade (hand open, fingers extended, as in shōmen-uchi or yokomen-uchi strikes).   |
-| Tekubi     | 手首   | Wrist.   |
-| Tenkan     | 転換   | A pivot or turn.   |
-| Tori/Dori  | 取り   | Grab or Take depending on context (takeaway with weapons, otherwise probably grab).   or/ Active technique performing partner (Nage)   |
-| Tsuki      | 突き   | Thrust or fist strike.   |
-| Uchi       | 内   | Inside   |
-| Uchideshi  | 内弟子   | Live-in student; a disciple living in the dojo or with the master and dedicating him or herself fulltime to the study of the art.   |
-| Uchimawari | 内回り   | Inside turn (a turn into or toward an opponent, usually with atemi). An uchimawari entry usually takes you inside and under your opponent’s attacking arm.   |
-| Ude        | 腕   | Arm.   |
-| Uke        | 受け   | “Receiver;” in partner practice, the role of the person executing the attack and receiving the technique.   |
-| Ukemi      | 受け身   | Fall, roll, or submission. Ukemi is, literally, the receptive or receiving body. (Outside of the martial arts, ukemi can also mean passive or passivity).   |
-| Undo       | 運動   | Exercise   |
-| Ura        | 裏   | Back (opposite of front). Ura-waza are techniques executed by entering to the opponent’s blind side or rear.   |
-| Urawaza    | 裏技   | The rear aspect of a technique (opposite of omotewaza), generally involving an entry to uke’s rear or blind side. Where omotewaza tend to be linear, urawaza tend to be circular.   |
-| Ushiro Kubishime   | 後ろ首締め   | Choke from behind with wrist grab   |
-| Ushiro Ryokatatori   | 後ろ両肩取り   | Both shoulders held from behind   |
-| Ushiro Tekubitori   | 後ろ手首取り   | Both wrists held from behind (Ushiro Ryotetori implied here)   |
-| Ushiro     | 後ろ   | Backside, behind.   |
-| Ushiro-ukemi   | 後受け身   | Backward fall, roll, or submission.   |
-| Ushirodori | 後ろ取り   | Generic name for holds from behind.   |
-| Waki       | 脇   | Side/Flank   |
-| Wakigamae  | 脇構え   | A sword stance. In wakigamae, left leg is forward, right leg is back, and the sword is held to the side pointing toward the rear so that the sword blade is partially or fully concealed by the right leg.   |
-| Waza       | 技   | “Technique.” Any of the formal methods of throwing or pinning uke performed in aikido.   |
-| Yokomen-uchi   | 横面打ち   | Open-handed, diagonal strike to the temple, side of the face, or side of the neck.   |
-| Yubi       | 指   | Finger.   |
-| Yūdansha   | 有段者   | Practitioner possessing black belt rank.   |
-| Zagi/Kiza  | 跪座   | Sitting–active posture - Seiza but active toes   |
-| Zanshin    | 残心   | “Remaining mind or attention;” exercise of mental alertness or readiness, especially following the completion of a technique.   |
+| Term                  | Japanese  | Definition                                                                                                                                                                                                                                                                                |
+| --------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Arigatō-gozaimashita  | 有難う御座いました | Thank you very much (very formal, past tense).                                                                                                                                                                                                                                            |
+| Ashi                  | 足         | Foot/Leg                                                                                                                                                                                                                                                                                  |
+| Ashikubi              | 足首        | Ankle.   (Lit: Leg-neck)                                                                                                                                                                                                                                                                  |
+| Atama                 | 頭         | Head.                                                                                                                                                                                                                                                                                     |
+| Atemi                 | 当身        | Striking attack   (Lit: Hit someone)                                                                                                                                                                                                                                                      |
+| Awase                 | 合わせ       | "Blending" - Two-partner practice to instill fundamentals (Lit: joined/facing)                                                                                                                                                                                                            |
+| Bokken/Bokutō         | 木剣/木刀     | Wooden sword                                                                                                                                                                                                                                                                              |
+| Budō                  | 武道        | The study of martial arts as a way of life, implying moral/spiritual aspects (Lit: military arts)                                                                                                                                                                                         |
+| Bukiwaza              | 武器技       | Weapons technique/practice                                                                                                                                                                                                                                                                |
+| Bushi                 | 武士        | Warrior                                                                                                                                                                                                                                                                                   |
+| Bushidō               | 武士道       | The way of the warrior                                                                                                                                                                                                                                                                    |
+| Bō                    | 棒         | Long staff                                                                                                                                                                                                                                                                                |
+| Chūdan                | 中段        | mid-level.   As a strike, targetting stomach/solar plexus.   As a sword Kamae: Tip even with opponent's neck.                                                                                                                                                                             |
+| Dan                   | 段         | Black belt (rank)                                                                                                                                                                                                                                                                         |
+| Deshi                 | 弟子        | Disciple or follower; dedicated student of one teacher.                                                                                                                                                                                                                                   |
+| Dō                    | 胴         | Trunk or torso. Often used to indicate the torso as a target for a sword cut.                                                                                                                                                                                                             |
+| Dō                    | 道         | Path or way (also read michi).                                                                                                                                                                                                                                                            |
+| Dōgi                  | 道着        | Training uniform (also called keikogi).                                                                                                                                                                                                                                                   |
+| Dōjō                  | 道場        | A place of practice where the way is revealed. A place for the strengthening and refinement of spirit, mind and body.                                                                                                                                                                     |
+| Dōjō-chō              | 道場長       | Head of the dojo.                                                                                                                                                                                                                                                                         |
+| Funakogi-undō         | 舟漕ぎ運動     | Boat rowing exercise.                                                                                                                                                                                                                                                                     |
+| Furitama              | 振り玉       | Spirit shaking.   Exercise for meditation, relaxation, and center alignment.                                                                                                                                                                                                              |
+| Gedan                 | 下段        | low-level                                                                                                                                                                                                                                                                                 |
+| Gō-no-sen             | 後の先       | Responding after "after the beginning"                                                                                                                                                                                                                                                    |
+| Hakama                | 袴         | Wide, pleated pants                                                                                                                                                                                                                                                                       |
+| Hanmi                 | 半身        | Half-body stance.                                                                                                                                                                                                                                                                         |
+| Hanmi handachi        | 半身半立ち     | Half-body, half-standing. Uke standing and Nage sitting                                                                                                                                                                                                                                   |
+| Hara                  | 腹         | Center - source of breath                                                                                                                                                                                                                                                                 |
+| Henkawaza             | 変化技       | Starting one technique, but finishing with another - (Lit: strange technique)                                                                                                                                                                                                             |
+| Hiji                  | 肘         | Elbow.                                                                                                                                                                                                                                                                                    |
+| Hiza                  | 膝         | Knee.                                                                                                                                                                                                                                                                                     |
+| Hombudōjō             | 本部道場      | The Aikikai Foundation dōjō in Tokyo (hombu means headquarters).                                                                                                                                                                                                                          |
+| Irimi                 | 入り身       | Body entering - forward movement                                                                                                                                                                                                                                                          |
+| Jiyūwaza              | 自由技       | Interval attacks w/nage varying techniques (prescribed attacks)                                                                                                                                                                                                                           |
+| Jo tori               | 杖取り       | Disarm attacker of jo                                                                                                                                                                                                                                                                     |
+| Jo waza / Jo Nage     | 杖技 / 杖投げ  | Techniques performed with jo                                                                                                                                                                                                                                                              |
+| Jodan                 | 上段        | high-level. As a strike, targetting head. As a Kamae, weapon raised diagonally back from above the forehead.                                                                                                                                                                              |
+| Jō                    | 杖         | Wooden staff (typically 50” to 56” long).                                                                                                                                                                                                                                                 |
+| Kaeshi waza           | 返し技       | Counter techniques.                                                                                                                                                                                                                                                                       |
+| Kaeshi/Gaeshi         | 返し        | Reverse/Return/Counter                                                                                                                                                                                                                                                                    |
+| Kamae/Gamae           | 構え        | Stance                                                                                                                                                                                                                                                                                    |
+| Kami                  | 神         | A god; a spiritual being or essence.                                                                                                                                                                                                                                                      |
+| Kamidana              | 神棚        | A shelf or small platform carrying a small Shinto shrine. Inside the dojo, this refers to the shōmen.                                                                                                                                                                                     |
+| Kamiza                | 上座        | Seat of honor. If seated inside the dojo, the kamiza would be directly in front of the shomen.                                                                                                                                                                                            |
+| Kata                  | 型         | A formal practice form                                                                                                                                                                                                                                                                    |
+| Kata                  | 肩         | Shoulder                                                                                                                                                                                                                                                                                  |
+| Katatedori ryōtemochi | 片手取り両手持ち  | Grab or hold of nage’s hand (wrist or forearm) with both hands.<br>(Morotetori)                                                                                                                                                                                                           |
+| Katatetori            | 片手取り      | One hand grab to wrist (Lit: one "of a pair" hand grab)                                                                                                                                                                                                                                   |
+| Katatori              | 肩取り       | Shoulder grab                                                                                                                                                                                                                                                                             |
+| Katatori Menuchi      | 肩取り面打ち    | Grab to shoulder (Lapel grab) with strike to head                                                                                                                                                                                                                                         |
+| Keikogi               | 稽古着       | Training uniform (see dōgi).                                                                                                                                                                                                                                                              |
+| Ken                   | 剣         | Sword.                                                                                                                                                                                                                                                                                    |
+| Kiai                  | 気合い       | A martial shout (used to effect an opponent’s mind and to gain an advantage). Also, to be animated and energetic (literally, “to meet with ki”). Note: Kiai is generic; there are different kinds of kiai and different applications depending upon the circumstances and desired effect. |
+| Kihon                 | 基本        | Foundational                                                                                                                                                                                                                                                                              |
+| Kihonwaza             | 基本技       | “Foundational techniques.” The basic technical curriculum of aikido.                                                                                                                                                                                                                      |
+| Kokyū                 | 呼吸        | Breath                                                                                                                                                                                                                                                                                    |
+| Kokyūnage             | 呼吸投げ      | Breath throw.                                                                                                                                                                                                                                                                             |
+| Koshi                 | 腰         | Hip                                                                                                                                                                                                                                                                                       |
+| Kote                  | 小手        | Forearm (Lit: Small hand)                                                                                                                                                                                                                                                                 |
+| Kubi                  | 首         | Neck.                                                                                                                                                                                                                                                                                     |
+| Kubijime              | 首締め       | Choke hold.                                                                                                                                                                                                                                                                               |
+| Kumijō                | 組杖        | Paired stick (Jo) practice of pre-established kata or forms.                                                                                                                                                                                                                              |
+| Kumitachi             | 組太刀       | Paired sword practice of pre-established kata or forms.                                                                                                                                                                                                                                   |
+| Kuzushi               | 崩し        | The act of destabilizing an opponent by disrupting his structure.                                                                                                                                                                                                                         |
+| Kyū                   | 級         | A preliminary rank or degree (pre-black belt).                                                                                                                                                                                                                                            |
+| Kōhai                 | 後輩        | Training junior (someone who started his or her training after you did yours).                                                                                                                                                                                                            |
+| Kōsadori              | 交差取り      | Cross-hand grab or hold (for example, uke grabs nage’s right wrist with his right hand).   (Gyaku Katatetori)                                                                                                                                                                             |
+| Ma-ai                 | 間合        | The spacing and timing of an encounter. “Ma” means space or interval; “ai” means meeting. .                                                                                                                                                                                               |
+| Mae-ukemi             | 前受け身      | Forward fall or roll.                                                                                                                                                                                                                                                                     |
+| Men                   | 面         | Face.                                                                                                                                                                                                                                                                                     |
+| Mentsuki              | 面突き       | Fist strike or thrust (with a weapon) to the face.                                                                                                                                                                                                                                        |
+| Morotetori            | 諸手取り      | Two hands grab to one wrist/forearm                                                                                                                                                                                                                                                       |
+| Mune                  | 胸         | Chest.                                                                                                                                                                                                                                                                                    |
+| Munedori              | 胸取り       | Chest grab or hold (uke grabs the chest of nage’s dōgi).                                                                                                                                                                                                                                  |
+| Munetsuki             | 胸突き       | Fist strike or thrust (with a weapon) to the midsection or solar plexus.                                                                                                                                                                                                                  |
+| Mushin                | 無心        | “No mind.” The state where the mind is alert but empty of thoughts.                                                                                                                                                                                                                       |
+| Musubi                | 結び        | Connection. The physical, mental, and spiritual connection between nage and uke.                                                                                                                                                                                                          |
+| Nage                  | 投げ        | Throw, or one who throws                                                                                                                                                                                                                                                                  |
+| Nagewaza              | 投げ技       | “Throwing technique.” The generic term for any technique where uke is thrown, as distinguished from osaewaza, where uke is pinned.                                                                                                                                                        |
+| O-Sensei              | 大先生       | “Great Teacher.” An honorific title reserved for Ueshiba Morihei, the founder of aikido.                                                                                                                                                                                                  |
+| Obi                   | 帯         | Belt or sash tied over dōgi.                                                                                                                                                                                                                                                              |
+| Omote                 | 表         | Front. Omote-waza are techniques executed by entering to the opponent’s front-side.                                                                                                                                                                                                       |
+| Omotewaza             | 表技        | The frontal aspect of a technique (opposite of urawaza), generally involving an entry to uke’s front side. Where urawaza tend to be circular, omotewaza tend to be linear.                                                                                                                |
+| Onegaishimasu         | お願いします    | Please. Uttered at the beginning of the class, it means “please teach me;” uttered to a training partner, it means “please train with me”.                                                                                                                                                |
+| Osaewaza              | 抑え技       | “Pinning technique.” The generic term for any technique where uke is rendered imobile with a pin, as distinguished from nagewaza, where uke is thrown.                                                                                                                                    |
+| Randori               | 乱取り       | “Ran” means riotous or disorderly; “tori” means attack. In randori practice, uke may use any attack (as distinguished from jiyūwaza, where the attack is prescribed) and nage responds accordingly. Also, randori is usually practiced against multiple opponents.                        |
+| Rei                   | 礼         | Bow.                                                                                                                                                                                                                                                                                      |
+| Ryōkatadori           | 両肩取り      | Hold, both shoulders held                                                                                                                                                                                                                                                                 |
+| Ryōtedori             | 両手取り      | Hold, both hands held                                                                                                                                                                                                                                                                     |
+| Seiza                 | 正座        | Sitting–meditative posture                                                                                                                                                                                                                                                                |
+| Sempai                | 先輩        | Training senior (someone who started his or her training before you did yours).                                                                                                                                                                                                           |
+| Sen-no-sen            | 先の先       | To anticipate an attack and to take the initiative. (See go-no-sen and sen-sen-no-sen). (Before the beginning)                                                                                                                                                                            |
+| Sen-sen-no-sen        | 先先の先      | To anticipate and take the initiative against sen-no-sen. (See sen-no-sen and go-no-sen). (Before the beginning of the beginning)                                                                                                                                                         |
+| Sensei                | 先生        | Teacher.                                                                                                                                                                                                                                                                                  |
+| Shihan                | 師範        | Master instructor                                                                                                                                                                                                                                                                         |
+| Shikkō                | 膝行        | Movement (forewards, backwards, turning, and to oblique angles) on the knees from kneeling position.                                                                                                                                                                                      |
+| Shinai                | 竹刀        | Practice sword made from split bamboo.                                                                                                                                                                                                                                                    |
+| Shodan                | 初段        | 1st degree black belt.                                                                                                                                                                                                                                                                    |
+| Shōmen                | 正面        | Frontal alcove or panel, typically carrying a picture of O-Sensei; also called kamidana.                                                                                                                                                                                                  |
+| Shōmen-uchi           | 正面打ち      | Vertical strike to the forehead.                                                                                                                                                                                                                                                          |
+| Sode                  | 袖         | Sleeve.                                                                                                                                                                                                                                                                                   |
+| Sodedori              | 袖取り       | Sleeve grab.                                                                                                                                                                                                                                                                              |
+| Soto                  | 外         | Outside                                                                                                                                                                                                                                                                                   |
+| Sotodeshi             | 外弟子       | A committed and dedicated student who commutes to the dojo for training (as opposed to “uchideshi,” live-in student).                                                                                                                                                                     |
+| Sotomawari            | 外回り       | Outside turn (a turn to the outside, away from an opponent’s attack).                                                                                                                                                                                                                     |
+| Suburi                | 素振り       | Unadorned Swing - Repetitive practice cuts to build muscle memory, form, and strength                                                                                                                                                                                                     |
+| Suwariwaza            | 座り技       | “Seated technique.” The generic term for waza executed from a seated position against an also seated attacker (as opposed to hanmi-handachi, where nage is seated but uke is standing).                                                                                                   |
+| Tachi                 | 太刀        | Sword (antiquated term).                                                                                                                                                                                                                                                                  |
+| Tachidori             | 太刀取り      | Sword take-away technique (generic).                                                                                                                                                                                                                                                      |
+| Tachiware             | 太刀割れ      | The act of “splitting the sword.” Describes a sword strike that displaces an opponent’s sword to take the center line.                                                                                                                                                                    |
+| Tai sabaki            |           | Body movement                                                                                                                                                                                                                                                                             |
+| Tai-no-henkō          | 体の変更      | The name given by the founder to a basic entering and turning exercise conducted against a one-hand wrist grab.                                                                                                                                                                           |
+| Taijutsu              | 体術        | “Physical arts;” empty-handed training (as opposed to bukiwaza).                                                                                                                                                                                                                          |
+| Tantō                 | 短刀        | Dagger or knife (practice tantō is made from wood).                                                                                                                                                                                                                                       |
+| Tantōdori             | 短刀取り      | Knife take-way technique (generic).                                                                                                                                                                                                                                                       |
+| Te                    | 手         | Hand.                                                                                                                                                                                                                                                                                     |
+| Tegatana              | 手刀        | Hand blade (hand open, fingers extended, as in shōmen-uchi or yokomen-uchi strikes).                                                                                                                                                                                                      |
+| Tekubi                | 手首        | Wrist.                                                                                                                                                                                                                                                                                    |
+| Tenkan                | 転換        | A pivot or turn.                                                                                                                                                                                                                                                                          |
+| Tori/Dori             | 取り        | Grab or Take depending on context (takeaway with weapons, otherwise probably grab).   or/ Active technique performing partner (Nage)                                                                                                                                                      |
+| Tsuki                 | 突き        | Thrust or fist strike.                                                                                                                                                                                                                                                                    |
+| Uchi                  | 内         | Inside                                                                                                                                                                                                                                                                                    |
+| Uchideshi             | 内弟子       | Live-in student; a disciple living in the dojo or with the master and dedicating him or herself fulltime to the study of the art.                                                                                                                                                         |
+| Uchimawari            | 内回り       | Inside turn (a turn into or toward an opponent, usually with atemi). An uchimawari entry usually takes you inside and under your opponent’s attacking arm.                                                                                                                                |
+| Ude                   | 腕         | Arm.                                                                                                                                                                                                                                                                                      |
+| Uke                   | 受け        | “Receiver;” in partner practice, the role of the person executing the attack and receiving the technique.                                                                                                                                                                                 |
+| Ukemi                 | 受け身       | Fall, roll, or submission. Ukemi is, literally, the receptive or receiving body. (Outside of the martial arts, ukemi can also mean passive or passivity).                                                                                                                                 |
+| Uke-Nagashi           | 受け流し      | Flowing reception.                                                                                                                                                                                                                                                                        |
+| Undo                  | 運動        | Exercise                                                                                                                                                                                                                                                                                  |
+| Ura                   | 裏         | Back (opposite of front). Ura-waza are techniques executed by entering to the opponent’s blind side or rear.                                                                                                                                                                              |
+| Urawaza               | 裏技        | The rear aspect of a technique (opposite of omotewaza), generally involving an entry to uke’s rear or blind side. Where omotewaza tend to be linear, urawaza tend to be circular.                                                                                                         |
+| Ushiro Kubishime      | 後ろ首締め     | Choke from behind with wrist grab                                                                                                                                                                                                                                                         |
+| Ushiro Ryokatatori    | 後ろ両肩取り    | Both shoulders held from behind                                                                                                                                                                                                                                                           |
+| Ushiro Tekubitori     | 後ろ手首取り    | Both wrists held from behind (Ushiro Ryotetori implied here)                                                                                                                                                                                                                              |
+| Ushiro                | 後ろ        | Backside, behind.                                                                                                                                                                                                                                                                         |
+| Ushiro-ukemi          | 後受け身      | Backward fall, roll, or submission.                                                                                                                                                                                                                                                       |
+| Ushirodori            | 後ろ取り      | Generic name for holds from behind.                                                                                                                                                                                                                                                       |
+| Waki                  | 脇         | Side/Flank                                                                                                                                                                                                                                                                                |
+| Wakigamae             | 脇構え       | A sword stance. In wakigamae, left leg is forward, right leg is back, and the sword is held to the side pointing toward the rear so that the sword blade is partially or fully concealed by the right leg.                                                                                |
+| Waza                  | 技         | “Technique.” Any of the formal methods of throwing or pinning uke performed in aikido.                                                                                                                                                                                                    |
+| Yokomen-uchi          | 横面打ち      | Open-handed, diagonal strike to the temple, side of the face, or side of the neck.                                                                                                                                                                                                        |
+| Yubi                  | 指         | Finger.                                                                                                                                                                                                                                                                                   |
+| Yūdansha              | 有段者       | Practitioner possessing black belt rank.                                                                                                                                                                                                                                                  |
+| Zagi/Kiza             | 跪座        | Sitting–active posture - Seiza but active toes                                                                                                                                                                                                                                            |
+| Zanshin               | 残心        | “Remaining mind or attention;” exercise of mental alertness or readiness, especially following the completion of a technique.                                                                                                                                                             |
 
 # Numeric Terms
 
@@ -214,3 +215,12 @@
 | Tsugi-ashi | (Subsequent Foot) | A, step used to close distance. The left foot moves up to touch or pass the right foot before the right foot moves again to strike.|
 | Hiraki-ashi | (Diagonal/Open Foot) | A movement to evade or create angles, where you move diagonally to the right or left, often with a slight pivot.|
 | Ayumi-ashi | (Walking Feet) | (Step in our dojo) A natural walking movement used for traversing longer distances quickly, rarely used in close combat. |
+# Uke-Nagashi
+Note: if there are better names for these, let me know
+
+| Name                       | Typical movement                               | Can be response to (not limited to)        |
+| -------------------------- | ---------------------------------------------- | ------------------------------------------ |
+| Kudari Soto: 下り - downward | Outside hand sweeps across body with open palm | Irimi entry to Tsuki                       |
+| Kudari Uchi: 下り - downward | Inside hand cuts down                          | Irimi entry to Tsuki<br>Front kick defense |
+| Nobori Soto: 上り - upward   | Entering with outside hand palm up             | Yokomen / Shomen                           |
+| Nobori Uchi: 上り - upward   | Inside hand spiraling Up                       | Shomen                                     |
