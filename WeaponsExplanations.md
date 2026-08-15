@@ -21,7 +21,9 @@
 - [Saito on Youtube](https://www.youtube.com/watch?v=9h3z8bnEuws)
 
 ### Ken Awase (7)
+- [Saito - ken awase, ki musubi no tachi, kumitachi, variations](https://www.youtube.com/watch?v=Y7IPWd4okWc)
 - [Kobayashi on Youtube](https://www.youtube.com/watch?v=FJBebwFJHgw)
 - [bigrock aikikai - good slow explanation](https://www.youtube.com/watch?v=jfYRauOPV4k)
 - [Facebook video](https://www.facebook.com/watch/?v=779610495843565)
+- [Random variations on Youtube](https://www.youtube.com/watch?v=Jwl6f2naz_0)
 - [Text description](./Ken%20Awase%20(7))
