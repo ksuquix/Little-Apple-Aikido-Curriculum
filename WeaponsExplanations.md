@@ -23,4 +23,5 @@
 ### Ken Awase (7)
 - [Kobayashi on Youtube](https://www.youtube.com/watch?v=FJBebwFJHgw)
 - [bigrock aikikai - good slow explanation](https://www.youtube.com/watch?v=jfYRauOPV4k)
+- [Facebook video](https://www.facebook.com/watch/?v=779610495843565)
 - [Text description](./Ken%20Awase%20(7))
