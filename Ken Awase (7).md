@@ -4,8 +4,10 @@ Uchitachi (打太刀 - Sword Attacker) initiates movements.  Instead of just rec
 
 Shitachi/uketachi (仕太刀 - Sword performer/receiver) performs technique. 
 
-1. Uchitachi prepares tsugi-ashi tsuki.  Shitachi responds with hiraki-ashi to the Uchitachi's inside, and shomenuchi to Uchitachi's wrist.
-2. Uchitachi prepares tsugi-ashi Tsuki, pushing shitachi's sword offline.  Shitachi steps tenshin, raising sword.  Uchitachi returns to original chudan-no-kamae.  Shitachi steps around and does large yokomen to wrist.
+1. Both partners raise for tsugi-ashi shomenuchi.  Shitachi moves offline hiraki-ashi to Uchitachi's wrist.
+   - Alternate: Target head
+2. Uchitachi prepares tsugi-ashi Tsuki, pushing shitachi's sword offline if shitachi doesn't move.  Shitachi steps tenshin, raising sword.  Uchitachi returns to original chudan-no-kamae.  Shitachi steps around and does large yokomen to wrist.
+   - Alternate: Uchitachi doesn't leave thrust position.  Shitachi cuts wrist.
 3. Start as (1). Shitachi lets Uchitachi raise sword (or uchitachi responds quickly) stepping back, but matches movement sliding in with Tsuki to neck.
 4.  Both raise, meet in cut together.   Uchitachi pushes Shitachi's sword, but shitachi slips around and does Tsuki while hiraki-ashi to outside.
 5. Uchitachi prepares tsugi-ashi shomenuchi.  Shitachi does fadeaway block, steps around in yokomen to outside wrist.  Uchitachi raises (either quickly or after Shitachi catches and releases wrist), stepping back.  Shitachi enters, cutting wrist from below.
