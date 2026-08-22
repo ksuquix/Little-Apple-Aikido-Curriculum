@@ -16,41 +16,41 @@
   - Ken Partner Blocking exercise - USAF via Hayes
   - Ken Connection - USAF via Hayes
   - I've only seen most of this content from Vu at seminars.  I believe the exercises were Hayes Sensei breaking the larger piece down for us.  I plan on doing similar and making several smaller Awase from Vu's seminar video.
-- Kanai kumitachi: https://youtu.be/Qpx6dIaLhlc?si=Wyrv8M6OZPcg6K_J
-- Vu weapons at winter camp (different take on warmup/suburi) https://www.youtube.com/watch?v=tkvcys4ReVI
+- [Kanai kumitachi](https://youtu.be/Qpx6dIaLhlc?si=Wyrv8M6OZPcg6K_J)
+- [Vu weapons at winter camp (different take on warmup/suburi)](https://www.youtube.com/watch?v=tkvcys4ReVI)
   - suiyake nen?   looks like a kumitachi
-  - awase - up blending deflect https://youtu.be/tkvcys4ReVI?t=197
-    - up blend awase continuous https://youtu.be/tkvcys4ReVI?t=249
-  - push thrust awase with fadeaway cut https://youtu.be/tkvcys4ReVI?t=307
-    - then catch  https://youtu.be/tkvcys4ReVI?t=391
-    - add another step https://youtu.be/tkvcys4ReVI?t=454
-  - up blend 2 step upcut block https://youtu.be/tkvcys4ReVI?t=533
-    - peter doing a piece of this https://www.youtube.com/watch?v=kVzoEvWcmhQ
-    - response is hasso block https://youtu.be/tkvcys4ReVI?t=611
-    - re-response https://youtu.be/tkvcys4ReVI?t=678
-  - push thrust added at end of last https://youtu.be/tkvcys4ReVI?t=769
-  - partial, maybe different (kristen in background?) https://www.youtube.com/watch?v=uxZOSNsoipA
-- Ken tai jo  bertiome https://www.youtube.com/shorts/fAbP0B0dsDI
-- jo - vu https://www.youtube.com/watch?v=1GbT848jrgk
-- ken vu 2022 https://www.youtube.com/watch?v=fvz2Ado7XzI
-  - awase https://youtu.be/fvz2Ado7XzI?t=210
-  - forward block https://youtu.be/fvz2Ado7XzI?t=329
-  - duck under as awase https://youtu.be/fvz2Ado7XzI?t=449
-- sugano style san no ken https://www.youtube.com/watch?v=4SFfKIN0-VA
-- sugano kata https://www.youtube.com/watch?v=rWhd6pigeaQ
-- sugano ni no ken https://www.youtube.com/watch?v=C2Fdk5RaYnY
-- sugano memorial https://www.youtube.com/watch?v=vUwl3Jt087g
-- sugano jo 25 https://www.youtube.com/watch?v=Ch8lhwDm4_k
-- sugano sword system trailer https://www.youtube.com/watch?v=r8m-xbOB0G0
-- waite ken tai jo https://www.youtube.com/watch?v=CJuCwhVZnvM
-- https://www.youtube.com/watch?v=ctVIhWuxVfc
-- waite bokken class https://www.youtube.com/watch?v=H25hahSceKI
-- waite suburi https://www.youtube.com/watch?v=MI4AHpcXXQs
-- chiarolanzio bokken bokken form 5 https://www.youtube.com/watch?v=BqhRyY4uAvo
-- ch b b 1 https://www.youtube.com/watch?v=eHMyCfViGAA
-- ch full https://www.youtube.com/watch?v=Fl-qkHroOWo&list=PLnrR_nVqPPi8vTsGLk0s6u2k5jhIGELog
-- bokken basics (very standard aikido style) https://www.youtube.com/watch?v=ZiZzzkh4lIU
-- gonzalez https://www.youtube.com/watch?v=xS34NH0vy1U
-- footwork https://youtu.be/_xBTxbuDtvA
-- ASU Kumitachi: https://www.youtube.com/watch?v=g7sUbkBs5Rw
-- Twin Cities Aikido - extensive weapons video reference: https://www.tcaikido.com/?page_id=943
+  - [awase - up blending deflect](https://youtu.be/tkvcys4ReVI?t=197)
+    - [up blend awase continuous](https://youtu.be/tkvcys4ReVI?t=249)
+  - [push thrust awase with fadeaway cut](https://youtu.be/tkvcys4ReVI?t=307)
+    - [then catch](https://youtu.be/tkvcys4ReVI?t=391)
+    - [add another step](https://youtu.be/tkvcys4ReVI?t=454)
+  - [up blend 2 step upcut block](https://youtu.be/tkvcys4ReVI?t=533)
+    - [peter doing a piece of this](https://www.youtube.com/watch?v=kVzoEvWcmhQ)
+    - [response is hasso block](https://youtu.be/tkvcys4ReVI?t=611)
+    - [re-response](https://youtu.be/tkvcys4ReVI?t=678)
+  - [push thrust added at end of last](https://youtu.be/tkvcys4ReVI?t=769)
+  - [partial, maybe different (kristen in background?)](https://www.youtube.com/watch?v=uxZOSNsoipA)
+- [Ken tai jo  bertiome](https://www.youtube.com/shorts/fAbP0B0dsDI)
+- [jo - vu](https://www.youtube.com/watch?v=1GbT848jrgk)
+- [ken vu 2022](https://www.youtube.com/watch?v=fvz2Ado7XzI)
+  - [awase](https://youtu.be/fvz2Ado7XzI?t=210)
+  - [forward block](https://youtu.be/fvz2Ado7XzI?t=329)
+  - [duck under as awase](https://youtu.be/fvz2Ado7XzI?t=449)
+- [sugano style san no ken](https://www.youtube.com/watch?v=4SFfKIN0-VA)
+- [sugano kata](https://www.youtube.com/watch?v=rWhd6pigeaQ)
+- [sugano ni no ken](https://www.youtube.com/watch?v=C2Fdk5RaYnY)
+- [sugano memorial](https://www.youtube.com/watch?v=vUwl3Jt087g)
+- [sugano jo 25](https://www.youtube.com/watch?v=Ch8lhwDm4_k)
+- [sugano sword system trailer](https://www.youtube.com/watch?v=r8m-xbOB0G0)
+- [waite ken tai jo](https://www.youtube.com/watch?v=CJuCwhVZnvM)
+- [video](https://www.youtube.com/watch?v=ctVIhWuxVfc)
+- [waite bokken class](https://www.youtube.com/watch?v=H25hahSceKI)
+- [waite suburi](https://www.youtube.com/watch?v=MI4AHpcXXQs)
+- [chiarolanzio bokken bokken form 5](https://www.youtube.com/watch?v=BqhRyY4uAvo)
+- [ch b b 1](https://www.youtube.com/watch?v=eHMyCfViGAA)
+- [ch full](https://www.youtube.com/watch?v=Fl-qkHroOWo&list=PLnrR_nVqPPi8vTsGLk0s6u2k5jhIGELog)
+- [bokken basics (very standard aikido style)](https://www.youtube.com/watch?v=ZiZzzkh4lIU)
+- [gonzalez](https://www.youtube.com/watch?v=xS34NH0vy1U)
+- [footwork](https://youtu.be/_xBTxbuDtvA)
+- [ASU Kumitachi](https://www.youtube.com/watch?v=g7sUbkBs5Rw)
+- [Twin Cities Aikido - extensive weapons video reference](https://www.tcaikido.com/?page_id=943)
