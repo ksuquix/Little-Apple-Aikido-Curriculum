@@ -11,10 +11,7 @@
 - Ken Suburi (7) - Saito  
 - Happo Giri - Saito
 - Ken Awase (7) - Saito
-- Shin Ken Awase (?) - USAF via Vu
-    - Ken Partner Blocking exercise - USAF via Hayes
-    - Ken Connection - USAF via Hayes
-    - I've only seen most of this content from Vu at seminars.  I believe the exercises were Hayes Sensei breaking the larger piece down for us.  I plan on doing similar and making several smaller Awase from Vu's seminar video.
+- Kumitachi (7) - Kanai
 
 ## Additional Weapons Testing
 
@@ -45,4 +42,4 @@
 - Jo Awase (8)
 - Jo kihon (20)
 - Ken Awase (7)
-- Shin Ken Awase (?) - not developed yet
+- Kumitachi (7)

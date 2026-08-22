@@ -12,6 +12,10 @@
 - Kumi Tachi Henka (7)  
 - Ken Tai jo (7) Henka (5) 
 - Ken tai riai: shiho nage; kotegaishi
+- Shin Ken Awase (?) - USAF via Vu
+  - Ken Partner Blocking exercise - USAF via Hayes
+  - Ken Connection - USAF via Hayes
+  - I've only seen most of this content from Vu at seminars.  I believe the exercises were Hayes Sensei breaking the larger piece down for us.  I plan on doing similar and making several smaller Awase from Vu's seminar video.
 - Kanai kumitachi: https://youtu.be/Qpx6dIaLhlc?si=Wyrv8M6OZPcg6K_J
 - Vu weapons at winter camp (different take on warmup/suburi) https://www.youtube.com/watch?v=tkvcys4ReVI
   - suiyake nen?   looks like a kumitachi
@@ -48,3 +52,5 @@
 - bokken basics (very standard aikido style) https://www.youtube.com/watch?v=ZiZzzkh4lIU
 - gonzalez https://www.youtube.com/watch?v=xS34NH0vy1U
 - footwork https://youtu.be/_xBTxbuDtvA
+- ASU Kumitachi: https://www.youtube.com/watch?v=g7sUbkBs5Rw
+- Twin Cities Aikido - extensive weapons video reference: https://www.tcaikido.com/?page_id=943

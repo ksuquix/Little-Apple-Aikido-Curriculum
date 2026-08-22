@@ -27,3 +27,7 @@
 - [Facebook video](https://www.facebook.com/watch/?v=779610495843565)
 - [Random variations on Youtube](https://www.youtube.com/watch?v=Jwl6f2naz_0)
 - [Text description](./Ken%20Awase%20(7))
+
+### Kumitachi (7)
+- [Kanai on Youtube](https://www.youtube.com/watch?v=Qpx6dIaLhlc)
+- [Text description](./Kumitachi%20(7))
