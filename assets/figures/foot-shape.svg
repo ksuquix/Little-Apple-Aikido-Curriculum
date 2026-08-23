@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 244" width="480" height="488">
+  <title>Footprint shape test (right and left foot)</title>
+  <defs>
+    <g id="foot-r" fill="#111111">
+      <path d="M 45 224
+               C 36 224 32 216 32 204
+               C 32 190 38 178 39 163
+               C 41 149 34 139 30 125
+               C 26 111 21 97 24 85
+               C 29 72 39 66 51 66
+               C 65 66 77 72 82 85
+               C 85 100 84 115 82 132
+               C 80 158 79 180 78 204
+               C 78 216 72 224 65 224
+               Z"/>
+      <ellipse cx="28.5" cy="54" rx="7.5" ry="13.5" transform="rotate(-12 28.5 54)"/>
+      <ellipse cx="44.5" cy="50" rx="6" ry="9.5" transform="rotate(-3 44.5 50)"/>
+      <ellipse cx="58" cy="50" rx="5" ry="8" transform="rotate(5 58 50)"/>
+      <ellipse cx="70" cy="55.5" rx="4.2" ry="6.5" transform="rotate(13 70 55.5)"/>
+      <ellipse cx="80" cy="65" rx="3.4" ry="5.2" transform="rotate(22 80 65)"/>
+    </g>
+    <g id="foot-l">
+      <use href="#foot-r" transform="translate(100 0) scale(-1 1)"/>
+    </g>
+  </defs>
+  <rect width="240" height="244" fill="#ffffff"/>
+  <use href="#foot-r" transform="translate(8 8)"/>
+  <use href="#foot-l" transform="translate(232 8)"/>
+</svg>

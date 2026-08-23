@@ -1,16 +1,16 @@
 # Weapon work to consider
 
-- 6 Jo Kata  
-- 13 Jo Kata  
-- Kumijo (10)  
-- 13 Kumijo  
-- 31 Kumijo 
-- Ken awase (4)  
-- Kumitachi (6)  
-- Kumijo (10)  
-- Ken Tai Jo Barai (3)  
-- Kumi Tachi Henka (7)  
-- Ken Tai jo (7) Henka (5) 
+- 6 Jo Kata
+- 13 Jo Kata
+- Kumijo (10)
+- 13 Kumijo
+- 31 Kumijo
+- Ken awase (4)
+- Kumitachi (6)
+- Kumijo (10)
+- Ken Tai Jo Barai (3)
+- Kumi Tachi Henka (7)
+- Ken Tai jo (7) Henka (5)
 - Ken tai riai: shiho nage; kotegaishi
 - Shin Ken Awase (?) - USAF via Vu
   - Ken Partner Blocking exercise - USAF via Hayes
@@ -18,10 +18,10 @@
   - I've only seen most of this content from Vu at seminars.  I believe the exercises were Hayes Sensei breaking the larger piece down for us.  I plan on doing similar and making several smaller Awase from Vu's seminar video.
 - [Kanai kumitachi](https://youtu.be/Qpx6dIaLhlc?si=Wyrv8M6OZPcg6K_J)
 - [Vu weapons at winter camp (different take on warmup/suburi)](https://www.youtube.com/watch?v=tkvcys4ReVI)
-  - suiyake nen?   looks like a kumitachi
-  - [awase - up blending deflect](https://youtu.be/tkvcys4ReVI?t=197)
-    - [up blend awase continuous](https://youtu.be/tkvcys4ReVI?t=249)
-  - [push thrust awase with fadeaway cut](https://youtu.be/tkvcys4ReVI?t=307)
+  - [Suriage Men](https://youtu.be/tkvcys4ReVI?t=197)
+    - Note:  Kote or Men, inside, outside
+    - [Kaeshi Suriage Men](https://youtu.be/tkvcys4ReVI?t=249)
+  - [Makiotoshi Men](https://youtu.be/tkvcys4ReVI?t=307)
     - [then catch](https://youtu.be/tkvcys4ReVI?t=391)
     - [add another step](https://youtu.be/tkvcys4ReVI?t=454)
   - [up blend 2 step upcut block](https://youtu.be/tkvcys4ReVI?t=533)
@@ -54,3 +54,5 @@
 - [footwork](https://youtu.be/_xBTxbuDtvA)
 - [ASU Kumitachi](https://www.youtube.com/watch?v=g7sUbkBs5Rw)
 - [Twin Cities Aikido - extensive weapons video reference](https://www.tcaikido.com/?page_id=943)
+- [Kumitachi 1-3, Twin Cities (matches kanai)](https://www.youtube.com/watch?v=Vst9dGeYiyU)
+- [14-count Kumi jo Developed by Kanai sensei and C. Berthiaume sensei](https://www.facebook.com/watch/?v=2065038290292562)

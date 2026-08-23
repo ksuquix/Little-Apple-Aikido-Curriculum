@@ -1,5 +1,8 @@
 # Weapons Explanations and Teaching Material
 
+### Additional Foundations
+- [Footwork, Ken/Tachi Foundations](./Additional-Foundations)
+
 ### Jo Suburi (20)
 - [Simple Text List w/ translation](./Jo%20Suburi%20(20))
 - [Saito on Youtube](https://www.youtube.com/watch?v=O9U04EU_Qp8)
@@ -19,6 +22,7 @@
 
 ### Ken Suburi (7)
 - [Saito on Youtube](https://www.youtube.com/watch?v=9h3z8bnEuws)
+- [Quick text](./Ken%20Suburi)
 
 ### Ken Awase (7)
 - [Saito - ken awase, ki musubi no tachi, kumitachi, variations](https://www.youtube.com/watch?v=Y7IPWd4okWc)

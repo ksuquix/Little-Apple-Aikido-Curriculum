@@ -8,37 +8,31 @@
 6. Dynamic timing and cutting applications.
 7. Final paired sword form integrating fluid spatial control and aiki principles.
 
-From the video:
+Kumitachi 1:
+- [Kanai](https://www.youtube.com/watch?v=Qpx6dIaLhlc&t=470)
+- [Two cities](https://www.youtube.com/watch?v=Vst9dGeYiyU)
+- Uchitachi: Makiotoshi Tsuki
+- Shitachi: Tenshin to waka, offline, step forward with yokomen to knee  (Wakagamen)
+- Uchitahi: step back, kiriotoshi through shitachi's blade (knocking them to waka again), into shomen
+- Shitachi: back foot steps out, pivot/sync into horizontal yokumen to cut uchitachi in half.
 
-せいがん  正眼   Seigan
-- holding one's sword pointing towards the opponent's eyes (kendo stance)
+Kumitachi 2:
+- [Kanai](https://www.youtube.com/watch?v=Qpx6dIaLhlc&t=495)
+- [Two cities](https://www.youtube.com/watch?v=Vst9dGeYiyU&t=56)
+- Uchitachi: Sliding in aggressively with blade
+- Shitachi: Outside makiotoshi, step outside forward with kesagiri to neck
 
-Suriage Men.  摺上げ面
-- Sliding parry.   parry on the upswing while sliding in.
-- use hips, tsuka leads, not kissaki
+Kumitachi 3:
+- [Kanai](https://www.youtube.com/watch?v=Qpx6dIaLhlc&t=542)
+- [Two cities](https://www.youtube.com/watch?v=Vst9dGeYiyU&t=97)
+- Two kesagiri crosses before?
+- Uchitachi: starts outside makiotoshi
+- Shitachi: slips outside makiotoshi, does outside makiotoshi.
+- Uchitachi: goes around for shomenuchi cut
+- Shitachi: step in with sword cut across body from position with makiotoshi.
 
-Kaeshi Suriage Men
-- sliding parry reverse.  parry the parry.  Shitachi barely moves, uchitachi is sliding in.
-
-
-Kiriotoshi Tsuki
-- strike their sword from kiriotoshi, then tsuki
-- hip turns as strike hits.
-- can be done stepping back rasie/cut as uchitachi does a menuchi stepping in
-
-Response to it:
-- ukenagashi, ayumi ashi, yokomen/shomen to head
-
-
-Suriage Kote
-- like suriage men, but sidestepping ayumi ashi as we move in.
-- sword travels up, ends up loaded on right shoulder from the sidestep
-- readjust above head, strike kote
-
-
-Makiotoshi Men
-- sword touch, use connection to flip down/out/completely across into all the way behind and shomen cut
-- flip is tip rotational
-
-
-at 7:00 in video
+Kumitachi 4:
+- [Kanai](https://www.youtube.com/watch?v=Qpx6dIaLhlc&t=597)
+- Uchitachi: shomenuchi
+- Shitachi: tenshin, forward block
+- Shitachi: slip, makiotoshi, tsuki to neck

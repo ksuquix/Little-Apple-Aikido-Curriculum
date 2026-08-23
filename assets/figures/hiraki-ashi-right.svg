@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-label="Hiraki-ashi: right foot steps diagonally forward and to the right, pivoting 45 degrees (1), then left foot follows into the new stance (2)">
+  <title>Hiraki-ashi (moving right)</title>
+  <defs>
+    <g id="foot-r">
+      <path d="M 45 224
+               C 36 224 32 216 32 204
+               C 32 190 38 178 39 163
+               C 41 149 34 139 30 125
+               C 26 111 21 97 24 85
+               C 29 72 39 66 51 66
+               C 65 66 77 72 82 85
+               C 85 100 84 115 82 132
+               C 80 158 79 180 78 204
+               C 78 216 72 224 65 224
+               Z"/>
+      <ellipse cx="28.5" cy="54" rx="7.5" ry="13.5" transform="rotate(-12 28.5 54)"/>
+      <ellipse cx="44.5" cy="50" rx="6" ry="9.5" transform="rotate(-3 44.5 50)"/>
+      <ellipse cx="58" cy="50" rx="5" ry="8" transform="rotate(5 58 50)"/>
+      <ellipse cx="70" cy="55.5" rx="4.2" ry="6.5" transform="rotate(13 70 55.5)"/>
+      <ellipse cx="80" cy="65" rx="3.4" ry="5.2" transform="rotate(22 80 65)"/>
+    </g>
+    <g id="foot-l">
+      <use href="#foot-r" transform="translate(100 0) scale(-1 1)"/>
+    </g>
+    <marker id="ah" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="16" markerHeight="16" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0 0 L 10 5 L 0 10 Z"/>
+    </marker>
+  </defs>
+  <rect width="480" height="480" fill="#ffffff"/>
+
+  <!-- start: same pair as okuri-ashi-forward -->
+  <use href="#foot-r" fill="#111111" transform="translate(172.4 175.6) scale(0.6)"/>
+  <use href="#foot-l" fill="#111111" transform="translate(39 285.6) scale(0.6)"/>
+
+  <!-- movement 1: right foot 45 deg diagonally forward-right (220px), rotated 45 CCW about the ball pivot (local 50,86) -->
+  <use href="#foot-r" fill="#111111" transform="translate(327.96 20.04) scale(0.6) rotate(-45 50 86)"/>
+
+  <!-- movement 2: left foot in normal stance relative to the final right foot -->
+  <use href="#foot-l" fill="#111111" transform="translate(311.42 192.74) scale(0.6) rotate(-45 50 86)"/>
+
+  <!-- curved arrows showing the pivot -->
+  <g stroke="#111111" stroke-width="7" stroke-linecap="round" fill="none">
+    <path d="M 210.4 190 Q 322.4 175 354.4 135" marker-end="url(#ah)"/>
+    <path d="M 82 302 Q 242.4 350 304.4 275" marker-end="url(#ah)"/>
+  </g>
+
+  <!-- movement numbers next to arrows -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" text-anchor="middle">
+    <circle cx="240" cy="158" r="17" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
+    <text x="240" y="158" dy="0.35em" fill="#111111">1</text>
+    <circle cx="218" cy="356" r="17" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
+    <text x="218" y="356" dy="0.35em" fill="#111111">2</text>
+  </g>
+</svg>
