@@ -19,15 +19,15 @@
 - Bokken:
   - Hold with Blade up on left thumb at 1:00
   - Bowing in (sitting and standing)
-  - Chudan kamae
-  - Shomen (kirioroshi), 
+  - Chūdan kamae
+  - Shōmen (kirioroshi), 
   - Hanmi ha direction (demonstrate with Tsuki)
 - Jo:
   - Bowing
   - Normal start position
   - Tsuki No Bu 1-2
   - Block
-  - Shomen
+  - Shōmen
   - Yokomen
 
 ### 4th Kyu

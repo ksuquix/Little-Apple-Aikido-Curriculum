@@ -13,7 +13,7 @@
   - Can be silent or with the sounds
 - Irimi (2 ways)
   - Okuri-ashi (slide)
-  - Ayumi-ashi (step)
+- Ayumi-ashi (step)
 - Yokomen-uchi
   - Take care to pivot back foot offline
 - Tai no henko
@@ -24,14 +24,14 @@
 
 #### 5th Kyu
 
-- Shoumen-uchi Iriminage & Tsuki Kotegaeshi
+- Shōmen-uchi Iriminage & Tsuki Kotegaeshi
   - Ura only
 - Ushiro Tekubitori Kotegaeshi
   - Dynamic opening highly encouraged
 
 #### 4th Kyu
 
-- Shoumen-uchi Nikyo
+- Shōmen-uchi Nikyō
   - good projection on initial opening, resulting in smooth wrist transition preferred
 - Tsuki Iriminage 
   - Irimi Opening (omote & ura)
@@ -49,7 +49,7 @@
 - Morotetori Iriminage
   - High to low - Start High, cut down follow path into iriminage - [Yamada](https://youtu.be/9hWRq9jRxsU?t=3660)
   - Low to High - [Yamada on youtube](https://youtu.be/9hWRq9jRxsU?t=3790) 
-- Suwari Waza Shoumen-uchi Iriminage
+- Suwari Waza Shōmen-uchi Iriminage
   - Ideally omote & ura
 - Hanmi Handachi Kaitennage
   - Cut uke all the way down, and through the ankle
@@ -57,4 +57,4 @@
 #### 2nd Kyu
 
 - Ushiro Kubishime Koshinage - Ideally more than one way
-- Hanmi Handachi Shoumen-uchi Iriminage - Ideally omote & ura
+- Hanmi Handachi Shōmen-uchi Iriminage - Ideally omote & ura

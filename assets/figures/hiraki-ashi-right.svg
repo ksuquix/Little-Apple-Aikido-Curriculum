@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 425" role="img" aria-label="Hiraki-ashi: right foot steps diagonally forward and to the right, pivoting 45 degrees (1), then left foot follows into the new stance (2)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 850" role="img" aria-label="Hiraki-ashi: right foot steps diagonally forward and to the right, pivoting 45 degrees (1), then left foot follows into the new stance (2)">
   <title>Hiraki-ashi (moving right)</title>
   <defs>
     <g id="foot-r">
@@ -26,7 +26,6 @@
       <path d="M 0 0 L 10 5 L 0 10 Z"/>
     </marker>
   </defs>
-  <rect width="420" height="425" fill="#ffffff"/>
 
   <!-- start: same pair as okuri-ashi-forward -->
   <use href="#foot-r" fill="#111111" transform="translate(172.4 175.6) scale(0.6)"/>

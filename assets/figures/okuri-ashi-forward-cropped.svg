@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472 1590" role="img" aria-label="Okuri-ashi backward: left foot steps back (movements 1 and 3) while right foot follows (movements 2 and 4)">
-  <title>Okuri-ashi (backward)</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 158 237 661" role="img" aria-label="Okuri-ashi forward: right foot steps forward (movements 1 and 3) while left foot follows (movements 2 and 4)">
+  <title>Okuri-ashi (forward)</title>
   <defs>
     <g id="foot-r">
       <path d="M 45 224
@@ -37,23 +37,23 @@
   <use href="#foot-l" fill="#111111" transform="translate(21.0 464.4) scale(0.6)"/>
   <use href="#foot-l" fill="#111111" transform="translate(21.0 684.4) scale(0.6)"/>
 
-  <!-- arrows: right foot movements 4 and 2, left foot movements 3 and 1 -->
+  <!-- arrows: right foot movements 1 and 3, left foot movements 2 and 4 -->
   <g stroke="#111111" stroke-width="7" stroke-linecap="round" fill="none">
-    <path d="M 184.4 494.8 L 184.4 592.8" marker-end="url(#ah)"/>
-    <path d="M 184.4 274.8 L 184.4 372.8" marker-end="url(#ah)"/>
-    <path d="M 51.0 604.8 L 51.0 702.8" marker-end="url(#ah)"/>
-    <path d="M 51.0 384.8 L 51.0 482.8" marker-end="url(#ah)"/>
+    <path d="M 184.4 592.8 L 184.4 494.8" marker-end="url(#ah)"/>
+    <path d="M 184.4 372.8 L 184.4 274.8" marker-end="url(#ah)"/>
+    <path d="M 51.0 702.8 L 51.0 604.8" marker-end="url(#ah)"/>
+    <path d="M 51.0 482.8 L 51.0 384.8" marker-end="url(#ah)"/>
   </g>
 
   <!-- movement numbers next to arrows -->
   <g font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" text-anchor="middle">
     <circle cx="218.4" cy="543.8" r="17" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
-    <text x="218.4" y="543.8" dy="0.35em" fill="#111111">4</text>
+    <text x="218.4" y="543.8" dy="0.35em" fill="#111111">1</text>
     <circle cx="218.4" cy="323.8" r="17" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
-    <text x="218.4" y="323.8" dy="0.35em" fill="#111111">2</text>
+    <text x="218.4" y="323.8" dy="0.35em" fill="#111111">3</text>
     <circle cx="17.0" cy="653.8" r="17" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
-    <text x="17.0" y="653.8" dy="0.35em" fill="#111111">3</text>
+    <text x="17.0" y="653.8" dy="0.35em" fill="#111111">2</text>
     <circle cx="17.0" cy="433.8" r="17" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
-    <text x="17.0" y="433.8" dy="0.35em" fill="#111111">1</text>
+    <text x="17.0" y="433.8" dy="0.35em" fill="#111111">4</text>
   </g>
 </svg>

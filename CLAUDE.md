@@ -118,25 +118,25 @@ Pages are served as DIRECTORIES (clean URLs, e.g. `.../Additional-Foundations/`)
 - `../assets/figures/...` passes through kramdown unchanged and resolves correctly on the live site.
 - Verify after editing: `jekyll build`, then `grep -o 'src="[^"]*"' _site/Additional-Foundations.html` — every figure should show `src="../assets/figures/..."`.
 
-## Romanization (Hepburn Wāpuro)
+## Romanization (Full Hepburn with macrons)
 
-Use Wāpuro-style Hepburn: `ou` instead of `ō`, no diacritical marks.
+Use full Hepburn romanization with macrons: `ō` for long o, `ū` for long u.
 
 ### Key terms
 
 | term | romanization | notes |
 |---|---|---|
-| 正面 / 正面打ち | shoumen / shoumen-uchi | never `shomenuchi` (one word), never `shōmen` (macron) |
-| 横面打ち | yokomen-uchi | hyphenate; never `yokomenuchi` or `Yokumenuchi` |
+| 正面 / 正面打ち | shōmen / shōmen-uchi | never `shomenuchi` (one word) |
+| 横面打ち | yokomen-uchi | hyphenate; never `yokomenuchi` or `Yōkumenuchi` |
 | 面打ち | men-uchi | hyphenate; never `menuchi` |
-| 中段の構え | chuudan-no-kamae | |
-| 上段の構え | joudan-no-kamae | |
-| 肩取り面打ち | katatori men-uchi | hyphenate in glossary entry |
+| 中段の構え | chūdan-no-kamae | |
+| 上段の構え | jōdan-no-kamae | |
+| 肩取り面打ち | katatori-men-uchi | hyphenated in glossary entry |
 
 ### Hints
 
-- Always hyphenate compound strikes: `shoumen-uchi`, `yokomen-uchi`, `men-uchi`. The `-uchi` suffix means "strike" and should be separated.
-- When `-uchi` is dropped in context (e.g. "shoumen cut"), keep `shoumen` as the level descriptor.
+- Always hyphenate compound strikes: `shōmen-uchi`, `yokomen-uchi`, `men-uchi`. The `-uchi` suffix means "strike" and should be separated.
+- When `-uchi` is dropped in context (e.g. "shōmen cut"), keep `shōmen` as the level descriptor.
 - Check Glossary.md as the canonical reference — other files should match it.
 - When in doubt, verify Japanese terms on jisho.org.
-- Run `grep -r 'shomenuchi\|Shomenuchi\|Shōmen\|menuchi\|Yokumenuchi'` to catch old-style romanization.
+- Run `grep -r 'shomenuchi\|Shomenuchi\|menuchi\|Yokomenuchi'` to catch old-style romanization (missing hyphens).

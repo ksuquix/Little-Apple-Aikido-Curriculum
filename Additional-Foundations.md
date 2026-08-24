@@ -29,14 +29,14 @@ The foundation of all Japanese arts, where feet slide across the floor without l
 
 ### Base Poses
 
-#### Chuudan-no-Kamae 中段の構え (Middle Stance)
+#### Chūdan-no-Kamae 中段の構え (Middle Stance)
 
-- Chuudan - Middle level
+- Chūdan - Middle level
 - Seigan 正眼: holding one's sword pointing towards the opponent's eyes (Seigan-no-kamae is an older reference to this stance)
 
-#### Joudan-no-Kamae 上段の構え (High Stance)
+#### Jōdan-no-Kamae 上段の構え (High Stance)
 
-- Joudan - Top level
+- Jōdan - Top level
 - sword raised above head, hilt aligned directly above the front of the face, sword pointing backwards up at 45 degrees
 
 ### Diagrams
@@ -44,12 +44,12 @@ The foundation of all Japanese arts, where feet slide across the floor without l
 <table>
 <tr>
 <td style="text-align:center">
-<img src="../assets/figures/chudan-no-kamae-cropped.svg" width="200" alt="Chudan-no-kamae">
-<br>Chudan-no-kamae 中段の構え
+<img src="../assets/figures/chudan-no-kamae-cropped.svg" width="200" alt="Chūdan-no-kamae">
+<br>Chūdan-no-kamae 中段の構え
 </td>
 <td style="text-align:center">
-<img src="../assets/figures/jodan-no-kamae-cropped.svg" width="200" alt="Jodan-no-kamae">
-<br>Jodan-no-kamae 上段の構え
+<img src="../assets/figures/jodan-no-kamae-cropped.svg" width="200" alt="Jōdan-no-kamae">
+<br>Jōdan-no-kamae 上段の構え
 </td>
 </tr>
 </table>
@@ -68,8 +68,8 @@ The foundation of all Japanese arts, where feet slide across the floor without l
 #### Kiriotoshi Tsuki
 - strike their sword from kiriotoshi, then tsuki
 - hip turns as strike hits.
- - can be done stepping back raise/cut as uchitachi does a shoumen-uchi stepping in
-  - Response: ukenagashi, ayumi ashi, yokomen-uchi/shoumen-uchi to head
+- can be done stepping back raise/cut as uchitachi does a shōmen-uchi stepping in
+   - Response: ukenagashi, ayumi ashi, yokomen-uchi/shōmen-uchi to head
 
 #### Suriage Kote
 - like suriage men, but sidestepping ayumi ashi as we move in.
@@ -77,5 +77,5 @@ The foundation of all Japanese arts, where feet slide across the floor without l
 - readjust above head, strike kote
 
 #### Makiotoshi Men
-- sword touch, use connection to flip down/out/completely across into all the way behind and shoumen cut
+- sword touch, use connection to flip down/out/completely across into all the way behind and shōmen cut
 - flip is tip rotational

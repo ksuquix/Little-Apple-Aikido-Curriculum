@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 850" role="img" aria-label="Hiraki-ashi: left foot steps diagonally forward and to the left, pivoting 45 degrees (1), then right foot follows into the new stance (2)">
-  <title>Hiraki-ashi (moving left)</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="48 46 377 374" role="img" aria-label="Hiraki-ashi: right foot steps diagonally forward and to the right, pivoting 45 degrees (1), then left foot follows into the new stance (2)">
+  <title>Hiraki-ashi (moving right)</title>
   <defs>
     <g id="foot-r">
       <path d="M 45 224
@@ -27,27 +27,27 @@
     </marker>
   </defs>
 
-  <!-- start: same pair as hiraki-ashi-right -->
-  <use href="#foot-r" fill="#111111" transform="translate(374.4 175.6) scale(0.6)"/>
-  <use href="#foot-l" fill="#111111" transform="translate(241 285.6) scale(0.6)"/>
+  <!-- start: same pair as okuri-ashi-forward -->
+  <use href="#foot-r" fill="#111111" transform="translate(172.4 175.6) scale(0.6)"/>
+  <use href="#foot-l" fill="#111111" transform="translate(39 285.6) scale(0.6)"/>
 
-  <!-- movement 1: left foot to the upper left, same y as the right foot's end in hiraki-ashi-right, rotated 45 CW about the ball pivot (local 50,86) -->
-  <use href="#foot-l" fill="#111111" transform="translate(85.44 20.04) scale(0.6) rotate(45 50 86)"/>
+  <!-- movement 1: right foot 45 deg diagonally forward-right (220px), rotated 45 CCW about the ball pivot (local 50,86) -->
+  <use href="#foot-r" fill="#111111" transform="translate(327.96 20.04) scale(0.6) rotate(-45 50 86)"/>
 
-  <!-- movement 2: right foot behind the left foot, stance swapped to left foot forward -->
-  <use href="#foot-r" fill="#111111" transform="translate(101.98 192.14) scale(0.6) rotate(45 50 86)"/>
+  <!-- movement 2: left foot in normal stance relative to the final right foot -->
+  <use href="#foot-l" fill="#111111" transform="translate(311.42 192.74) scale(0.6) rotate(-45 50 86)"/>
 
   <!-- curved arrows showing the pivot -->
   <g stroke="#111111" stroke-width="7" stroke-linecap="round" fill="none">
-    <path d="M 263 300 Q 155 230 119 135" marker-end="url(#ah)"/>
-    <path d="M 396 190 Q 273 300 150 290" marker-end="url(#ah)"/>
+    <path d="M 210.4 190 Q 322.4 175 354.4 135" marker-end="url(#ah)"/>
+    <path d="M 82 302 Q 242.4 350 304.4 275" marker-end="url(#ah)"/>
   </g>
 
   <!-- movement numbers next to arrows -->
   <g font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" text-anchor="middle">
-    <circle cx="209" cy="224" r="17" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
-    <text x="209" y="224" dy="0.35em" fill="#111111">1</text>
-    <circle cx="273" cy="234" r="17" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
-    <text x="273" y="234" dy="0.35em" fill="#111111">2</text>
+    <circle cx="240" cy="158" r="17" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
+    <text x="240" y="158" dy="0.35em" fill="#111111">1</text>
+    <circle cx="218" cy="356" r="17" fill="#ffffff" stroke="#111111" stroke-width="2.5"/>
+    <text x="218" y="356" dy="0.35em" fill="#111111">2</text>
   </g>
 </svg>
