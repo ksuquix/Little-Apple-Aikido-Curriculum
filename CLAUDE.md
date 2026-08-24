@@ -49,7 +49,16 @@ Steps:
    - 45° CW: `translate(hx+28.55, hy-110.15) scale(0.6) rotate(45 50 86)`
 3. Arrows: straight in the gap between consecutive same-foot positions (6px inset, stroke 7, 16px head) for slides; quadratic curves for pivot movements. Number circle (r=17, white fill, black 2.5 stroke, bold 20px digit) right next to the arrow it labels; the digit is the movement number.
 4. If a new position overlaps the old one: draw the new footprint in gray (`#999999`) on top of the black one, and make its arrow smaller (stroke 5, 12px head) pulled to the side of the column.
-5. Add `<img src="../assets/figures/NAME.svg" width="200" alt="...">` under the matching bullet in `Additional-Foundations.md`, and add a one-line record below.
+5. Add `<img src="../assets/figures/NAME-cropped.svg" width="200" alt="...">` under the matching bullet in `Additional-Foundations.md`, and add a one-line record below.
+
+### Cropping SVGs (crop-svg.sh)
+
+All SVGs in `assets/figures/` are served with tight crops via `scripts/crop-svg.sh`. The script uses `rsvg-convert` + `magick -fuzz 5%` to find content bounds, then updates the root `<svg>` `viewBox`, `width`, and `height` attributes.
+
+- Usage: `scripts/crop-svg.sh <input.svg> [padding_px] [output.svg]`
+- All SVGs must have their white `<rect>` background removed before cropping.
+- Always reference the `-cropped.svg` versions in Markdown (`NAME-cropped.svg`).
+- After editing an SVG: run `scripts/crop-svg.sh assets/figures/NAME.svg 0 assets/figures/NAME-cropped.svg` to regenerate the cropped version.
 
 Variant records:
 
@@ -68,7 +77,7 @@ Files: `chudan-no-kamae.svg`, `jodan-no-kamae.svg` in `assets/figures/`, referen
 
 - Side view facing right, black (`#222`) on white, round caps/joins; stroke 5 for limbs, 4 for blade; head = white-filled circle r=20; no title, no ground line.
 - No part labels (e.g. "kissaki") unless the user asks for one on a specific diagram.
-- Grip: right hand near the tsuba, left hand at the midpoint of the tsuka. Tsuka ~45px; tsuba short (~11px), perpendicular to the blade.
+- Grip: right hand near the tsuba, left hand at the midpoint of the tsuka. Tsuka ~36px; tsuba short (~11px), perpendicular to the blade.
 - Arms are RIGID: upper arm = forearm = 60px. When a hand moves, recompute the elbow (two-circle intersection) — never stretch a segment.
 
 ### Proportions (artistic, in heads; head = 40px)
@@ -99,7 +108,7 @@ Copy these coordinates, then only change the arms/sword per pose:
 
 ### Embedding in Markdown
 
-`<img src="../assets/figures/NAME.svg" width="200" alt="...">` under the pose heading (see image-path gotcha below).
+`<img src="../assets/figures/NAME-cropped.svg" width="200" alt="...">` under the pose heading (see image-path gotcha below).
 
 ## Image paths in Markdown (gotcha)
 

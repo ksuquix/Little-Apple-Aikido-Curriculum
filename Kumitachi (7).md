@@ -12,9 +12,9 @@ Kumitachi 1:
 - [Kanai](https://www.youtube.com/watch?v=Qpx6dIaLhlc&t=470)
 - [Two cities](https://www.youtube.com/watch?v=Vst9dGeYiyU)
 - Uchitachi: Makiotoshi Tsuki
-- Shitachi: Tenshin to waka, offline, step forward with yokomen to knee  (Wakagamen)
-- Uchitahi: step back, kiriotoshi through shitachi's blade (knocking them to waka again), into shoumen
-- Shitachi: back foot steps out, pivot/sync into horizontal yokumen to cut uchitachi in half.
+- Shitachi: Tenshin to wakagamae, offline, step forward with yokomen-uchi to knee  (Wakagamen)
+- Uchitachi: step back, kiriotoshi through shitachi's blade (knocking them to wakagamae again), into shoumen
+- Shitachi: back foot steps out, pivot/sync into horizontal yokomen-uchi to cut uchitachi in half.
 
 Kumitachi 2:
 - [Kanai](https://www.youtube.com/watch?v=Qpx6dIaLhlc&t=495)

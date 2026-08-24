@@ -28,7 +28,7 @@
   - Tsuki No Bu 1-2
   - Block
   - Shomen
-  - Yokumen
+  - Yokomen
 
 ### 4th Kyu
 - Jo Tsuki no bu

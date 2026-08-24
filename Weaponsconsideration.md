@@ -11,7 +11,7 @@
 - Ken Tai Jo Barai (3)
 - Kumi Tachi Henka (7)
 - Ken Tai jo (7) Henka (5)
-- Ken tai riai: shiho nage; kotegaishi
+- Ken tai riai: shiho nage; kotegaeshi
 - Shin Ken Awase (?) - USAF via Vu
   - Ken Partner Blocking exercise - USAF via Hayes
   - Ken Connection - USAF via Hayes

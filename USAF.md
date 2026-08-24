@@ -26,7 +26,7 @@
 
 - Shoumen-uchi Iriminage & Tsuki Kotegaeshi
   - Ura only
-- Ushiro Tekubitory Kotegaeshi
+- Ushiro Tekubitori Kotegaeshi
   - Dynamic opening highly encouraged
 
 #### 4th Kyu
