@@ -29,17 +29,30 @@ The foundation of all Japanese arts, where feet slide across the floor without l
 
 ### Base Poses
 
-#### Chudan-no-Kamae 中段の構え
+#### Chuudan-no-Kamae 中段の構え (Middle Stance)
 
-![Chudan-no-kamae](../assets/figures/chudan-no-kamae.svg)
-
+- Chuudan - Middle level
 - Seigan 正眼: holding one's sword pointing towards the opponent's eyes (Seigan-no-kamae is an older reference to this stance)
 
-#### Jodan-no-Kamae 上段の構え
+#### Joudan-no-Kamae 上段の構え (High Stance)
 
-![Jodan-no-kamae](../assets/figures/jodan-no-kamae.svg)
-
+- Joudan - Top level
 - sword raised above head, hilt aligned directly above the front of the face, sword pointing backwards up at 45 degrees
+
+### Diagrams
+
+<table>
+<tr>
+<td style="text-align:center">
+<img src="../assets/figures/chudan-no-kamae.svg" width="200" alt="Chudan-no-kamae">
+<br>Chudan-no-kamae 中段の構え
+</td>
+<td style="text-align:center">
+<img src="../assets/figures/jodan-no-kamae.svg" width="200" alt="Jodan-no-kamae">
+<br>Jodan-no-kamae 上段の構え
+</td>
+</tr>
+</table>
 
 ### Base Waza
 
@@ -55,8 +68,8 @@ The foundation of all Japanese arts, where feet slide across the floor without l
 #### Kiriotoshi Tsuki
 - strike their sword from kiriotoshi, then tsuki
 - hip turns as strike hits.
-- can be done stepping back raise/cut as uchitachi does a menuchi stepping in
-- Response: ukenagashi, ayumi ashi, yokomen/shomen to head
+- can be done stepping back raise/cut as uchitachi does a men-uchi stepping in
+- Response: ukenagashi, ayumi ashi, yokomen/shoumen to head
 
 #### Suriage Kote
 - like suriage men, but sidestepping ayumi ashi as we move in.
@@ -64,5 +77,5 @@ The foundation of all Japanese arts, where feet slide across the floor without l
 - readjust above head, strike kote
 
 #### Makiotoshi Men
-- sword touch, use connection to flip down/out/completely across into all the way behind and shomen cut
+- sword touch, use connection to flip down/out/completely across into all the way behind and shoumen cut
 - flip is tip rotational

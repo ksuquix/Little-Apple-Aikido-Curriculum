@@ -1,21 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 380" width="400" height="380">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="110 60 275 450" width="275" height="450">
   <style>
     .limb { stroke: #222; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
     .blade { stroke: #222; stroke-width: 4; stroke-linecap: round; }
-    .thin { stroke: #999; stroke-width: 2; }
-    text { font-family: sans-serif; fill: #222; }
   </style>
-  <text x="200" y="30" font-size="20" text-anchor="middle">Jodan-no-kamae 上段の構え</text>
-  <line x1="50" y1="352" x2="350" y2="352" class="thin"/>
-  <circle cx="185" cy="145" r="20" fill="#fff" class="limb"/>
-  <line x1="188" y1="165" x2="178" y2="245" class="limb"/>
-  <polyline points="186,183 220,152 210,120" class="limb"/>
-  <polyline points="183,190 220,170 219,131" class="limb"/>
-  <line x1="205" y1="117" x2="233" y2="145" class="limb"/>
-  <line x1="201" y1="121" x2="209" y2="113" class="limb"/>
-  <line x1="205" y1="117" x2="134" y2="46" class="blade"/>
-  <polyline points="178,245 215,295 225,350" class="limb"/>
-  <line x1="225" y1="350" x2="245" y2="350" class="limb"/>
-  <polyline points="178,245 140,300 125,350" class="limb"/>
-  <line x1="125" y1="350" x2="145" y2="350" class="limb"/>
+  <circle cx="191" cy="205" r="20" fill="#fff" class="limb"/>
+  <line x1="190" y1="225" x2="178" y2="345" class="limb"/>
+  <polyline points="192,232 251,222 224,168" class="limb"/>
+  <polyline points="187,240 247,232 230,174" class="limb"/>
+  <line x1="216" y1="160" x2="246" y2="190" class="limb"/>
+  <line x1="218" y1="154" x2="210" y2="162" class="limb"/>
+  <line x1="214" y1="158" x2="133" y2="77" class="blade"/>
+  <polyline points="178,345 218,415 226,495" class="limb"/>
+  <line x1="226" y1="495" x2="248" y2="495" class="limb"/>
+  <polyline points="178,345 138,414 124,493" class="limb"/>
+  <line x1="124" y1="493" x2="146" y2="493" class="limb"/>
 </svg>

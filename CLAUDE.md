@@ -64,10 +64,42 @@ Foot-shape changes: update `foot-shape.svg` first, get it approved, then copy th
 
 Files: `chudan-no-kamae.svg`, `jodan-no-kamae.svg` in `assets/figures/`, referenced from the "Base Poses" section of `Additional-Foundations.md`.
 
-Conventions: side view facing right, black (`#222`) on white, round caps/joins, stroke 5 for limbs and 4 for blade; head = white-filled circle r=20; title (name + kanji) centered at top; light gray ground line. Grip: right hand near the tsuba, left hand at the midpoint of the tsuka. No part labels (e.g. "kissaki") unless the user asks for one on a specific diagram.
+### Conventions
 
-- Chudan: sword angled ~20° upward toward the opponent's eye line (not horizontal); tsuba is short (~11px), perpendicular to the blade.
-- Jodan: sword raised above head, hilt aligned above the front of the face, blade pointing backwards-up at 45°.
+- Side view facing right, black (`#222`) on white, round caps/joins; stroke 5 for limbs, 4 for blade; head = white-filled circle r=20; no title, no ground line.
+- No part labels (e.g. "kissaki") unless the user asks for one on a specific diagram.
+- Grip: right hand near the tsuba, left hand at the midpoint of the tsuka. Tsuka ~45px; tsuba short (~11px), perpendicular to the blade.
+- Arms are RIGID: upper arm = forearm = 60px. When a hand moves, recompute the elbow (two-circle intersection) — never stretch a segment.
+
+### Proportions (artistic, in heads; head = 40px)
+
+| part | heads | px |
+|---|---|---|
+| head (circle diameter) | 1 | 40 (r=20) |
+| upper arm | 1.5 | 60 |
+| forearm + hand | 1.5 | 60 |
+| torso (shoulder → crotch) | 3 | 120 |
+| thigh | 2 | 80 |
+| shin | 2 | 80 |
+
+### Shared skeleton
+
+Copy these coordinates, then only change the arms/sword per pose:
+
+- head: circle (191,205) r=20
+- torso: (190,225) → (178,345)
+- front leg: (178,345) → (218,415) → (226,495); foot (226,495) → (248,495)
+- back leg: (178,345) → (138,414) → (124,493); foot (124,493) → (146,493)
+- arm shoulders: right/near (192,232), left/far (187,240)
+
+### Pose values
+
+- Chudan: sword line 20° up toward opponent's eye line (direction (0.940,-0.342)), grip at belly level — tsuba (262,304), tsuka back to (220,319), blade to kissaki (370,265); tsuba (260,299)→(264,309). Right hand (256,306), elbow (198,292); left hand (241,312), elbow (182,300) (left upper arm runs along/behind the torso — expected, far-side arm).
+- Jodan: sword raised above head, hilt above the front of the face (face front x=211) — tsuba (214,158), blade 45° up-back to kissaki (133,77); tsuka back to (246,190); tsuba (218,154)→(210,162). Right hand (224,168), elbow (251,222); left hand (230,174), elbow (247,232).
+
+### Embedding in Markdown
+
+`<img src="../assets/figures/NAME.svg" width="200" alt="...">` under the pose heading (see image-path gotcha below).
 
 ## Image paths in Markdown (gotcha)
 
@@ -76,3 +108,26 @@ Pages are served as DIRECTORIES (clean URLs, e.g. `.../Additional-Foundations/`)
 - `assets/figures/...` is broken (resolves to `Additional-Foundations/assets/...`) — kramdown also rewrites it to `/assets/...` (domain root) in the built HTML, which is broken too.
 - `../assets/figures/...` passes through kramdown unchanged and resolves correctly on the live site.
 - Verify after editing: `jekyll build`, then `grep -o 'src="[^"]*"' _site/Additional-Foundations.html` — every figure should show `src="../assets/figures/..."`.
+
+## Romanization (Hepburn Wāpuro)
+
+Use Wāpuro-style Hepburn: `ou` instead of `ō`, no diacritical marks.
+
+### Key terms
+
+| term | romanization | notes |
+|---|---|---|
+| 正面 / 正面打ち | shoumen / shoumen-uchi | never `shomenuchi` (one word), never `shōmen` (macron) |
+| 横面打ち | yokomen-uchi | hyphenate; never `yokomenuchi` or `Yokumenuchi` |
+| 面打ち | men-uchi | hyphenate; never `menuchi` |
+| 中段の構え | chuudan-no-kamae | |
+| 上段の構え | joudan-no-kamae | |
+| 肩取り面打ち | katatori men-uchi | hyphenate in glossary entry |
+
+### Hints
+
+- Always hyphenate compound strikes: `shoumen-uchi`, `yokomen-uchi`, `men-uchi`. The `-uchi` suffix means "strike" and should be separated.
+- When `-uchi` is dropped in context (e.g. "shoumen cut"), keep `shoumen` as the level descriptor.
+- Check Glossary.md as the canonical reference — other files should match it.
+- When in doubt, verify Japanese terms on jisho.org.
+- Run `grep -r 'shomenuchi\|Shomenuchi\|Shōmen\|menuchi\|Yokumenuchi'` to catch old-style romanization.
