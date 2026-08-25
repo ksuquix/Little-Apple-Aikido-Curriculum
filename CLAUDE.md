@@ -49,7 +49,7 @@ Steps:
    - 45° CW: `translate(hx+28.55, hy-110.15) scale(0.6) rotate(45 50 86)`
 3. Arrows: straight in the gap between consecutive same-foot positions (6px inset, stroke 7, 16px head) for slides; quadratic curves for pivot movements. Number circle (r=17, white fill, black 2.5 stroke, bold 20px digit) right next to the arrow it labels; the digit is the movement number.
 4. If a new position overlaps the old one: draw the new footprint in gray (`#999999`) on top of the black one, and make its arrow smaller (stroke 5, 12px head) pulled to the side of the column.
-5. Add `<img src="../assets/figures/NAME-cropped.svg" width="200" alt="...">` under the matching bullet in `Additional-Foundations.md`, and add a one-line record below.
+5. Add the image to the `### Diagrams` table at the end of the Footwork section in `Additional-Foundations.md` (`height="200"`, caption line under it), and add a one-line record below.
 
 ### Cropping SVGs (crop-svg.sh)
 
@@ -66,6 +66,7 @@ Variant records:
 - `ayumi-ashi.svg` — identical layout to okuri-ashi-forward, only the numbers swapped: 1=2, 2=1, 3=4, 4=3 (left foot leads, feet alternate).
 - `hiraki-ashi-right.svg` — start pair same as okuri-ashi-forward. Right foot moves 45° diagonally forward-right (same 220px distance as its okuri-ashi stride), then rotates 45° CCW about the ball pivot: local point (50,86) = top center, 25% down the foot. Final foot transform: `translate(hx-88.55 hy-110.15) scale(0.6) rotate(-45 50 86)`. Left foot placed in normal stance relative to the final right foot (okuri-ashi start offset (−133.4, 110) rotated −45° → (−16.5, 172.1)), same rotation; toes end up pointing upper-left. Curved (quadratic) arrows show the pivot, numbered 1 (right) and 2 (left).
 - `hiraki-ashi-left.svg` — same start pair. Left foot moves first to the upper left: ends at the same y as the right foot's end in hiraki-ashi-right, x-moved left by the same distance the right foot moved there; rotated 45° CW about the ball pivot (transform `translate(hx+28.55 hy-110.15) scale(0.6) rotate(45 50 86)`), toes pointing upper-right. Right foot placed behind it (offset (+16.5, 172.1)) so the stance swaps to left foot forward, same rotation. Curved arrows numbered 1 (left) and 2 (right).
+- `hiraki-ashi-cross-centerline.svg` — start is the end position of hiraki-ashi-right (right foot forward, both rotated −45°), end is the stance of hiraki-ashi-left (left foot forward, both rotated +45°). The back (left) foot crosses the centerline first (1), then the right foot follows (2); the two curved arrows cross in the middle of the canvas, with arrow 2 bowed the other way (toward the back) to show the right foot's rotational movement.
 
 Foot-shape changes: update `foot-shape.svg` first, get it approved, then copy the path into all diagram files.
 
@@ -108,7 +109,7 @@ Copy these coordinates, then only change the arms/sword per pose:
 
 ### Embedding in Markdown
 
-`<img src="../assets/figures/NAME-cropped.svg" width="200" alt="...">` under the pose heading (see image-path gotcha below).
+Poses go in the `### Diagrams` table under Base Poses in `Additional-Foundations.md` (`height="200"`, caption line under it; see image-path gotcha below).
 
 ## Image paths in Markdown (gotcha)
 
