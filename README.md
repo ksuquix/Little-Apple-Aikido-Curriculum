@@ -2,14 +2,24 @@
 If you can see this, use this URL to access this content: https://ksuquix.github.io/Little-Apple-Aikido-Curriculum/
 {% endcomment %}
 
-# [USAF test requirements and local clarifications](./USAF)
+# [USAF Test Requirements](./2026%20USAF.test.req.pdf)
 
-# [Additional Foundations](./Additional-Foundations)
+- [Local clarifications](./usaf-local-clarifications)
+- [Additional local weapons testing](./local-weapons-testing)
 
-# [Weapons Study and test requirements](./Weapons)
+# Foundations
 
-# [Weapons Explanations and Teaching Material](./WeaponsExplanations)
+- [Footwork](./Foundations/Footwork)
+- [Sword Stances](./Foundations/Sword-Stances)
+- [Sword Waza](./Foundations/Sword-Waza)
 
-# [Additional Weapons to consider](./Weaponsconsideration)
+# Weapons
+
+- [Weapons Quick Study List](./Weapons)
+- [Jo](./Jo)
+- [Bokken](./Bokken)
+- [Tanto](./Tanto)
 
 # [Glossary](./Glossary)
+
+# [Additional Ramblings and considerations](./Weaponsconsideration)

@@ -15,4 +15,4 @@ Shitachi/uketachi (仕太刀 - Sword performer/receiver) performs technique.
 6. Perform (3), then do ukenagashi, completing as (5).
 7. Uchitachi starts raise for shōmen-uchi.  Shitachi enters tsugi-ashi, blocking out both wrists.  Then ukenagashi, hiraki-ashi yokomen-uchi to neck.
 
-Footwork: see [Additional Foundations](./Additional-Foundations)
+Footwork: see [Footwork](../Foundations/Footwork)

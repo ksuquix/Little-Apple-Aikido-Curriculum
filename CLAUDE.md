@@ -4,7 +4,7 @@ Notes for working in this repo (Little Apple Aikido Curriculum, Jekyll site).
 
 ## Footwork diagrams (SVG)
 
-Files (in `assets/figures/`, referenced from `Additional-Foundations.md`):
+Files (in `assets/figures/`, referenced from `Foundations/Footwork.md`):
 
 - `foot-shape.svg` — the footprint silhouette alone (right + left foot, black). Iterate on the shape here first, then sync the path into the diagrams.
 - `okuri-ashi-forward.svg` / `okuri-ashi-backward.svg` — the step diagrams.
@@ -49,7 +49,7 @@ Steps:
    - 45° CW: `translate(hx+28.55, hy-110.15) scale(0.6) rotate(45 50 86)`
 3. Arrows: straight in the gap between consecutive same-foot positions (6px inset, stroke 7, 16px head) for slides; quadratic curves for pivot movements. Number circle (r=17, white fill, black 2.5 stroke, bold 20px digit) right next to the arrow it labels; the digit is the movement number.
 4. If a new position overlaps the old one: draw the new footprint in gray (`#999999`) on top of the black one, and make its arrow smaller (stroke 5, 12px head) pulled to the side of the column.
-5. Add the image to the `### Diagrams` table at the end of the Footwork section in `Additional-Foundations.md` (`height="200"`, caption line under it), and add a one-line record below.
+5. Add the image to the `## Diagrams` table at the end of `Foundations/Footwork.md` (`height="200"`, caption line under it), and add a one-line record below.
 
 ### Cropping SVGs (crop-svg.sh)
 
@@ -72,7 +72,7 @@ Foot-shape changes: update `foot-shape.svg` first, get it approved, then copy th
 
 ## Stick figure poses (kamae, ...)
 
-Files: `chudan-no-kamae.svg`, `jodan-no-kamae.svg` in `assets/figures/`, referenced from the "Base Poses" section of `Additional-Foundations.md`.
+Files: `chudan-no-kamae.svg`, `jodan-no-kamae.svg` in `assets/figures/`, referenced from the "Base Poses" section of `Foundations/Sword-Stances.md`.
 
 ### Conventions
 
@@ -109,7 +109,7 @@ Copy these coordinates, then only change the arms/sword per pose:
 
 ### Embedding in Markdown
 
-Poses go in the `### Diagrams` table under Base Poses in `Additional-Foundations.md` (see image-path gotcha below).
+Poses go in the `## Diagrams` table under Base Poses in `Foundations/Sword-Stances.md` (see image-path gotcha below).
 
 - Cells: `<td style="text-align:center; vertical-align:bottom">` — row height is set by the tallest figure; `vertical-align:bottom` aligns image bottoms so the feet sit on the same line.
 - Caption: two lines under the image, romaji over kanji: `<br>Chūdan-no-kamae<br>中段の構え`.
@@ -117,11 +117,12 @@ Poses go in the `### Diagrams` table under Base Poses in `Additional-Foundations
 
 ## Image paths in Markdown (gotcha)
 
-Pages are served as DIRECTORIES (clean URLs, e.g. `.../Additional-Foundations/`), so image `src` paths in the Markdown must be `../assets/figures/...`:
+Pages are served as DIRECTORIES (clean URLs, e.g. `.../Foundations/Footwork/`), so image `src` paths in the Markdown must be relative to the page's own directory — one `../` per level below the repo root:
 
-- `assets/figures/...` is broken (resolves to `Additional-Foundations/assets/...`) — kramdown also rewrites it to `/assets/...` (domain root) in the built HTML, which is broken too.
-- `../assets/figures/...` passes through kramdown unchanged and resolves correctly on the live site.
-- Verify after editing: `jekyll build`, then `grep -o 'src="[^"]*"' _site/Additional-Foundations.html` — every figure should show `src="../assets/figures/..."`.
+- Root page → `../assets/figures/...`; page in `Foundations/` → `../../assets/figures/...`.
+- `assets/figures/...` (no `../`) is broken (resolves to `PAGE/assets/...`) — kramdown also rewrites it to `/assets/...` (domain root) in the built HTML, which is broken too.
+- Paths with `../` pass through kramdown unchanged and resolve correctly on the live site.
+- Verify after editing: `jekyll build`, then `grep -o 'src="[^"]*"' _site/Foundations/Footwork.html` — every figure should show the correct relative path.
 
 ## Romanization (Full Hepburn with macrons)
 

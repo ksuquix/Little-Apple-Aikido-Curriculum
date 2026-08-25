@@ -216,13 +216,15 @@
 
 ## Footwork <a id="footwork"></a>
 
-| Footwork Name | Japanese | Definition |
+- Moving forward with Okuri-Ashi, Ayumi-ashi, or Tsugi-ashi are all Irimi movement.  The first two are our 6th kyu test forms.
+
+| Footwork Name | English | Definition |
 | --------- | --------- | ------- |
-| Suri-ashi | (Sliding Feet) | The foundation of all Japanese arts, where feet slide across the floor without lifting to maintain constant contact, reducing friction and enabling fast movement. |
-| Okuri-ashi | (Trailing Foot) | (Slide in our dojo) The standard, most used movement. Move the right foot forward (or backward), then quickly bring the left foot up to match, maintaining the initial distance between feet.|
-| Tsugi-ashi | (Subsequent Foot) | A step used to close distance. The left foot moves up to touch or pass the right foot before the right foot moves again to strike.|
-| Hiraki-ashi | (Diagonal/Open Foot) | A movement to evade or create angles, where you move diagonally to the right or left, often with a slight pivot.|
-| Ayumi-ashi | (Walking Feet) | (Step in our dojo) A natural walking movement used for traversing longer distances quickly, rarely used in close combat. |
+| Suri-ashi | Sliding Feet | The foundation of all Japanese arts, where feet slide across the floor without lifting to maintain constant contact, reducing friction and enabling fast movement. |
+| Okuri-ashi | Trailing Foot / Slide | Move the right foot forward (or backward), then quickly bring the left foot up to match, maintaining the initial distance between feet. |
+| Ayumi-ashi | Walking Feet / Step | A natural walking movement used to shift hanmi. |
+| Tsugi-ashi | Subsequent Foot | A step used to close distance. The left foot moves up to touch or pass the right foot before the right foot moves again to strike.|
+| Hiraki-ashi | Diagonal/Open Foot / Side step | A movement to evade or create angles, where you move diagonally to the right or left, often with a slight pivot.|
 
 ## Uke-Nagashi <a id="uke-nagashi"></a>
 Note: if there are better names for these, let me know
