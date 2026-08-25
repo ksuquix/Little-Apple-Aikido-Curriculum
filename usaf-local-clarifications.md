@@ -9,7 +9,7 @@
   - Can be silent or with the sounds
 - Irimi (2 ways)
   - Okuri-ashi (slide)
-- Ayumi-ashi (step)
+  - Ayumi-ashi (step)
 - Yokomen-uchi
   - Take care to pivot back foot offline
 - Tai no henko
@@ -29,7 +29,7 @@
 
 - Shōmen-uchi Nikyō
   - good projection on initial opening, resulting in smooth wrist transition preferred
-- Tsuki Iriminage 
+- Tsuki Iriminage
   - Irimi Opening (omote & ura)
   - Tenshin Opening (omote & ura)
   - Those minimally, can add other known variations like "direct entry" after.
@@ -44,7 +44,7 @@
   - Those minimally, can add other known variations after.
 - Morotetori Iriminage
   - High to low - Start High, cut down follow path into iriminage - [Yamada](https://youtu.be/9hWRq9jRxsU?t=3660)
-  - Low to High - [Yamada on youtube](https://youtu.be/9hWRq9jRxsU?t=3790) 
+  - Low to High - [Yamada on youtube](https://youtu.be/9hWRq9jRxsU?t=3790)
 - Suwari Waza Shōmen-uchi Iriminage
   - Ideally omote & ura
 - Hanmi Handachi Kaitennage
