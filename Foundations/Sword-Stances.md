@@ -17,15 +17,13 @@
 
 ### Hassō-no-Kamae 八相の構え (Eight Aspect Stance)
 
-- sword held vertical and pointed straight up, along the side of the face
-- end of the tsuka one forearm-length below shoulder level
-- left upper arm goes diagonally forward and down (left forearm disappears in perspective), right elbow back
+- sword held vertical and pointed straight up, in front of right shoulder
+- left forearm horizontal across front of body
+- right elbow back
 
 ### Waki-Gamae 脇構え (Side Stance)
 
-- sword hilt at the hip, end of the hilt barely in front of the body, blade pointed down and back at 45 degrees
-- right hand low on the body with elbow back
-- left elbow slightly in front
+- sword at right side of body, blade pointed down and back at 45 degrees
 
 ## Diagrams
 
