@@ -229,9 +229,10 @@
 ## Uke-Nagashi <a id="uke-nagashi"></a>
 Note: if there are better names for these, let me know
 
-| Name                       | Typical movement                               | Can be response to (not limited to)        |
+| Name                       | Typical movement                               | Could be:        |
 | -------------------------- | ---------------------------------------------- | ------------------------------------------ |
-| Kudari Soto: 下り - downward | Outside hand sweeps across body with open palm | Irimi entry to Tsuki                       |
-| Kudari Uchi: 下り - downward | Inside hand cuts down                          | Irimi entry to Tsuki<br>Front kick defense |
-| Nobori Soto: 上り - upward   | Entering with outside hand palm up             | Yokomen-uchi / Shōmen-uchi                           |
-| Nobori Uchi: 上り - upward   | Inside hand spiraling Up                       | Shōmen-uchi                                     |
+| (Uchi Jodan) Uke Nagashi (Irimi) | Extend then roll as crossing under (or rolling the attack over), generally passing attacking arm to other hand. | Yokomen-uchi Gokyo |
+| ... Tenkan | Same, but nage's elbow connects over the top of attacking arm while doing tenkan. | Yokomen-uchi Kotegaeshi |
+|  Soto Jodan Uke Nagashi | Extend, keeping extension while turning tenkai | Shomen-uchi irimi-nage |
+| Soto Gedan Uke Nagashi 下段受流し | Step and cut down incoming attack while blending. | Tsuki Iriminage / Tsuki Kotegaeshi Omote |
+| Uchi Gedan Uke Nagashi | Step inside, cutting attack down | Tsuki Kokyu nage |
