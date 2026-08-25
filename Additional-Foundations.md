@@ -72,13 +72,13 @@ The foundation of all Japanese arts, where feet slide across the floor without l
 
 <table>
 <tr>
-<td style="text-align:center">
-<img src="../assets/figures/chudan-no-kamae-cropped.svg" height="200" alt="Chūdan-no-kamae">
-<br>Chūdan-no-kamae 中段の構え
+<td style="text-align:center; vertical-align:bottom">
+<img src="../assets/figures/chudan-no-kamae-cropped.svg" height="149" alt="Chūdan-no-kamae">
+<br>Chūdan-no-kamae<br>中段の構え
 </td>
-<td style="text-align:center">
+<td style="text-align:center; vertical-align:bottom">
 <img src="../assets/figures/jodan-no-kamae-cropped.svg" height="200" alt="Jōdan-no-kamae">
-<br>Jōdan-no-kamae 上段の構え
+<br>Jōdan-no-kamae<br>上段の構え
 </td>
 </tr>
 </table>

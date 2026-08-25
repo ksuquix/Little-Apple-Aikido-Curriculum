@@ -109,7 +109,11 @@ Copy these coordinates, then only change the arms/sword per pose:
 
 ### Embedding in Markdown
 
-Poses go in the `### Diagrams` table under Base Poses in `Additional-Foundations.md` (`height="200"`, caption line under it; see image-path gotcha below).
+Poses go in the `### Diagrams` table under Base Poses in `Additional-Foundations.md` (see image-path gotcha below).
+
+- Cells: `<td style="text-align:center; vertical-align:bottom">` — row height is set by the tallest figure; `vertical-align:bottom` aligns image bottoms so the feet sit on the same line.
+- Caption: two lines under the image, romaji over kanji: `<br>Chūdan-no-kamae<br>中段の構え`.
+- Heights: keep every figure at the SAME scale (px per local unit). Each pose's viewBox height differs (a raised sword extends it above the head), so give the reference pose `height="200"` and scale the others by viewBox height: `height = 200 × (viewBoxHeight / viewBoxHeight_ref)`. Currently: jōdan 200 (viewBox 423), chūdan 149 (316 → 200×316/423 ≈ 149.4).
 
 ## Image paths in Markdown (gotcha)
 
