@@ -4,14 +4,14 @@
     .blade { stroke: #222; stroke-width: 4; stroke-linecap: round; }
   </style>
   <circle cx="191" cy="205" r="20" fill="#fff" class="limb"/>
-  <line x1="190" y1="225" x2="178" y2="345" class="limb"/>
+  <line x1="190" y1="225" x2="190" y2="345" class="limb"/>
   <polyline points="192,232 251,222 224,168" class="limb"/>
   <polyline points="187,240 247,232 230,174" class="limb"/>
   <line x1="216" y1="160" x2="246" y2="190" class="limb"/>
   <line x1="218" y1="154" x2="210" y2="162" class="limb"/>
   <line x1="214" y1="158" x2="133" y2="77" class="blade"/>
-  <polyline points="178,345 218,415 226,495" class="limb"/>
-  <line x1="226" y1="495" x2="248" y2="495" class="limb"/>
-  <polyline points="178,345 138,414 124,493" class="limb"/>
-  <line x1="124" y1="493" x2="146" y2="493" class="limb"/>
+  <polyline points="190,345 230,415 238,495" class="limb"/>
+  <line x1="238" y1="495" x2="260" y2="495" class="limb"/>
+  <polyline points="190,345 150,414 136,493" class="limb"/>
+  <line x1="136" y1="493" x2="158" y2="493" class="limb"/>
 </svg>

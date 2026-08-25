@@ -10,6 +10,23 @@
 - Jōdan - Top level
 - sword raised above head, hilt aligned directly above the front of the face, sword pointing backwards up at 45 degrees
 
+### Gedan-no-Kamae 下段の構え (Low Stance)
+
+- Gedan - Low level
+- sword points at the opponent's knee or ankle
+
+### Hassō-no-Kamae 八相の構え (Eight Aspect Stance)
+
+- sword held vertical and pointed straight up, along the side of the face
+- end of the tsuka one forearm-length below shoulder level
+- left upper arm goes diagonally forward and down (left forearm disappears in perspective), right elbow back
+
+### Waki-Gamae 脇構え (Side Stance)
+
+- sword hilt at the hip, end of the hilt barely in front of the body, blade pointed down and back at 45 degrees
+- right hand low on the body with elbow back
+- left elbow slightly in front
+
 ## Diagrams
 
 <table>
@@ -21,6 +38,18 @@
 <td style="text-align:center; vertical-align:bottom">
 <img src="../../assets/figures/jodan-no-kamae-cropped.svg" height="200" alt="Jōdan-no-kamae">
 <br>Jōdan-no-kamae<br>上段の構え
+</td>
+<td style="text-align:center; vertical-align:bottom">
+<img src="../../assets/figures/gedan-no-kamae-cropped.svg" height="149" alt="Gedan-no-kamae">
+<br>Gedan-no-kamae<br>下段の構え
+</td>
+<td style="text-align:center; vertical-align:bottom">
+<img src="../../assets/figures/hasso-no-kamae-cropped.svg" height="174" alt="Hassō-no-kamae">
+<br>Hassō-no-kamae<br>八相の構え
+</td>
+<td style="text-align:center; vertical-align:bottom">
+<img src="../../assets/figures/waki-gamae-cropped.svg" height="149" alt="Waki-gamae">
+<br>Waki-gamae<br>脇構え
 </td>
 </tr>
 </table>

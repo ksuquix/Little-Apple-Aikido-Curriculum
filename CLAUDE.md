@@ -72,7 +72,7 @@ Foot-shape changes: update `foot-shape.svg` first, get it approved, then copy th
 
 ## Stick figure poses (kamae, ...)
 
-Files: `chudan-no-kamae.svg`, `jodan-no-kamae.svg` in `assets/figures/`, referenced from the "Base Poses" section of `Foundations/Sword-Stances.md`.
+Files: `chudan-no-kamae.svg`, `jodan-no-kamae.svg`, `gedan-no-kamae.svg`, `hasso-no-kamae.svg`, `waki-gamae.svg` in `assets/figures/`, referenced from the "Base Poses" section of `Foundations/Sword-Stances.md`.
 
 ### Conventions
 
@@ -80,6 +80,7 @@ Files: `chudan-no-kamae.svg`, `jodan-no-kamae.svg` in `assets/figures/`, referen
 - No part labels (e.g. "kissaki") unless the user asks for one on a specific diagram.
 - Grip: right hand near the tsuba, left hand at the midpoint of the tsuka. Tsuka ~36px; tsuba short (~11px), perpendicular to the blade.
 - Arms are RIGID: upper arm = forearm = 60px. When a hand moves, recompute the elbow (two-circle intersection) — never stretch a segment.
+- Spine straight up-down: torso top directly above the hip, no forward lean (hip sits under the shoulders, feet shift with it).
 
 ### Proportions (artistic, in heads; head = 40px)
 
@@ -97,15 +98,18 @@ Files: `chudan-no-kamae.svg`, `jodan-no-kamae.svg` in `assets/figures/`, referen
 Copy these coordinates, then only change the arms/sword per pose:
 
 - head: circle (191,205) r=20
-- torso: (190,225) → (178,345)
-- front leg: (178,345) → (218,415) → (226,495); foot (226,495) → (248,495)
-- back leg: (178,345) → (138,414) → (124,493); foot (124,493) → (146,493)
+- torso: (190,225) → (190,345) (vertical)
+- front leg: (190,345) → (230,415) → (238,495); foot (238,495) → (260,495)
+- back leg: (190,345) → (150,414) → (136,493); foot (136,493) → (158,493)
 - arm shoulders: right/near (192,232), left/far (187,240)
 
 ### Pose values
 
 - Chudan: sword line 20° up toward opponent's eye line (direction (0.940,-0.342)), grip at belly level — tsuba (262,304), tsuka back to (220,319), blade to kissaki (370,265); tsuba (260,299)→(264,309). Right hand (256,306), elbow (198,292); left hand (241,312), elbow (182,300) (left upper arm runs along/behind the torso — expected, far-side arm).
 - Jodan: sword raised above head, hilt above the front of the face (face front x=211) — tsuba (214,158), blade 45° up-back to kissaki (133,77); tsuka back to (246,190); tsuba (218,154)→(210,162). Right hand (224,168), elbow (251,222); left hand (230,174), elbow (247,232).
+- Gedan: same body as Chudan; sword rotated ~54° CW about the right hand (256,306) so the blade points ~34° down (direction (0.827,0.562)) at the opponent's ankle — tsuba (261,310), tsuka up-back to (224,284), blade to kissaki (356,374); tsuba (258,314)→(264,306). Both hands on the sword line: right hand (256,306), elbow (198,292); left hand (243,297), elbow (183,300).
+- Hassō: same body; sword vertical (pointed straight up) at x=216, along the side of the face (face front x=211) — tsuka end (216,292) = one forearm (60) below shoulder level (232), tsuba (216,247), blade to kissaki (216,132); tsuba (211,247)→(221,247). Right hand (216,272), elbow (157,281) (elbow back). Left hand (216,292) at the tsuka end: left arm drawn as upper arm only, diagonally forward-down from (187,240) (left forearm disappears in 3D perspective).
+- Waki-gamae: same body; end of the hilt barely in front of the body (spine x=190), blade 45° down-back (direction (−0.707,0.707), runs entirely behind the back leg) — tsuka end (195,330), tsuba back-down to (163,362), blade to kissaki (82,443); tsuba (159,358)→(167,366). Right hand (177,348) low on the body, elbow (171,288) (back); left hand (191,334), elbow (226,285) (slightly in front).
 
 ### Embedding in Markdown
 
@@ -113,7 +117,7 @@ Poses go in the `## Diagrams` table under Base Poses in `Foundations/Sword-Stanc
 
 - Cells: `<td style="text-align:center; vertical-align:bottom">` — row height is set by the tallest figure; `vertical-align:bottom` aligns image bottoms so the feet sit on the same line.
 - Caption: two lines under the image, romaji over kanji: `<br>Chūdan-no-kamae<br>中段の構え`.
-- Heights: keep every figure at the SAME scale (px per local unit). Each pose's viewBox height differs (a raised sword extends it above the head), so give the reference pose `height="200"` and scale the others by viewBox height: `height = 200 × (viewBoxHeight / viewBoxHeight_ref)`. Currently: jōdan 200 (viewBox 423), chūdan 149 (316 → 200×316/423 ≈ 149.4).
+- Heights: keep every figure at the SAME scale (px per local unit). Each pose's viewBox height differs (a raised sword extends it above the head), so give the reference pose `height="200"` and scale the others by viewBox height: `height = 200 × (viewBoxHeight / viewBoxHeight_ref)`. Currently: jōdan 200 (viewBox 423), chūdan 149 (316 → 200×316/423 ≈ 149.4), gedan 149 (316, same as chūdan), hassō 174 (368 → 200×368/423 ≈ 174), waki 149 (316, same as chūdan).
 
 ## Image paths in Markdown (gotcha)
 
