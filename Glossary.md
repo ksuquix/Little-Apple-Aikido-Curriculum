@@ -1,6 +1,14 @@
-```table-of-contents
-```
-# Terms
+# Glossary
+
+## Table of Contents
+
+- [Terms](#terms) — Core Aikido, Dojo, Philosophy, Body Parts, Greetings
+- [Numeric Terms](#numeric-terms) — Numbers, Ranks, Kyū/Dan
+- [Technique Names](#technique-names) — Throws, Pins, Teachings
+- [Footwork](#footwork) — Stepping patterns
+- [Uke-Nagashi](#uke-nagashi) — Hand movements for receiving techniques
+
+## Terms <a id="terms"></a>
 
 | Term                  | Japanese  | Definition                                                                                                                                                                                                                                                                                |
 | --------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -150,7 +158,7 @@
 | Zagi/Kiza             | 跪座        | Sitting–active posture - Seiza but active toes                                                                                                                                                                                                                                            |
 | Zanshin               | 残心        | “Remaining mind or attention;” exercise of mental alertness or readiness, especially following the completion of a technique.                                                                                                                                                             |
 
-# Numeric Terms
+## Numeric Terms <a id="numeric-terms"></a>
 
 | Numeric-based Term   | Japanese | Definition   |
 | ------------------------ | -------- | --------------------------------- |
@@ -183,7 +191,7 @@
 | Yondan   | 四段   | 4th degree black belt.   |
 | Yonkyū   | 四級   | 4th degree.   |
 
-# Technique Names
+## Technique Names <a id="technique-names"></a>
 
 | Technique Name   | Japanese   | Definition   |
 | ------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -206,7 +214,7 @@
 | Tenchinage   | 天地投げ   | “Heaven and earth throw.”   |
 | Yonkyō   | 四教   | “Fourth teaching.”   |
 
-# Footwork
+## Footwork <a id="footwork"></a>
 
 | Footwork Name | Japanese | Definition |
 | --------- | --------- | ------- |
@@ -216,7 +224,7 @@
 | Hiraki-ashi | (Diagonal/Open Foot) | A movement to evade or create angles, where you move diagonally to the right or left, often with a slight pivot.|
 | Ayumi-ashi | (Walking Feet) | (Step in our dojo) A natural walking movement used for traversing longer distances quickly, rarely used in close combat. |
 
-## Uke-Nagashi
+## Uke-Nagashi <a id="uke-nagashi"></a>
 Note: if there are better names for these, let me know
 
 | Name                       | Typical movement                               | Can be response to (not limited to)        |
