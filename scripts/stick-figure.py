@@ -637,6 +637,61 @@ def _cylinder_vertices(ax, ay, az, bx, by, bz, r, segments=12):
         idx += [cb_idx, b, d]                 # end cap (faces +u)
     return verts, idx
 
+def _tsuba_disk(ax, ay, az, bx, by, bz, r=10.5, thick=3.0):
+    """Thin square disk at point A, perpendicular to AB, for the tsuba guard.
+
+    4 corners x 2 faces + 4 sides x 2 triangles = 16 triangles total.
+    All windings verified for outward-facing normals.
+    """
+    dx, dy, dz = bx - ax, by - ay, bz - az
+    L = math.sqrt(dx*dx + dy*dy + dz*dz)
+    if L < 1e-9:
+        return [], []
+    ux, uy, uz = dx/L, dy/L, dz/L
+    if abs(ux) < 0.9:
+        cx, cy, cz = 1.0, 0.0, 0.0
+    else:
+        cx, cy, cz = 0.0, 1.0, 0.0
+    ex = cy*uz - cz*uy
+    ey = cz*ux - cx*uz
+    ez = cx*uy - cy*ux
+    el = math.sqrt(ex*ex + ey*ey + ez*ez) or 1.0
+    ex, ey, ez = ex/el, ey/el, ez/el
+    fx = ey*uz - ez*uy
+    fy = ez*ux - ex*uz
+    fz = ex*uy - ey*ux
+    h = thick / 2.0
+
+    verts = []
+    idx = []
+
+    cr = r * 0.7071  # cos(45)
+    corners = [
+        (cr*ex + cr*fx, cr*ey + cr*fy, cr*ez + cr*fz),
+        (-cr*ex + cr*fx, -cr*ey + cr*fy, -cr*ez + cr*fz),
+        (-cr*ex - cr*fx, -cr*ey - cr*fy, -cr*ez - cr*fz),
+        (cr*ex - cr*fx, cr*ey - cr*fy, cr*ez - cr*fz),
+    ]
+
+    # Front face (+u): corners offset by +h*u
+    for cxv, cyv, czv in corners:
+        verts.append((ax + cxv + h*ux, ay + cyv + h*uy, az + czv + h*uz))
+    # Back face (-u): SAME corners offset by -h*u (pure translation, so the
+    # two squares are parallel and the side quads are planar parallelograms)
+    for cxv, cyv, czv in corners:
+        verts.append((ax + cxv - h*ux, ay + cyv - h*uy, az + czv - h*uz))
+
+    # Front: [0,2,3], [0,1,3]  Back: [4,7,6], [4,6,5]
+    # Sides (quad F_i, F_{i+1}, B_{i+1}, B_i), reversed for outward normals:
+    idx += [0, 2, 3, 0, 1, 3]       # front
+    idx += [4, 7, 6, 4, 6, 5]       # back
+    idx += [0, 4, 1, 1, 4, 5]       # side 0->1 (outward: +f)
+    idx += [1, 5, 2, 2, 5, 6]       # side 1->2 (outward: -e)
+    idx += [2, 6, 3, 3, 6, 7]       # side 2->3 (outward: -f)
+    idx += [3, 7, 0, 0, 7, 4]       # side 3->0 (outward: +e)
+
+    return verts, idx
+
 def _sphere_vertices(cx, cy, cz, r, segments=12, rings=8):
     """UV sphere in skeleton space; outward-facing after the Z-up transform."""
     top = (cx, cy - r, cz)
@@ -703,10 +758,12 @@ def export_3mf(sk, radius=DEFAULT_RADIUS):
         if key in points:
             toe = _f3(add(points[key], scl(sk[s + "_footdir"], FOOT)))
             beam_specs.append((points[key], toe, radius))
+    tsuba_disk = False
     if sword_keys:
         for a, b in [("sword.tsuka_end", "sword.tsuba"), ("sword.tsuba", "sword.kissaki")]:
             if a in points and b in points:
                 beam_specs.append((points[a], points[b], radius * 0.8))
+        tsuba_disk = True
 
     # Spheres: head and hands
     sphere_specs = [(_f3(sk["head"]), HEAD_R)]
@@ -724,6 +781,15 @@ def export_3mf(sk, radius=DEFAULT_RADIUS):
             all_verts.extend(verts)
             all_idx.extend([i + vert_offset for i in idx])
             vert_offset += len(verts)
+    if tsuba_disk:
+        ta = points["sword.tsuba"]
+        te = points.get("sword.tsuka_end") or points.get("sword.kissaki")
+        if te:
+            dv, di = _tsuba_disk(ta[0], ta[1], ta[2], te[0], te[1], te[2])
+            if dv:
+                all_verts.extend(dv)
+                all_idx.extend([i + vert_offset for i in di])
+                vert_offset += len(dv)
     for c, r in sphere_specs:
         verts, idx = _sphere_vertices(c[0], c[1], c[2], r)
         all_verts.extend(verts)
