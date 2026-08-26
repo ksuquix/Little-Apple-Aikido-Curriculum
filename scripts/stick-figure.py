@@ -81,9 +81,10 @@ Construction (the feet drive everything):
      "angle_from_center" (default 0): an azimuth about the vertical axis
      measured from straight forward (+x); positive swings toward the
      viewer (+z).
-  9. Elbows: of the two two-circle IK solutions, pick the one whose
-     shoulder->elbow direction is closest to a supplied vector (default
-     straight down); "elbow_dir" overrides per elbow.
+  9. Elbows: two-sphere IK (upper arm about the shoulder, forearm about
+      the hand); the solutions form a circle in 3D.  Take the point on that
+      circle whose shoulder->elbow direction is closest to a supplied
+      vector (default straight down); "elbow_dir" overrides per elbow.
   10. No stretching: a hand beyond arm reach (110px) or a foot beyond leg
      reach (160px) is a hard error -- no SVG is written.
 
@@ -124,7 +125,9 @@ Pose JSON:
                                                 # z from the body centerline
   "sword": {"angle_from_horizontal": 20,    # required with a sword
             "angle_from_center": 0},
-  "elbow_dir": {"left": [0, 1, 0]},         # optional, per elbow pick vector
+  "elbow_dir": {"left": [0, 1, 0]},         # optional, per elbow: direction
+                                              # the shoulder->elbow vector
+                                              # should approach
   "hand_style": {"right": "closed"},          # optional: open | closed
   "hand_dir": {"right": -20}                  # optional open-hand angle (degrees)
 }
@@ -224,6 +227,26 @@ def two_circle(a, b, l1, l2, plane_dir, pick):
         u = sub(u, scl(dhat, dot(u, dhat)))
     u = norm(u)
     return pick(add(mid, scl(u, h)), sub(mid, scl(u, h)))
+
+def two_sphere(a, b, l1, l2, pick_dir):
+    """The joint j with |a-j|=l1, |j-b|=l2, in full 3D.  The solutions are
+    the circle where the two spheres intersect; return the point on it whose
+    a->j direction is closest to pick_dir (largest dot)."""
+    d = sub(b, a)
+    D = length(d)
+    if D > l1 + l2 + 1e-6 or D < abs(l1 - l2) - 1e-6:
+        raise PoseError(f"two-sphere IK out of range: {D:.1f}px vs "
+                        f"{l1:.0f}+{l2:.0f}")
+    ax = (l1*l1 - l2*l2 + D*D) / (2*D)
+    h = math.sqrt(max(l1*l1 - ax*ax, 0.0))
+    dhat = scl(d, 1.0/D)
+    mid = add(a, scl(dhat, ax))
+    v = norm(pick_dir)
+    w = sub(v, scl(dhat, dot(v, dhat)))      # pick_dir on the circle plane
+    if length(w) < 1e-6:                     # pick_dir || a->b: all points tie
+        w = (1.0, 0.0, 0.0) if abs(dhat[1]) > 0.9 else (0.0, 1.0, 0.0)
+        w = sub(w, scl(dhat, dot(w, dhat)))
+    return add(mid, scl(norm(w), h))
 
 def dir_pick(anchor, vec):
     """pick(j1, j2): the candidate whose anchor->candidate direction is
@@ -421,8 +444,7 @@ def build(cfg):
             raise PoseError(f"{s} hand is {D:.1f}px from the {s} shoulder; "
                             f"arm reach is {ARM_REACH:.0f}px (no stretching)")
         vec = v3(cfg.get("elbow_dir", {}).get(s, DOWN))
-        elbows[s] = two_circle(shp, h, UPPER_ARM, FOREARM, DOWN,
-                              dir_pick(shp, vec))
+        elbows[s] = two_sphere(shp, h, UPPER_ARM, FOREARM, vec)
     diag.append("arm reach: " + ", ".join(
         f"{s} {length(sub(hands[s], sh[s])):.1f}/{ARM_REACH:.0f}"
         for s in ("right", "left")))
@@ -759,7 +781,10 @@ def _model_xml(verts, idx):
         '<model xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" '
         'unit="millimeter">\n'
         '  <resources>\n'
-        '    <object id="1" type="model" name="skeleton">\n'
+        '    <basematerials id="1">\n'
+        '      <base name="Blue" displaycolor="#0099FF"/>\n'
+        '    </basematerials>\n'
+        '    <object id="2" type="model" name="skeleton" pid="1" pindex="0">\n'
         '      <mesh>\n'
         '        <vertices>\n'
         f'          {v_str}\n'
@@ -771,7 +796,7 @@ def _model_xml(verts, idx):
         '    </object>\n'
         '  </resources>\n'
         '  <build>\n'
-        '    <item objectid="1"/>\n'
+        '    <item objectid="2"/>\n'
         '  </build>\n'
         '</model>\n'
     )

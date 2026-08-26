@@ -131,7 +131,7 @@ Construction order (the feet drive everything):
 6. Hands: one is given as `[x, y]`, `[x, y, z]` or `[x, y, z, a]` **relative to the shoulder on the same side**; z is from the shoulder by default (0 = the shoulder's depth), or from the body centerline when `a` is true (the forward-stance grip is on the centerline: `[x, y, 0, true]`). The other hand is derived from the sword; without a sword both must be given.
 7. Sword: fixed parts tsuka 45 / tsuba 11 / blade 115. The fist (r 7.5) touches the back edge of the tsuba with its center on the axis; the left hand sits halfway between the right hand and the tsuka end. Both distances are computed once from the parts and stored: right hand → kissaki 133.5, right hand → left hand −18.75.
 8. Sword input: `angle_from_horizontal` (required; positive up) + `angle_from_center` (default 0) — an azimuth about the vertical axis from straight forward (+x); positive swings toward the viewer (+z). If the left hand is given instead of the right, the right hand is derived the same way.
-9. Elbows: two-circle IK (60/50); pick the solution whose shoulder→elbow direction is closest to a supplied vector (default straight down); `elbow_dir` overrides per elbow.
+9. Elbows: two-sphere IK (60/50); the solutions form a circle in 3D, take the point on it whose shoulder→elbow direction is closest to a supplied vector (default straight down); `elbow_dir` overrides per elbow.
 10. **No stretching**: a hand farther than 110px from its shoulder, or a foot farther than 160px from its hip, is a hard error — no SVG is written, non-zero exit.
 
 Pose JSON:
@@ -151,8 +151,8 @@ Optional keys: `hip_rot`, `foot_rot`, `knee_bend`, `knee_dir`, `elbow_dir`, `fro
 Example notes:
 
 - Right foot forward: chudan, chudan-hanmi, chudan-nosword, gedan, gedan-hanmi, jodan, jodan-hanmi. Left foot forward: hasso, hasso-hanmi, waki, waki-hanmi.
-- hasso (user-tuned): right hand `[7.5, 31.3, 0]` relative to the right shoulder, `elbow_dir` right `[-1, 0, 0]` (elbow trails back), sword 90°/0.
-- jodan/jodan-hanmi: `elbow_dir` right and left `[1, 0, 0]` (elbows lead forward — the default DOWN pick would trail the right elbow back). waki/waki-hanmi: `elbow_dir` right `[-1, 0, 0]`, left `[1, 0, 0]`.
+- hasso (user-tuned): right hand `[7.5, 31.3, 0]` relative to the right shoulder, `elbow_dir` right `[-1, 0, 0]` (elbow trails back), left `[.25, 1, 0]` (hasso) / `[1, 1, 0]` (hasso-hanmi) (down, slightly forward), sword 90°/0.
+- jodan/jodan-hanmi: the given hand is the RIGHT, on the centerline — `[20, -65.7, 0, true]` (jodan) / `[-8.3, -65.7, 0, true]` (jodan-hanmi); `elbow_dir` right `[1, 0, 1]`, left `[1, 0, -1]` (elbows lead forward and out — the default DOWN pick would trail the right elbow back). waki/waki-hanmi: `elbow_dir` right `[-1, 0, 0]`, left `[1, 0, 0]`.
 - Sword angles were converted from the old right-hand→kissaki axes: chudan 20/0, gedan −34/0, jodan 45/180, hasso 90/0, waki −45/155.
 
 ### 3MF export (`--export-3mf`)
@@ -162,6 +162,7 @@ Writes the 3D wireframe as a 3MF (triangle mesh) for viewing/3D-printing in any 
 - Geometry: every bone is a capped 12-gon cylinder (beam radius 2mm, sword beams 0.8×), feet are ankle→toe beams, and the head (r 20) and hands (fist r 7.5, open hand r 10) are UV spheres.
 - Coordinates: skeleton space is converted to 3MF's right-handed Z-up space via (x, y, z) → (x, −z, −y), so the figure stands upright on z = 0 in viewers.
 - Winding: all triangles outward-facing (mesh is manifold and consistently oriented; verify with signed volume > 0 — the winding was determined numerically, the interleaved cylinder vertex layout `[A0, B0, A1, B1, ...]` makes the winding easy to get wrong).
+- Material: one `<basematerials id="1">` group with a single `<base name="Blue" displaycolor="#0099FF"/>`, referenced from the object (`<object id="2" ... pid="1" pindex="0">`) — the 3MF core spec's object-level property assignment, so no triangle carries a `pid`. Resource ids share one namespace across all resources, so the object id (2) must not collide with the materials-group id (1).
 - Verified against the official 3D Printing Consortium library (`pip install py-lib3mf`, reader in strict mode: zero errors/warnings, `ismanifoldandoriented` true) for all eleven poses.
 
 ### Review list (next session)
@@ -172,7 +173,7 @@ Writes the 3D wireframe as a 3MF (triangle mesh) for viewing/3D-printing in any 
 4. **Embedding heights are stale** — the `## Diagrams` table heights in `Foundations/Sword-Stances.md` (jōdan 200 / chūdan 149 / …) were computed from the OLD viewBoxes; re-derive them when the new figures are embedded (rule: reference pose `height="200"`, others `200 × viewBoxHeight/viewBoxHeight_ref`).
 5. **Swap decision** — the in-use figures in `assets/figures/` (`chudan-no-kamae.svg` etc.) are still the old hand-tuned 2D ones referenced by `Foundations/Sword-Stances.md`; the `examples/` versions are the new geometry. Decide when/whether to replace the in-use figures with generator output (and re-crop via `scripts/crop-svg.sh` — the examples are not cropped).
 
-Done this session: added `--view` (six orthographic projections; `--render-all` appends the view to filenames when `--view` is given), top/bottom depth sorting by y, and `--export-3mf` (capped-tube wireframe + head/hand spheres, validated against the official lib3MF in strict mode for all eleven poses). Earlier: the three out-of-reach hands were retuned (gedan right `[65.6, 74.3, 0, true]`, waki right `[-7.5, 75, 5]`, chudan-hanmi left `[50.0, 73.7, 0, true]` — all now ≤ 107/110); the pose format moved to the hierarchical coordinate frames above.
+Done this session: elbow IK moved from two-circle (planar pick) to two-sphere (the 3D solution circle; the point whose shoulder→elbow direction is closest to `elbow_dir` is taken) — off-plane picks like a forward elbow now work; 3MF export gained a single Blue basematerial (object-level `pid`, no per-triangle `pid`); jodan/jodan-hanmi's given hand moved to the right on the centerline (`[20, -65.7, 0, true]` / `[-8.3, -65.7, 0, true]`) with `elbow_dir` `[1, 0, 1]` / `[1, 0, -1]`, and hasso/hasso-hanmi got a left `elbow_dir` (`[.25, 1, 0]` / `[1, 1, 0]`). Earlier: added `--view` (six orthographic projections; `--render-all` appends the view to filenames when `--view` is given), top/bottom depth sorting by y, and `--export-3mf` (capped-tube wireframe + head/hand spheres, validated against the official lib3MF in strict mode for all eleven poses). Earlier still: the three out-of-reach hands were retuned (gedan right `[65.6, 74.3, 0, true]`, waki right `[-7.5, 75, 5]`, chudan-hanmi left `[50.0, 73.7, 0, true]` — all now ≤ 107/110); the pose format moved to the hierarchical coordinate frames above.
 
 ### Embedding in Markdown
 
