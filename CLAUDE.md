@@ -78,7 +78,7 @@ In-use figures (OLD, hand-tuned 2D — leave as-is): `chudan-no-kamae.svg`, `jod
 
 Everything is computed in 3D (x, y, z); projection to the side view (screen_x = x + skew·z, screen_y = y) happens only at draw time. The FEET drive the construction — the head is NOT an input anymore.
 
-- Pose data: `assets/data/*.json` — `chudan`, `jodan`, `gedan` (forward stance), `hasso`, `waki` (hanmi), `chudan-nosword`, `chudan-hanmi` (user's hanmi experiment) → rendered to `assets/figures/examples/`.
+- Pose data: `assets/data/*.json` — `chudan`, `jodan`, `gedan`, `hasso`, `waki`, `chudan-nosword` (forward stance), plus a `-hanmi` variant of each of the first five (hanmi) → rendered to `assets/figures/examples/`.
 - Usage:
   - `python3 scripts/stick-figure.py assets/data/NAME.json -o out.svg` — one pose
   - `python3 scripts/stick-figure.py --render-all` — every `assets/data/*.json`; failing files are skipped with a message, exit 1 if any skipped
@@ -148,19 +148,20 @@ Optional keys: `hip_rot`, `foot_rot`, `knee_bend`, `knee_dir`, `elbow_dir`, `fro
 
 Example notes:
 
-- Right foot forward: chudan, gedan, jodan, chudan-nosword, chudan-hanmi. Left foot forward: hasso, waki.
-- hasso (user-tuned): right hand `[7.5, 31.3, 8.8]` relative to the right shoulder (z 8.8 in front of it), `elbow_dir` right `[-1, 0, 0]` (elbow trails back), sword 90°/0.
-- Sword angles were converted from the old right-hand→kissaki axes: chudan 20/0, gedan −34/0, jodan 45/180, hasso 90/0, waki −45/180.
+- Right foot forward: chudan, chudan-hanmi, chudan-nosword, gedan, gedan-hanmi, jodan, jodan-hanmi. Left foot forward: hasso, hasso-hanmi, waki, waki-hanmi.
+- hasso (user-tuned): right hand `[7.5, 31.3, 0]` relative to the right shoulder, `elbow_dir` right `[-1, 0, 0]` (elbow trails back), sword 90°/0.
+- jodan/jodan-hanmi: `elbow_dir` right and left `[1, 0, 0]` (elbows lead forward — the default DOWN pick would trail the right elbow back). waki/waki-hanmi: `elbow_dir` right `[-1, 0, 0]`, left `[1, 0, 0]`.
+- Sword angles were converted from the old right-hand→kissaki axes: chudan 20/0, gedan −34/0, jodan 45/180, hasso 90/0, waki −45/155.
 
 ### Review list (next session)
 
 1. **Hanmi equidistant deviation is 18.7px** (hip center 155.0 from the front foot vs 173.7 from the computed back foot, with the hasso data). The front-knee-offset + 45°-thigh derivation and the 15° back bend do not currently satisfy "hip midpoint equidistant from both feet" — decide whether to adjust (offset, thigh angle, back bend) or accept the deviation.
-2. **`chudan-hanmi`** — user's experiment file; hands are retuned (right hand `[46.5, 53.3, -37.1]`, left reaches 106.0/110); decide if it stays in `assets/data/`.
-3. **`waki` sword angle** (−45°/180, converted from the old axis) — verify visually (its hand is retuned: `[38.1, 97.3]`).
+2. **`chudan-hanmi`** — user's experiment file; the given hand is the LEFT `[50.0, 73.7, 0, true]` (right hand computed from the sword; left reaches 93.4/110); decide if it stays in `assets/data/`.
+3. **`waki` sword angle** (−45°/155, converted from the old axis) — verify visually (its hand is retuned: `[-7.5, 75, 5]`).
 4. **Embedding heights are stale** — the `## Diagrams` table heights in `Foundations/Sword-Stances.md` (jōdan 200 / chūdan 149 / …) were computed from the OLD viewBoxes; re-derive them when the new figures are embedded (rule: reference pose `height="200"`, others `200 × viewBoxHeight/viewBoxHeight_ref`).
 5. **Swap decision** — the in-use figures in `assets/figures/` (`chudan-no-kamae.svg` etc.) are still the old hand-tuned 2D ones referenced by `Foundations/Sword-Stances.md`; the `examples/` versions are the new geometry. Decide when/whether to replace the in-use figures with generator output (and re-crop via `scripts/crop-svg.sh` — the examples are not cropped).
 
-Done this session: the three out-of-reach hands were retuned (gedan right `[65.6, 74.3, 0, true]`, waki right `[38.1, 97.3]`, chudan-hanmi right `[46.5, 53.3, -37.1]` — all now ≤ 107/110) and `--render-all` renders all seven poses; the pose format moved to the hierarchical coordinate frames above.
+Done this session: the three out-of-reach hands were retuned (gedan right `[65.6, 74.3, 0, true]`, waki right `[-7.5, 75, 5]`, chudan-hanmi left `[50.0, 73.7, 0, true]` — all now ≤ 107/110) and `--render-all` renders all eleven poses; the pose format moved to the hierarchical coordinate frames above.
 
 ### Embedding in Markdown
 
