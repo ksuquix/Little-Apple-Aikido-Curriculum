@@ -1,8 +1,18 @@
 #!/usr/bin/env python3
 """3D stick-figure generator.
 
-Everything is computed in 3D (x, y, z); projection to the side view
-(screen_x = x + skew*z, screen_y = y) happens only at draw time.
+Everything is computed in 3D (x, y, z); projection to screen happens only
+at draw time.  Six orthographic projections are available (default: side).
+--export-3mf additionally writes a 3MF of the 3D wireframe (capped tube
+mesh + head/hand spheres), structure matching the official lib3MF writer.
+
+Orthographic projections (screen_x, screen_y):
+  side   (right):  x, y        -- figure's right side facing viewer
+  left:  -x, y     -- figure's left side facing viewer
+  front:  z, y     -- figure faces right across the screen
+  back:  -z, y     -- figure faces left across the screen
+  top:    z, -x    -- looking down; figure faces up/away, right side right
+  bottom: -z, x    -- looking up; figure faces down/toward, right side left
 
 3D conventions:
   x = forward (screen right), y = down (SVG), z = toward the viewer.
@@ -121,9 +131,11 @@ Pose JSON:
 """
 
 import argparse
+import io
 import json
 import math
 import sys
+import zipfile
 
 # ----------------------------------------------------------------- constants
 
@@ -461,39 +473,312 @@ def build(cfg):
 
 class Canvas:
     def __init__(self):
-        self.items = []   # (z, rank, svg_text, bounds_points)
+        self.items = []   # (depth, rank, svg_text, bounds_points)
+                          # depth = 3rd component of projected point
 
-    def add(self, z, rank, text, pts):
-        self.items.append((z, rank, text, pts))
+    def add(self, depth, rank, text, pts):
+        self.items.append((depth, rank, text, pts))
 
-    def poly(self, z, rank, pts3, cls):
+    def poly(self, depth, rank, pts3, cls):
         pts = [f"{p[0]:.1f},{p[1]:.1f}" for p in pts3]
-        return self.add(z, rank,
+        return self.add(depth, rank,
                         f'<polyline points="{" ".join(pts)}" class="{cls}"/>',
                         pts3)
 
-    def line(self, z, rank, a, b, cls):
-        return self.add(z, rank,
+    def line(self, depth, rank, a, b, cls):
+        return self.add(depth, rank,
             f'<line x1="{a[0]:.1f}" y1="{a[1]:.1f}" x2="{b[0]:.1f}" '
             f'y2="{b[1]:.1f}" class="{cls}"/>', [a, b])
 
-    def dot(self, z, rank, c, r, cls):
-        return self.add(z, rank,
+    def dot(self, depth, rank, c, r, cls):
+        return self.add(depth, rank,
             f'<circle cx="{c[0]:.1f}" cy="{c[1]:.1f}" r="{r:.1f}" class="{cls}"/>',
             [(c[0]-r, c[1]-r), (c[0]+r, c[1]+r)])
 
-    def oval(self, z, rank, c, rx, ry, ang_deg, cls):
-        return self.add(z, rank,
+    def oval(self, depth, rank, c, rx, ry, ang_deg, cls):
+        return self.add(depth, rank,
             f'<ellipse cx="{c[0]:.1f}" cy="{c[1]:.1f}" rx="{rx:.1f}" ry="{ry:.1f}" '
             f'transform="rotate({ang_deg:.1f} {c[0]:.1f} {c[1]:.1f})" class="{cls}"/>',
             [(c[0]-rx, c[1]-rx), (c[0]+rx, c[1]+rx)])
 
-def project(p, skew):
-    return (p[0] + skew*p[2], p[1], p[2])
+# Projection functions: each returns (screen_x, screen_y, depth_value)
+# depth_value is used for z-sorting (draw far parts first).
+# For side/front/back views depth = z (horizontal depth).
+# For top view depth = -y (higher y = closer to viewer = draws first in asc sort).
+# For bottom view depth = y (lower y = farther = draws first in asc sort).
+
+def proj_side(p):   # right side view: x → right, y → down
+    return (p[0], p[1], p[2])
+
+def proj_left(p):   # left side view: -x → right, y → down
+    return (-p[0], p[1], -p[2])
+
+def proj_front(p):  # front view: z → right, y → down
+    return (p[2], p[1], p[0])
+
+def proj_back(p):   # back view: -z → right, y → down
+    return (-p[2], p[1], -p[0])
+
+def proj_top(p):    # top view: z → right, -x → down; depth = -y (higher y = closer)
+    return (p[2], -p[0], -p[1])
+
+def proj_bottom(p): # bottom view: -z → right, x → down; depth = y (lower y = farther)
+    return (-p[2], p[0], p[1])
+
+PROJECTIONS = {
+    "side": proj_side,
+    "left": proj_left,
+    "front": proj_front,
+    "back": proj_back,
+    "top": proj_top,
+    "bottom": proj_bottom,
+}
+
+def project(p, proj_fn, skew):
+    sx, sy, sz = proj_fn(p)
+    # Skew applies only to side views (adds depth along screen_x)
+    if proj_fn in (proj_side, proj_left):
+        sx = sx + skew * sz
+    return (sx, sy, sz)
+
+# ----------------------------------------------------------------- 3MF export
+
+BEAM_LATTICE_NS = "urn:three-mesh-bfx:beamlattice:1.0.0"
+DEFAULT_RADIUS = 2.0
+
+# Skeleton connections: (label_a, label_b) — flattened keys into the skeleton dict
+# Nested dicts use dot notation: "hi.right" -> sk["hi"]["right"]
+BEAM_CONNECTIONS = [
+    # legs
+    ("right_ankle", "right_knee"),
+    ("left_ankle", "left_knee"),
+    ("right_knee", "hi.right"),
+    ("left_knee", "hi.left"),
+    # torso
+    ("hi.right", "hi.left"),
+    ("hi.right", "sh_c"),
+    ("hi.left", "sh_c"),
+    ("sh_c", "neck"),
+    ("neck", "head"),
+    # shoulders
+    ("sh.right", "sh.left"),
+    ("sh.right", "sh_c"),
+    ("sh.left", "sh_c"),
+    # arms
+    ("sh.right", "elbows.right"),
+    ("elbows.right", "hands.right"),
+    ("sh.left", "elbows.left"),
+    ("elbows.left", "hands.left"),
+    # sword (if present)
+]
+
+def _f3(p):
+    return (round(p[0], 3), round(p[1], 3), round(p[2], 3))
+
+def _cylinder_vertices(ax, ay, az, bx, by, bz, r, segments=12):
+    """Generate (vertices, indices) for a cylinder from (ax,ay,az) to (bx,by,bz)."""
+    dx, dy, dz = bx - ax, by - ay, bz - az
+    length = math.sqrt(dx*dx + dy*dy + dz*dz)
+    if length < 1e-9:
+        return [], []
+    ux, uy, uz = dx/length, dy/length, dz/length
+    # Build orthonormal basis
+    if abs(ux) < 0.9:
+        cx, cy, cz = 1.0, 0.0, 0.0
+    else:
+        cx, cy, cz = 0.0, 1.0, 0.0
+    ex = cy*uz - cz*uy
+    ey = cz*ux - cx*uz
+    ez = cx*uy - cy*ux
+    el = math.sqrt(ex*ex + ey*ey + ez*ez) or 1.0
+    ex, ey, ez = ex/el, ey/el, ez/el
+    fx = ey*uz - ez*uy
+    fy = ez*ux - ex*uz
+    fz = ex*uy - ey*ux
+    verts = []
+    for i in range(segments):
+        a = 2.0 * math.pi * i / segments
+        ca, sa = math.cos(a), math.sin(a)
+        nx = ex*ca + fx*sa
+        ny = ey*ca + fy*sa
+        nz = ez*ca + fz*sa
+        verts.append((ax + nx*r, ay + ny*r, az + nz*r))
+        verts.append((bx + nx*r, by + ny*r, bz + nz*r))
+    ca_idx, cb_idx = 2*segments, 2*segments+1
+    verts.append((ax, ay, az))   # start cap center
+    verts.append((bx, by, bz))   # end cap center
+    idx = []
+    for i in range(segments):
+        a, b, c, d = i*2, i*2+1, ((i+1)%segments)*2, ((i+1)%segments)*2+1
+        idx += [a, c, b, b, c, d]           # side, outward after Z-up transform
+        idx += [ca_idx, c, a]                # start cap (faces -u)
+        idx += [cb_idx, b, d]                 # end cap (faces +u)
+    return verts, idx
+
+def _sphere_vertices(cx, cy, cz, r, segments=12, rings=8):
+    """UV sphere in skeleton space; outward-facing after the Z-up transform."""
+    top = (cx, cy - r, cz)
+    bottom = (cx, cy + r, cz)
+    ring_verts = []
+    for i in range(1, rings):
+        phi = math.pi * i / rings
+        ring = []
+        for j in range(segments):
+            th = 2.0 * math.pi * j / segments
+            ring.append((cx + r*math.sin(phi)*math.cos(th),
+                        cy - r*math.cos(phi),
+                        cz + r*math.sin(phi)*math.sin(th)))
+        ring_verts.append(ring)
+    verts = [top, bottom]
+    for ring in ring_verts:
+        verts.extend(ring)
+    def ri(i, j): return 2 + i*segments + j
+    idx = []
+    for j in range(segments):
+        idx += [0, ri(0, (j+1) % segments), ri(0, j)]           # top fan
+    for i in range(len(ring_verts) - 1):
+        for j in range(segments):
+            a, b = ri(i, j), ri(i, (j+1) % segments)
+            c, d = ri(i+1, j), ri(i+1, (j+1) % segments)
+            idx += [a, b, c, b, d, c]
+    last = len(ring_verts) - 1
+    for j in range(segments):
+        idx += [1, ri(last, j), ri(last, (j+1) % segments)]           # bottom fan
+    return verts, idx
+
+def export_3mf(sk, radius=DEFAULT_RADIUS):
+    """Build a valid 3MF ZIP with actual cylinder mesh geometry for the wireframe."""
+    # Flatten nested skeleton keys for lookup
+    flat = {}
+    for k, v in sk.items():
+        if isinstance(v, dict):
+            for sk2, v2 in v.items():
+                if isinstance(v2, (list, tuple)) and len(v2) == 3:
+                    flat[f"{k}.{sk2}"] = v2
+        elif isinstance(v, (list, tuple)) and len(v) == 3:
+            flat[k] = v
+
+    # Collect all points
+    points = {}
+    for a, b in BEAM_CONNECTIONS:
+        if a in flat and a not in points:
+            points[a] = _f3(flat[a])
+        if b in flat and b not in points:
+            points[b] = _f3(flat[b])
+    sword_keys = [k for k in flat if k.startswith("sword.")]
+    if sword_keys:
+        for key in ("sword.tsuba", "sword.kissaki", "sword.tsuka_end"):
+            if key in flat and key not in points:
+                points[key] = _f3(flat[key])
+
+    # Build all beam segments with radii
+    beam_specs = []
+    for a, b in BEAM_CONNECTIONS:
+        if a in points and b in points:
+            beam_specs.append((points[a], points[b], radius))
+    for s in ("right", "left"):           # feet: ankle -> toe
+        key = s + "_ankle"
+        if key in points:
+            toe = _f3(add(points[key], scl(sk[s + "_footdir"], FOOT)))
+            beam_specs.append((points[key], toe, radius))
+    if sword_keys:
+        for a, b in [("sword.tsuka_end", "sword.tsuba"), ("sword.tsuba", "sword.kissaki")]:
+            if a in points and b in points:
+                beam_specs.append((points[a], points[b], radius * 0.8))
+
+    # Spheres: head and hands
+    sphere_specs = [(_f3(sk["head"]), HEAD_R)]
+    for s in ("right", "left"):
+        r = HAND_CLOSED_R if sk_style(sk, s) == "closed" else HAND_OPEN_L / 2
+        sphere_specs.append((_f3(sk["hands"][s]), r))
+
+    # Generate mesh (beam cylinders + spheres)
+    all_verts = []
+    all_idx = []
+    vert_offset = 0
+    for pa, pb, r in beam_specs:
+        verts, idx = _cylinder_vertices(pa[0], pa[1], pa[2], pb[0], pb[1], pb[2], r)
+        if verts:
+            all_verts.extend(verts)
+            all_idx.extend([i + vert_offset for i in idx])
+            vert_offset += len(verts)
+    for c, r in sphere_specs:
+        verts, idx = _sphere_vertices(c[0], c[1], c[2], r)
+        all_verts.extend(verts)
+        all_idx.extend([i + vert_offset for i in idx])
+        vert_offset += len(verts)
+
+    # Build 3MF (structure matches the official lib3MF writer)
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as zf:
+        zf.writestr("[Content_Types].xml", _ct_types())
+        zf.writestr("_rels/.rels", _root_rels())
+        zf.writestr("3D/3dmodel.model", _model_xml(all_verts, all_idx))
+    return buf.getvalue()
+
+def _ct_types():
+    return (
+        '<?xml version="1.0" encoding="utf-8"?>\n'
+        '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">\n'
+        '  <Default Extension="jpeg" ContentType="image/jpeg"/>\n'
+        '  <Default Extension="jpg" ContentType="image/jpeg"/>\n'
+        '  <Default Extension="model" '
+        '            ContentType="application/vnd.ms-package.3dmanufacturing-3dmodel+xml"/>\n'
+        '  <Default Extension="png" ContentType="image/png"/>\n'
+        '  <Default Extension="rels" '
+        '            ContentType="application/vnd.openxmlformats-package.relationships+xml"/>\n'
+        '  <Default Extension="texture" '
+        '            ContentType="application/vnd.ms-package.3dmanufacturing-3dmodeltexture"/>\n'
+        '</Types>\n'
+    )
+
+def _root_rels():
+    return (
+        '<?xml version="1.0" encoding="utf-8"?>\n'
+        '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">\n'
+        '  <Relationship Type="http://schemas.microsoft.com/3dmanufacturing/2013/01/3dmodel" '
+        'Target="/3D/3dmodel.model" Id="rel0"/>\n'
+        '</Relationships>\n'
+    )
+
+def _to_3mf(p):
+    """Skeleton (x forward, y down, z toward viewer) -> 3MF right-handed
+    (x right, y into screen, z up)."""
+    return (p[0], -p[2], -p[1])
+
+def _model_xml(verts, idx):
+    v_str = " ".join(
+        f'<vertex x="{v[0]:.3f}" y="{v[1]:.3f}" z="{v[2]:.3f}"/>'
+        for v in (_to_3mf(v) for v in verts))
+    t_str = "\n        ".join(
+        f'<triangle v1="{idx[k]}" v2="{idx[k+1]}" v3="{idx[k+2]}"/>'
+        for k in range(0, len(idx), 3)
+    )
+    return (
+        '<?xml version="1.0" encoding="utf-8"?>\n'
+        '<model xmlns="http://schemas.microsoft.com/3dmanufacturing/core/2015/02" '
+        'unit="millimeter">\n'
+        '  <resources>\n'
+        '    <object id="1" type="model" name="skeleton">\n'
+        '      <mesh>\n'
+        '        <vertices>\n'
+        f'          {v_str}\n'
+        '        </vertices>\n'
+        '        <triangles>\n'
+        f'          {t_str}\n'
+        '        </triangles>\n'
+        '      </mesh>\n'
+        '    </object>\n'
+        '  </resources>\n'
+        '  <build>\n'
+        '    <item objectid="1"/>\n'
+        '  </build>\n'
+        '</model>\n'
+    )
 
 def render(sk, o):
     cw = Canvas()
-    P = lambda p: project(p, o.skew)
+    P = lambda p: project(p, o.proj_fn, o.skew)
     hands = sk["hands"]
     hand_dir = sk.get("_hand_dir", {})
 
@@ -506,25 +791,26 @@ def render(sk, o):
             sword_ang = math.degrees(math.atan2(k0[1]-t0[1], k0[0]-t0[0]))
 
     for s in ("left", "right"):
-        z = side_z(s, SHOULDER_HALF)
+        z3d = side_z(s, SHOULDER_HALF)
         rank = 0 if s == "left" else 1
         style = sk_style(sk, s)
         el = P(sk["elbows"][s])
         hd = P(hands[s])
         shd = P(sk["sh"][s])
-        far = " far" if z < 0 else ""
+        depth = shd[2]
+        far = " far" if z3d < 0 else ""
         if style == "closed":
             # forearm stops at the fist's edge (the wrist side), not its center
             dl = math.hypot(hd[0]-el[0], hd[1]-el[1]) or 1.0
             edge = (hd[0] + (el[0]-hd[0])/dl*HAND_CLOSED_R,
                     hd[1] + (el[1]-hd[1])/dl*HAND_CLOSED_R, hd[2])
-            cw.line(z, rank, shd, el, "limb"+far)
-            cw.line(z, rank, el, edge, "limb"+far)
+            cw.line(depth, rank, shd, el, "limb"+far)
+            cw.line(depth, rank, el, edge, "limb"+far)
         else:
-            cw.poly(z, rank, [shd, el, hd], "limb"+far)
+            cw.poly(depth, rank, [shd, el, hd], "limb"+far)
         if style == "closed":
-            cw.dot(z, rank+0.5, hd, HAND_CLOSED_R,
-                   "fist" + (" farfist" if z < 0 else ""))
+            cw.dot(depth, rank+0.5, hd, HAND_CLOSED_R,
+                   "fist" + (" farfist" if z3d < 0 else ""))
         else:
             # open hand: oval 20 x 5.  Long axis: per-hand override, else the
             # blade direction, else the forearm direction.  The wrist end of
@@ -539,7 +825,7 @@ def render(sk, o):
             a = math.radians(ang)
             c = (hd[0] + math.cos(a)*HAND_OPEN_L/2,
                 hd[1] + math.sin(a)*HAND_OPEN_L/2, hd[2])
-            cw.oval(z, rank+0.5, c, HAND_OPEN_L/2, HAND_OPEN_W/2, ang,
+            cw.oval(depth, rank+0.5, c, HAND_OPEN_L/2, HAND_OPEN_W/2, ang,
                    "limb openhand"+far)
 
     # neck (head -> shoulders), shoulder/hip bars, then torso
@@ -553,27 +839,29 @@ def render(sk, o):
     cw.dot(0, 1, P(sk["head"]), HEAD_R, "limb head")
 
     for s in ("left", "right"):
-        z = side_z(s, HIP_HALF)
+        z3d = side_z(s, HIP_HALF)
         hip = P(sk["hi"][s])
         kn = P(sk[s+"_knee"])
         an = P(sk[s+"_ankle"])
+        depth = hip[2]
         far = " far" if s == "left" else ""
-        cw.poly(z, 0, [hip, kn, an], "limb"+far)
-        cw.line(z, 0, an, P(add(sk[s+"_ankle"], scl(sk[s+"_footdir"], FOOT))),
+        cw.poly(depth, 0, [hip, kn, an], "limb"+far)
+        cw.line(depth, 0, an, P(add(sk[s+"_ankle"], scl(sk[s+"_footdir"], FOOT))),
                "limb"+far)
 
     sw = sk.get("sword")
     if sw:
-        z = sw["tsuba"][2]
-        tsuba, kissaki = P(sw["tsuba"]), P(sw["kissaki"])
+        ptsuba = P(sw["tsuba"])
+        tsuba, kissaki = ptsuba, P(sw["kissaki"])
         tsuka_end = P(sw["tsuka_end"])
-        cw.line(z, 0, tsuka_end, tsuba, "limb")          # tsuka
+        depth = ptsuba[2]
+        cw.line(depth, 0, tsuka_end, tsuba, "limb")          # tsuka
         d2 = (kissaki[0]-tsuba[0], kissaki[1]-tsuba[1])
         l2 = math.hypot(*d2) or 1.0
         t = ((-d2[1]/l2)*(TSUBA/2), d2[0]/l2*(TSUBA/2))
-        cw.line(z, 0, (tsuba[0]-t[0], tsuba[1]-t[1], 0),
+        cw.line(depth, 0, (tsuba[0]-t[0], tsuba[1]-t[1], 0),
                       (tsuba[0]+t[0], tsuba[1]+t[1], 0), "limb")   # tsuba
-        cw.line(z, 0, tsuba, kissaki, "blade")
+        cw.line(depth, 0, tsuba, kissaki, "blade")
 
     cw.items.sort(key=lambda it: (it[0], it[1]))
     body = "\n  ".join(it[2] for it in cw.items)
@@ -626,6 +914,11 @@ def render_all(o):
     files = sorted(DATA_DIR.glob("*.json"))
     if not files:
         sys.exit(f"no pose JSONs in {DATA_DIR}")
+    append_view = o.view is not None
+    # render-all: default to "side" view (the existing default)
+    if o.view is None:
+        o.view = "side"
+    o.proj_fn = PROJECTIONS[o.view]
     bad = 0
     for f in files:
         try:
@@ -636,9 +929,14 @@ def render_all(o):
             continue
         for line in diag:
             print(f"{f.stem}: {line}", file=sys.stderr)
-        out = FIG_DIR / (f.stem + ".svg")
+        suffix = f"-{o.view}" if append_view else ""
+        out = FIG_DIR / (f.stem + suffix + ".svg")
         out.write_text(render(sk, o))
         print(out)
+        if o.export_3mf:
+            out_3mf = FIG_DIR / (f.stem + suffix + ".3mf")
+            out_3mf.write_bytes(export_3mf(sk))
+            print(out_3mf)
     return bad
 
 # ----------------------------------------------------------------- dump
@@ -701,14 +999,25 @@ def main():
     ap.add_argument("-o", "--out", help="output SVG file")
     ap.add_argument("--pad", type=float, default=20.0, help="viewBox padding")
     ap.add_argument("--skew", type=float, default=0.0,
-                   help="depth skew: screen_x = x + skew*z (0 = flat side view)")
+                    help="depth skew, side views only: screen_x = base + skew*z")
+    ap.add_argument("--view",
+                    choices=["side", "left", "front", "back", "top", "bottom"],
+                    default=None,
+                    help="orthographic projection (default: side if --skew, else front)")
     ap.add_argument("--dump", action="store_true", help="print computed skeleton")
     ap.add_argument("--render-all", action="store_true",
                    help="render every assets/data/*.json into assets/figures/examples/")
+    ap.add_argument("--export-3mf", action="store_true",
+                   help="export 3D wireframe as 3MF with Beam Lattice Extension")
     o = ap.parse_args()
 
     if o.render_all:
         sys.exit(1 if render_all(o) else 0)
+
+    # Resolve view: --skew implies "side"; default to "front" otherwise
+    if o.view is None:
+        o.view = "side" if o.skew != 0.0 else "front"
+    o.proj_fn = PROJECTIONS[o.view]
 
     if not o.pose:
         ap.error("pose JSON required (or --render-all)")
@@ -723,11 +1032,24 @@ def main():
 
     svg = render(sk, o)
     if o.out:
+        if o.export_3mf:
+            out_3mf = Path(o.out).with_suffix(".3mf")
+            data = export_3mf(sk)
+            with open(out_3mf, "wb") as f:
+                f.write(data)
+            print(out_3mf)
         with open(o.out, "w") as f:
             f.write(svg)
         print(o.out)
     else:
         sys.stdout.write(svg)
+    if o.export_3mf and not o.out:
+        data = export_3mf(sk)
+        label = "-" if o.pose == "-" else Path(o.pose).stem
+        out_3mf = Path(label + ".3mf")
+        with open(out_3mf, "wb") as f:
+            f.write(data)
+        print(out_3mf)
     if o.dump:
         print(json.dumps(dump_frames(sk), indent=1))
 

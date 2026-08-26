@@ -76,13 +76,15 @@ In-use figures (OLD, hand-tuned 2D — leave as-is): `chudan-no-kamae.svg`, `jod
 
 ### 3D generator (`scripts/stick-figure.py`)
 
-Everything is computed in 3D (x, y, z); projection to the side view (screen_x = x + skew·z, screen_y = y) happens only at draw time. The FEET drive the construction — the head is NOT an input anymore.
+Everything is computed in 3D (x, y, z); projection to screen happens only at draw time. Six orthographic projections are available (`--view`; default side). The FEET drive the construction — the head is NOT an input anymore.
 
 - Pose data: `assets/data/*.json` — `chudan`, `jodan`, `gedan`, `hasso`, `waki`, `chudan-nosword` (forward stance), plus a `-hanmi` variant of each of the first five (hanmi) → rendered to `assets/figures/examples/`.
 - Usage:
   - `python3 scripts/stick-figure.py assets/data/NAME.json -o out.svg` — one pose
-  - `python3 scripts/stick-figure.py --render-all` — every `assets/data/*.json`; failing files are skipped with a message, exit 1 if any skipped
-  - `--skew K` — depth skew, screen_x = x + K·z (0 = flat side view; the user views with `--skew -0.2`)
+  - `python3 scripts/stick-figure.py --render-all` — every `assets/data/*.json`; failing files are skipped with a message, exit 1 if any skipped. With `--view`, the view name is appended to the output filenames (`chudan-front.svg`); without it, names are unchanged (`chudan.svg`).
+  - `--view {side,left,front,back,top,bottom}` — orthographic projection (screen_x, screen_y): side `x, y`; left `-x, y`; front `z, y`; back `-z, y`; top `z, -x` (figure faces up/away); bottom `-z, x` (figure faces down/toward). In the top/bottom views the figure's right side stays on the right, as in the front view. Default: `side` if `--skew` is given, else `front` (single pose); `side` for `--render-all`.
+  - `--skew K` — depth skew, side views only: screen_x = base + K·z (0 = flat; the user views with `--skew -0.2`)
+  - `--export-3mf` — also write a 3MF of the 3D wireframe (next to the SVG with a `.3mf` suffix; with `--render-all`, all poses). See "3MF export" below.
   - `--dump` — print the computed skeleton as JSON, nested by coordinate frame (ground / spine / per-shoulder arm / sword)
   - Build trace (always, stderr): every computed location, printed in its own frame — ground (ankles, toes, knees, hips, hip center), spine (hips, shoulder base, shoulders, neck, head), per shoulder (hand, elbow), sword (tsuba / tsuka end / kissaki from the right hand) — followed by summary diagnostics (stance, leg bends, equidistant deviation, arm reach).
 
@@ -95,7 +97,7 @@ Coordinate frames (nothing is specified as a plain absolute coordinate):
 - **ground** — origin: the FRONT foot's ankle, declared in the pose file (`"front_foot"`), at (0, 0, 0); y = 0 at ground level. Foot points, knees and hips live here. The back foot's ground level (`"feet": {"back_y": ...}`; 0 = level ground, the default, so the key is omittable) is the only foot input; its x is computed (forward) or the whole foot (hanmi).
 - **spine** — origin: the base of the spine (the hip center). Hip points, the shoulder base, the shoulder points, the neck and the head live here.
 - **shoulder** — origin: each shoulder. That arm's hand and elbow live here; the sword's points (tsuba / tsuka end / kissaki) live relative to the right hand (its grip). The hand's z is addressed from the shoulder; a 4th element `a` (default false) addresses it from the body centerline (the shoulder base's z) instead — a hand on the centerline is `[x, y, 0, true]` (even though the spine level sits at z ≠ 0 in the ground frame).
-- Draw order by z (far parts first). The derived left hand sits exactly on the sword axis in 3D and draws at its own z (no depth hack needed).
+- Draw order by depth (far parts first): side/left/front/back views sort by z; top/bottom views sort by y (the projection functions return the depth value — top negates it so higher y = closer = draws first). The derived left hand sits exactly on the sword axis in 3D and draws at its own depth (no depth hack needed).
 - Depth shading: near side (right arm/leg) and middle (torso, neck, head, sword, shoulder/hip bars) = `#222`; far side (left arm, left leg, their hands) = charcoal `#444`.
 - With non-zero skew, shoulder/hip connector bars are drawn (tie the limbs to the torso; invisible when flat). In forward stance the hips share x and y, so the hip bar projects to a point at 0 skew.
 
@@ -153,6 +155,15 @@ Example notes:
 - jodan/jodan-hanmi: `elbow_dir` right and left `[1, 0, 0]` (elbows lead forward — the default DOWN pick would trail the right elbow back). waki/waki-hanmi: `elbow_dir` right `[-1, 0, 0]`, left `[1, 0, 0]`.
 - Sword angles were converted from the old right-hand→kissaki axes: chudan 20/0, gedan −34/0, jodan 45/180, hasso 90/0, waki −45/155.
 
+### 3MF export (`--export-3mf`)
+
+Writes the 3D wireframe as a 3MF (triangle mesh) for viewing/3D-printing in any 3MF viewer. Structure matches the official lib3MF writer: `3D/3dmodel.model` part + root `_rels/.rels` + content types (a missing root rels or wrong `unit`/`objectid` attribute names makes every viewer reject the file).
+
+- Geometry: every bone is a capped 12-gon cylinder (beam radius 2mm, sword beams 0.8×), feet are ankle→toe beams, and the head (r 20) and hands (fist r 7.5, open hand r 10) are UV spheres.
+- Coordinates: skeleton space is converted to 3MF's right-handed Z-up space via (x, y, z) → (x, −z, −y), so the figure stands upright on z = 0 in viewers.
+- Winding: all triangles outward-facing (mesh is manifold and consistently oriented; verify with signed volume > 0 — the winding was determined numerically, the interleaved cylinder vertex layout `[A0, B0, A1, B1, ...]` makes the winding easy to get wrong).
+- Verified against the official 3D Printing Consortium library (`pip install py-lib3mf`, reader in strict mode: zero errors/warnings, `ismanifoldandoriented` true) for all eleven poses.
+
 ### Review list (next session)
 
 1. **Hanmi equidistant deviation is 18.7px** (hip center 155.0 from the front foot vs 173.7 from the computed back foot, with the hasso data). The front-knee-offset + 45°-thigh derivation and the 15° back bend do not currently satisfy "hip midpoint equidistant from both feet" — decide whether to adjust (offset, thigh angle, back bend) or accept the deviation.
@@ -161,7 +172,7 @@ Example notes:
 4. **Embedding heights are stale** — the `## Diagrams` table heights in `Foundations/Sword-Stances.md` (jōdan 200 / chūdan 149 / …) were computed from the OLD viewBoxes; re-derive them when the new figures are embedded (rule: reference pose `height="200"`, others `200 × viewBoxHeight/viewBoxHeight_ref`).
 5. **Swap decision** — the in-use figures in `assets/figures/` (`chudan-no-kamae.svg` etc.) are still the old hand-tuned 2D ones referenced by `Foundations/Sword-Stances.md`; the `examples/` versions are the new geometry. Decide when/whether to replace the in-use figures with generator output (and re-crop via `scripts/crop-svg.sh` — the examples are not cropped).
 
-Done this session: the three out-of-reach hands were retuned (gedan right `[65.6, 74.3, 0, true]`, waki right `[-7.5, 75, 5]`, chudan-hanmi left `[50.0, 73.7, 0, true]` — all now ≤ 107/110) and `--render-all` renders all eleven poses; the pose format moved to the hierarchical coordinate frames above.
+Done this session: added `--view` (six orthographic projections; `--render-all` appends the view to filenames when `--view` is given), top/bottom depth sorting by y, and `--export-3mf` (capped-tube wireframe + head/hand spheres, validated against the official lib3MF in strict mode for all eleven poses). Earlier: the three out-of-reach hands were retuned (gedan right `[65.6, 74.3, 0, true]`, waki right `[-7.5, 75, 5]`, chudan-hanmi left `[50.0, 73.7, 0, true]` — all now ≤ 107/110); the pose format moved to the hierarchical coordinate frames above.
 
 ### Embedding in Markdown
 
