@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-136.1 -360.5 169 363" width="169" height="363">
+  <style>
+    .limb { stroke: #222; stroke-width: 5.0; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .far { stroke: #888; }
+    .blade { stroke: #222; stroke-width: 4.0; stroke-linecap: round; }
+    .head { fill: #fff; }
+    .openhand { fill: #fff; }
+    .fist { fill: #222; }
+    .farfist { fill: #888; }
+  </style>
+  <line x1="-49.6" y1="-256.3" x2="-38.8" y2="-205.5" class="limb far"/>
+  <line x1="-38.8" y1="-205.5" x2="-34.7" y2="-204.6" class="limb far"/>
+  <circle cx="-42.1" cy="-206.2" r="7.5" class="fist farfist"/>
+  <line x1="-49.6" y1="-276.3" x2="-49.6" y2="-256.3" class="limb"/>
+  <line x1="-49.6" y1="-256.3" x2="-49.6" y2="-136.3" class="limb"/>
+  <polyline points="-49.6,-136.3 7.0,-79.7 0.0,0.0" class="limb far"/>
+  <line x1="0.0" y1="0.0" x2="30.0" y2="0.0" class="limb far"/>
+  <circle cx="-49.6" cy="-296.3" r="20.0" class="limb head"/>
+  <polyline points="-49.6,-136.3 -88.4,-66.3 -133.1,0.0" class="limb"/>
+  <line x1="-133.1" y1="0.0" x2="-103.1" y2="0.0" class="limb"/>
+  <line x1="-42.1" y1="-187.5" x2="-42.1" y2="-238.0" class="limb"/>
+  <line x1="-47.6" y1="-238.0" x2="-36.6" y2="-238.0" class="limb"/>
+  <line x1="-42.1" y1="-238.0" x2="-42.1" y2="-358.5" class="blade"/>
+  <line x1="-49.6" y1="-256.3" x2="-90.5" y2="-212.3" class="limb"/>
+  <line x1="-90.5" y1="-212.3" x2="-49.3" y2="-223.1" class="limb"/>
+  <circle cx="-42.1" cy="-225.0" r="7.5" class="fist"/>
+</svg>

@@ -30,23 +30,23 @@
 <table>
 <tr>
 <td style="text-align:center; vertical-align:bottom">
-<img src="../../assets/figures/chudan-no-kamae-cropped.svg" height="149" alt="Chūdan-no-kamae">
+<img src="../../assets/figures/stance/chudan-side-cropped.svg" height="153" alt="Chūdan-no-kamae">
 <br>Chūdan-no-kamae<br>中段の構え
 </td>
 <td style="text-align:center; vertical-align:bottom">
-<img src="../../assets/figures/jodan-no-kamae-cropped.svg" height="200" alt="Jōdan-no-kamae">
+<img src="../../assets/figures/stance/jodan-side-cropped.svg" height="200" alt="Jōdan-no-kamae">
 <br>Jōdan-no-kamae<br>上段の構え
 </td>
 <td style="text-align:center; vertical-align:bottom">
-<img src="../../assets/figures/gedan-no-kamae-cropped.svg" height="149" alt="Gedan-no-kamae">
+<img src="../../assets/figures/stance/gedan-side-cropped.svg" height="153" alt="Gedan-no-kamae">
 <br>Gedan-no-kamae<br>下段の構え
 </td>
 <td style="text-align:center; vertical-align:bottom">
-<img src="../../assets/figures/hasso-no-kamae-cropped.svg" height="174" alt="Hassō-no-kamae">
+<img src="../../assets/figures/stance/hasso-side-cropped.svg" height="172" alt="Hassō-no-kamae">
 <br>Hassō-no-kamae<br>八相の構え
 </td>
 <td style="text-align:center; vertical-align:bottom">
-<img src="../../assets/figures/waki-gamae-cropped.svg" height="149" alt="Waki-gamae">
+<img src="../../assets/figures/stance/waki-side-cropped.svg" height="153" alt="Waki-gamae">
 <br>Waki-gamae<br>脇構え
 </td>
 </tr>

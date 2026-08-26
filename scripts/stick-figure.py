@@ -99,7 +99,7 @@ Proportions (px; head = 40):
 
 Depth shading: in a right-side view the near side (right, +z) and middle
 (z=0: torso, head, neck, sword) draw black #222; the far side (left, -z:
-left arm & leg) draws charcoal gray #444.
+left arm & leg) draws medium gray #888.
 
 Pose JSON:
 {
@@ -164,7 +164,7 @@ LEG_REACH = THIGH + SHIN           # 160
 LIMB_W = 5.0
 BLADE_W = 4.0
 COLOR = "#222"        # near & middle (right side & center)
-FAR_COLOR = "#ffcccc"    # light red: far side (left) limbs
+FAR_COLOR = "#888"       # medium gray: far side (left) limbs
 DOWN = (0.0, 1.0, 0.0)
 
 # Sword grip, computed once from the parts.  The fist (r HAND_CLOSED_R)

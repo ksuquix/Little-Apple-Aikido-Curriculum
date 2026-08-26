@@ -26,19 +26,18 @@ GEOMETRY=$(magick "$PNG" -fuzz 5% +repage -format "%@" info:)
 read -r DIMS <<< "$GEOMETRY"
 IFS='x+' read -r NEW_W NEW_H OFFSET_X OFFSET_Y <<< "$DIMS"
 
-# 2.5. Add original SVG viewBox offset
+# 2.5. Add original SVG viewBox offset (may be negative/fractional)
+ORIG_X=0
+ORIG_Y=0
 ORIG_VB=$(sed -n 's/.*viewBox="\([^"]*\)".*/\1/p' "$INPUT" | head -1)
 if [ -n "$ORIG_VB" ]; then
-  ORIG_X=$(echo "$ORIG_VB" | cut -d' ' -f1)
-  ORIG_Y=$(echo "$ORIG_VB" | cut -d' ' -f2)
-  OFFSET_X=$((OFFSET_X + ORIG_X))
-  OFFSET_Y=$((OFFSET_Y + ORIG_Y))
+  read -r ORIG_X ORIG_Y _ _ <<< "$ORIG_VB"
 fi
 
 # 3. Apply padding
 PADDING=$((PADDING < 0 ? 0 : PADDING))
-NEW_X=$((OFFSET_X - PADDING))
-NEW_Y=$((OFFSET_Y - PADDING))
+NEW_X=$(awk -v a="$OFFSET_X" -v b="$ORIG_X" -v p="$PADDING" 'BEGIN{printf "%g", a+b-p}')
+NEW_Y=$(awk -v a="$OFFSET_Y" -v b="$ORIG_Y" -v p="$PADDING" 'BEGIN{printf "%g", a+b-p}')
 FINAL_W=$((NEW_W + 2 * PADDING))
 FINAL_H=$((NEW_H + 2 * PADDING))
 

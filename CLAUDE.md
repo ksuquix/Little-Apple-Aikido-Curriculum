@@ -56,6 +56,7 @@ Steps:
 All SVGs in `assets/figures/` are served with tight crops via `scripts/crop-svg.sh`. The script uses `rsvg-convert` + `magick -fuzz 5%` to find content bounds, then updates the root `<svg>` `viewBox`, `width`, and `height` attributes.
 
 - Usage: `scripts/crop-svg.sh <input.svg> [padding_px] [output.svg]`
+- The original viewBox origin may be negative or fractional (stick figures); the offset math is done in awk, not bash integers.
 - All SVGs must have their white `<rect>` background removed before cropping.
 - Always reference the `-cropped.svg` versions in Markdown (`NAME-cropped.svg`).
 - After editing an SVG: run `scripts/crop-svg.sh assets/figures/NAME.svg 0 assets/figures/NAME-cropped.svg` to regenerate the cropped version.
@@ -98,7 +99,7 @@ Coordinate frames (nothing is specified as a plain absolute coordinate):
 - **spine** — origin: the base of the spine (the hip center). Hip points, the shoulder base, the shoulder points, the neck and the head live here.
 - **shoulder** — origin: each shoulder. That arm's hand and elbow live here; the sword's points (tsuba / tsuka end / kissaki) live relative to the right hand (its grip). The hand's z is addressed from the shoulder; a 4th element `a` (default false) addresses it from the body centerline (the shoulder base's z) instead — a hand on the centerline is `[x, y, 0, true]` (even though the spine level sits at z ≠ 0 in the ground frame).
 - Draw order by depth (far parts first): side/left/front/back views sort by z; top/bottom views sort by y (the projection functions return the depth value — top negates it so higher y = closer = draws first). The derived left hand sits exactly on the sword axis in 3D and draws at its own depth (no depth hack needed).
-- Depth shading: near side (right arm/leg) and middle (torso, neck, head, sword, shoulder/hip bars) = `#222`; far side (left arm, left leg, their hands) = charcoal `#444`.
+- Depth shading: near side (right arm/leg) and middle (torso, neck, head, sword, shoulder/hip bars) = `#222`; far side (left arm, left leg, their hands) = medium gray `#888`.
 - With non-zero skew, shoulder/hip connector bars are drawn (tie the limbs to the torso; invisible when flat). In forward stance the hips share x and y, so the hip bar projects to a point at 0 skew.
 
 Proportions (head = 40px):
@@ -164,6 +165,10 @@ Writes the 3D wireframe as a 3MF (triangle mesh) for viewing/3D-printing in any 
 - Winding: all triangles outward-facing (mesh is manifold and consistently oriented; verify with signed volume > 0 — the winding was determined numerically, the interleaved cylinder vertex layout `[A0, B0, A1, B1, ...]` makes the winding easy to get wrong).
 - Material: one `<basematerials id="1">` group with a single `<base name="Blue" displaycolor="#0099FF"/>`, referenced from the object (`<object id="2" ... pid="1" pindex="0">`) — the 3MF core spec's object-level property assignment, so no triangle carries a `pid`. Resource ids share one namespace across all resources, so the object id (2) must not collide with the materials-group id (1).
 - Verified against the official 3D Printing Consortium library (`pip install py-lib3mf`, reader in strict mode: zero errors/warnings, `ismanifoldandoriented` true) for all eleven poses.
+
+### Publishing verified renders (`scripts/update-stance-figures.py`)
+
+After `--render-all --view side` and human verification of `assets/figures/examples/`: `python3 scripts/update-stance-figures.py` copies the side views of the five forward-stance poses into `assets/figures/stance/`, crops each via `scripts/crop-svg.sh` (`{pose}-side-cropped.svg`), and rebuilds the `## Diagrams` table in `Foundations/Sword-Stances.md` — one common px-per-unit scale: tallest figure = `height="200"`, others rounded by cropped viewBox height. (Forward-stance side views only, for now.)
 
 ### Review list (next session)
 
