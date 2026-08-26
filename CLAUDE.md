@@ -72,44 +72,95 @@ Foot-shape changes: update `foot-shape.svg` first, get it approved, then copy th
 
 ## Stick figure poses (kamae, ...)
 
-Files: `chudan-no-kamae.svg`, `jodan-no-kamae.svg`, `gedan-no-kamae.svg`, `hasso-no-kamae.svg`, `waki-gamae.svg` in `assets/figures/`, referenced from the "Base Poses" section of `Foundations/Sword-Stances.md`.
+In-use figures (OLD, hand-tuned 2D — leave as-is): `chudan-no-kamae.svg`, `jodan-no-kamae.svg`, `gedan-no-kamae.svg`, `hasso-no-kamae.svg`, `waki-gamae.svg` in `assets/figures/`, referenced from the "Base Poses" section of `Foundations/Sword-Stances.md`. They use the old proportions (forearm+hand = 60, no neck, no depth) — do NOT regenerate or "fix" them; new figures go through the 3D generator below.
 
-### Conventions
+### 3D generator (`scripts/stick-figure.py`)
 
-- Side view facing right, black (`#222`) on white, round caps/joins; stroke 5 for limbs, 4 for blade; head = white-filled circle r=20; no title, no ground line.
-- No part labels (e.g. "kissaki") unless the user asks for one on a specific diagram.
-- Grip: right hand near the tsuba, left hand at the midpoint of the tsuka. Tsuka ~36px; tsuba short (~11px), perpendicular to the blade.
-- Arms are RIGID: upper arm = forearm = 60px. When a hand moves, recompute the elbow (two-circle intersection) — never stretch a segment.
-- Spine straight up-down: torso top directly above the hip, no forward lean (hip sits under the shoulders, feet shift with it).
+Everything is computed in 3D (x, y, z); projection to the side view (screen_x = x + skew·z, screen_y = y) happens only at draw time. The FEET drive the construction — the head is NOT an input anymore.
 
-### Proportions (artistic, in heads; head = 40px)
+- Pose data: `assets/data/*.json` — `chudan`, `jodan`, `gedan` (forward stance), `hasso`, `waki` (hanmi), `chudan-nosword`, `chudan-hanmi` (user's hanmi experiment) → rendered to `assets/figures/examples/`.
+- Usage:
+  - `python3 scripts/stick-figure.py assets/data/NAME.json -o out.svg` — one pose
+  - `python3 scripts/stick-figure.py --render-all` — every `assets/data/*.json`; failing files are skipped with a message, exit 1 if any skipped
+  - `--skew K` — depth skew, screen_x = x + K·z (0 = flat side view; the user views with `--skew -0.2`)
+  - `--dump` — print the computed skeleton as JSON, nested by coordinate frame (ground / spine / per-shoulder arm / sword)
+  - Build trace (always, stderr): every computed location, printed in its own frame — ground (ankles, toes, knees, hips, hip center), spine (hips, shoulder base, shoulders, neck, head), per shoulder (hand, elbow), sword (tsuba / tsuka end / kissaki from the right hand) — followed by summary diagnostics (stance, leg bends, equidistant deviation, arm reach).
+
+3D conventions:
+
+- x = forward (screen right), y = down (SVG), z = toward the viewer. The figure faces +x, so its RIGHT side = +z = NEAR, left side = −z = FAR.
+
+Coordinate frames (nothing is specified as a plain absolute coordinate):
+
+- **ground** — origin: the FRONT foot's ankle, declared in the pose file (`"front_foot"`), at (0, 0, 0); y = 0 at ground level. Foot points, knees and hips live here. The back foot's ground level (`"feet": {"back_y": ...}`; 0 = level ground, the default, so the key is omittable) is the only foot input; its x is computed (forward) or the whole foot (hanmi).
+- **spine** — origin: the base of the spine (the hip center). Hip points, the shoulder base, the shoulder points, the neck and the head live here.
+- **shoulder** — origin: each shoulder. That arm's hand and elbow live here; the sword's points (tsuba / tsuka end / kissaki) live relative to the right hand (its grip). The hand's z is addressed from the shoulder; a 4th element `a` (default false) addresses it from the body centerline (the shoulder base's z) instead — a hand on the centerline is `[x, y, 0, true]` (even though the spine level sits at z ≠ 0 in the ground frame).
+- Draw order by z (far parts first). The derived left hand sits exactly on the sword axis in 3D and draws at its own z (no depth hack needed).
+- Depth shading: near side (right arm/leg) and middle (torso, neck, head, sword, shoulder/hip bars) = `#222`; far side (left arm, left leg, their hands) = charcoal `#444`.
+- With non-zero skew, shoulder/hip connector bars are drawn (tie the limbs to the torso; invisible when flat). In forward stance the hips share x and y, so the hip bar projects to a point at 0 skew.
+
+Proportions (head = 40px):
 
 | part | heads | px |
 |---|---|---|
 | head (circle diameter) | 1 | 40 (r=20) |
+| neck (head → shoulder gap) | 0.5 | 20 |
+| torso (shoulder → hip) | 3 | 120 |
+| shoulder width (z) | 2 | 80 (±40) |
+| hip width (z) | 1.5 | 60 (±30) |
 | upper arm | 1.5 | 60 |
-| forearm + hand | 1.5 | 60 |
-| torso (shoulder → crotch) | 3 | 120 |
-| thigh | 2 | 80 |
-| shin | 2 | 80 |
+| forearm | 1.25 | 50 |
+| open hand (oval, long × wide) | 0.5 × 0.125 | 20 × 5 |
+| closed hand (dot) | 0.375 | 15 (r=7.5) |
+| thigh / shin | 2 | 80 / 80 |
+| foot (side view) | 0.75 | 30 |
+| tsuka / tsuba / blade | — | 45 / 11 / 115 |
 
-### Shared skeleton
+Construction order (the feet drive everything):
 
-Copy these coordinates, then only change the arms/sword per pose:
+1. Feet: the pose declares the front foot (`"front_foot"`); its ankle is the ground-frame origin (0, 0, 0) at ground level. The only foot input is the back foot's ground level (`"feet": {"back_y": ...}`, 0 = level, default/omittable); the back foot's x is computed (forward) or the whole foot (hanmi), one hip-width away in z. The toe is 30px ahead of the ankle along the foot direction.
+2. Stance (`"stance"`: `"hanmi"` default, or `"forward"`) sets the defaults:
+   - **forward**: hips level AND even (both hips share x and y; only z differs), both feet point straight forward. The front leg places the hip: knee `front_knee_offset` (default 7px) along the foot from the heel, straight up the shin; thigh leaves the knee `front_thigh_angle` (default 45) below horizontal, up-and-back. The hip is fully derived — NOT centered over the stride. The back foot's x is COMPUTED from the back hip and the back leg (5° bend default, knee in front of the foot); only the back foot's y comes from the input.
+   - **hanmi**: hips rotated 45° about the vertical axis (`hip_rot` default ±45 by front side; the forward hip sits on the forward foot's side), front foot 0°, back foot 45° out. The front leg derives the hip exactly as in forward. The back foot is then COMPUTED: behind the back hip by the back leg's span (15° bend default), on the front foot's ground, at the side z one hip-width from the front foot. The deviation of the hip center from being equidistant from both feet is printed (18.7px with the current hasso data — see review list).
+   - Overrides: `hip_rot`, per-foot `foot_rot`, per-leg `knee_bend` (back leg only: 5° forward / 15° hanmi default), per-knee `knee_dir` (pick vector, default the foot direction), `front_knee_offset`, `front_thigh_angle`.
+3. Knees: the front knee is placed (offset above the foot); the back knee is two-circle IK (80/80) with the pick in the foot direction.
+4. Spine, neck, head go straight up from the hip center.
+5. Shoulders rotate by the same angle as the hips (±40 along the rotated axis).
+6. Hands: one is given as `[x, y]`, `[x, y, z]` or `[x, y, z, a]` **relative to the shoulder on the same side**; z is from the shoulder by default (0 = the shoulder's depth), or from the body centerline when `a` is true (the forward-stance grip is on the centerline: `[x, y, 0, true]`). The other hand is derived from the sword; without a sword both must be given.
+7. Sword: fixed parts tsuka 45 / tsuba 11 / blade 115. The fist (r 7.5) touches the back edge of the tsuba with its center on the axis; the left hand sits halfway between the right hand and the tsuka end. Both distances are computed once from the parts and stored: right hand → kissaki 133.5, right hand → left hand −18.75.
+8. Sword input: `angle_from_horizontal` (required; positive up) + `angle_from_center` (default 0) — an azimuth about the vertical axis from straight forward (+x); positive swings toward the viewer (+z). If the left hand is given instead of the right, the right hand is derived the same way.
+9. Elbows: two-circle IK (60/50); pick the solution whose shoulder→elbow direction is closest to a supplied vector (default straight down); `elbow_dir` overrides per elbow.
+10. **No stretching**: a hand farther than 110px from its shoulder, or a foot farther than 160px from its hip, is a hard error — no SVG is written, non-zero exit.
 
-- head: circle (191,205) r=20
-- torso: (190,225) → (190,345) (vertical)
-- front leg: (190,345) → (230,415) → (238,495); foot (238,495) → (260,495)
-- back leg: (190,345) → (150,414) → (136,493); foot (136,493) → (158,493)
-- arm shoulders: right/near (192,232), left/far (187,240)
+Pose JSON:
 
-### Pose values
+```json
+{
+  "stance": "forward",
+  "front_foot": "right",
+  "feet": {"back_y": -2},
+  "hands": {"right": [67.6, 67.3, 0, true]},
+  "sword": {"angle_from_horizontal": 20, "angle_from_center": 0}
+}
+```
 
-- Chudan: sword line 20° up toward opponent's eye line (direction (0.940,-0.342)), grip at belly level — tsuba (262,304), tsuka back to (220,319), blade to kissaki (370,265); tsuba (260,299)→(264,309). Right hand (256,306), elbow (198,292); left hand (241,312), elbow (182,300) (left upper arm runs along/behind the torso — expected, far-side arm).
-- Jodan: sword raised above head, hilt above the front of the face (face front x=211) — tsuba (214,158), blade 45° up-back to kissaki (133,77); tsuka back to (246,190); tsuba (218,154)→(210,162). Right hand (224,168), elbow (251,222); left hand (230,174), elbow (247,232).
-- Gedan: same body as Chudan; sword rotated ~54° CW about the right hand (256,306) so the blade points ~34° down (direction (0.827,0.562)) at the opponent's ankle — tsuba (261,310), tsuka up-back to (224,284), blade to kissaki (356,374); tsuba (258,314)→(264,306). Both hands on the sword line: right hand (256,306), elbow (198,292); left hand (243,297), elbow (183,300).
-- Hassō: same body; sword vertical (pointed straight up) at x=216, along the side of the face (face front x=211) — tsuka end (216,292) = one forearm (60) below shoulder level (232), tsuba (216,247), blade to kissaki (216,132); tsuba (211,247)→(221,247). Right hand (216,272), elbow (157,281) (elbow back). Left hand (216,292) at the tsuka end: left arm drawn as upper arm only, diagonally forward-down from (187,240) (left forearm disappears in 3D perspective).
-- Waki-gamae: same body; end of the hilt barely in front of the body (spine x=190), blade 45° down-back (direction (−0.707,0.707), runs entirely behind the back leg) — tsuka end (195,330), tsuba back-down to (163,362), blade to kissaki (82,443); tsuba (159,358)→(167,366). Right hand (177,348) low on the body, elbow (171,288) (back); left hand (191,334), elbow (226,285) (slightly in front).
+Optional keys: `hip_rot`, `foot_rot`, `knee_bend`, `knee_dir`, `elbow_dir`, `front_knee_offset`, `front_thigh_angle`, a z and centerline flag `a` on the given hand, `hand_style` (open|closed), `hand_dir`.
+
+Example notes:
+
+- Right foot forward: chudan, gedan, jodan, chudan-nosword, chudan-hanmi. Left foot forward: hasso, waki.
+- hasso (user-tuned): right hand `[7.5, 31.3, 8.8]` relative to the right shoulder (z 8.8 in front of it), `elbow_dir` right `[-1, 0, 0]` (elbow trails back), sword 90°/0.
+- Sword angles were converted from the old right-hand→kissaki axes: chudan 20/0, gedan −34/0, jodan 45/180, hasso 90/0, waki −45/180.
+
+### Review list (next session)
+
+1. **Hanmi equidistant deviation is 18.7px** (hip center 155.0 from the front foot vs 173.7 from the computed back foot, with the hasso data). The front-knee-offset + 45°-thigh derivation and the 15° back bend do not currently satisfy "hip midpoint equidistant from both feet" — decide whether to adjust (offset, thigh angle, back bend) or accept the deviation.
+2. **`chudan-hanmi`** — user's experiment file; hands are retuned (right hand `[46.5, 53.3, -37.1]`, left reaches 106.0/110); decide if it stays in `assets/data/`.
+3. **`waki` sword angle** (−45°/180, converted from the old axis) — verify visually (its hand is retuned: `[38.1, 97.3]`).
+4. **Embedding heights are stale** — the `## Diagrams` table heights in `Foundations/Sword-Stances.md` (jōdan 200 / chūdan 149 / …) were computed from the OLD viewBoxes; re-derive them when the new figures are embedded (rule: reference pose `height="200"`, others `200 × viewBoxHeight/viewBoxHeight_ref`).
+5. **Swap decision** — the in-use figures in `assets/figures/` (`chudan-no-kamae.svg` etc.) are still the old hand-tuned 2D ones referenced by `Foundations/Sword-Stances.md`; the `examples/` versions are the new geometry. Decide when/whether to replace the in-use figures with generator output (and re-crop via `scripts/crop-svg.sh` — the examples are not cropped).
+
+Done this session: the three out-of-reach hands were retuned (gedan right `[65.6, 74.3, 0, true]`, waki right `[38.1, 97.3]`, chudan-hanmi right `[46.5, 53.3, -37.1]` — all now ≤ 107/110) and `--render-all` renders all seven poses; the pose format moved to the hierarchical coordinate frames above.
 
 ### Embedding in Markdown
 
@@ -117,7 +168,7 @@ Poses go in the `## Diagrams` table under Base Poses in `Foundations/Sword-Stanc
 
 - Cells: `<td style="text-align:center; vertical-align:bottom">` — row height is set by the tallest figure; `vertical-align:bottom` aligns image bottoms so the feet sit on the same line.
 - Caption: two lines under the image, romaji over kanji: `<br>Chūdan-no-kamae<br>中段の構え`.
-- Heights: keep every figure at the SAME scale (px per local unit). Each pose's viewBox height differs (a raised sword extends it above the head), so give the reference pose `height="200"` and scale the others by viewBox height: `height = 200 × (viewBoxHeight / viewBoxHeight_ref)`. Currently: jōdan 200 (viewBox 423), chūdan 149 (316 → 200×316/423 ≈ 149.4), gedan 149 (316, same as chūdan), hassō 174 (368 → 200×368/423 ≈ 174), waki 149 (316, same as chūdan).
+- Heights: keep every figure at the SAME scale (px per local unit). Each pose's viewBox height differs (a raised sword extends it above the head), so give the reference pose `height="200"` and scale the others by viewBox height: `height = 200 × (viewBoxHeight / viewBoxHeight_ref)`. Currently: jōdan 200 (viewBox 423), chūdan 149 (316 → 200×316/423 ≈ 149.4), gedan 149 (316, same as chūdan), hassō 174 (368 → 200×368/423 ≈ 174), waki 149 (316, same as chūdan). STALE — these are the old-geometry numbers; re-derive when the new figures are embedded (review list item 5).
 
 ## Image paths in Markdown (gotcha)
 

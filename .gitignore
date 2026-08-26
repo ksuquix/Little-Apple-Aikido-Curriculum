@@ -5,3 +5,5 @@ _site
 vendor
 Gemfile.lock
 Gemfile
+__pycache__/
+assets/figures/examples/
