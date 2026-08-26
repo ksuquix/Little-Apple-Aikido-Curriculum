@@ -1,0 +1,12 @@
+{
+  "stance": "hanmi",
+  "front_foot": "right",
+  "hands": {
+    "left": [ 48.9, -57.4, 0,true]
+  },
+  "elbow_dir": {"right": [1, 0, 0],"left":[1,0,0]},
+  "sword": {
+    "angle_from_horizontal": 45,
+    "angle_from_center": 180
+  }
+}

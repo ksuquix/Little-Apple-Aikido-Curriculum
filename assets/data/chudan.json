@@ -1,0 +1,10 @@
+{
+  "stance": "forward",
+  "front_foot": "right",
+  "hands": {
+    "right": [67.6,67.3,0,true]
+  },
+  "sword": {
+    "angle_from_horizontal": 20
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "stance": "hanmi",
+  "front_foot": "left",
+  "hands": {
+    "right": [
+      7.5,
+      31.3,
+      0
+    ]
+  },
+  "sword": {
+    "angle_from_horizontal": 90
+  },
+  "elbow_dir": {
+    "right": [
+      -1,
+      0,
+      0
+    ]
+  }
+}
