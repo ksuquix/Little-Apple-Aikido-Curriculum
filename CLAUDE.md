@@ -198,6 +198,14 @@ That trailing slash is load-bearing: a document URL without it resolves relative
 - Paths with `../` pass through kramdown unchanged and resolve correctly on the live site. Bare `assets/figures/...` (no `../`) now rewrites under the subpath too (baseurl is set) — correct, but keep the `../` form.
 - Verify after editing: `jekyll build`, then `grep -o 'src="[^"]*"' _site/Foundations/Footwork/index.html` — every figure should show the correct relative path.
 
+## Branding / theme (gotchas)
+
+- Palette (taken from littleappledojo.com): `--aka #b22222` firebrick red (links, headings, table headers), `--midori #008000` leaf green, `--sumi #161616` header/text, white page. The apple mark IS the ensō — do not add separate ensō graphics.
+- Brand assets in `assets/images/`: `apple.png` (header mark), `favicon-16x16.png` / `favicon-32x32.png`, `apple-touch-icon.png`. Fonts: Open Sans (theme) + Zen Old Mincho (the header line ちさいりんご合気道 — hiragana, not katakana).
+- **Custom CSS lives in `assets/css/style.scss`, NOT `style.css`**: the cayman theme also ships `assets/css/style.scss` (front matter + `@import 'jekyll-theme-cayman'`), which compiles to the same output `assets/css/style.css`, and in that collision the THEME file wins — a user `style.css` is never emitted (built file is pure theme CSS, no error). Naming the user file `style.scss` shadows the theme file at the source path, so there is no collision.
+- `scripts/rebuild.sh` — stop the server (`.jekyll-serve.pid`, then `pkill -f 'jekyll[s]erve'`; the bracket trick keeps pkill from matching the script's own cmdline), clean `jekyll build`, detached `jekyll serve` (setsid, log `.jekyll-serve.log`), curl-verify the subpath URL. Config changes need a restart; `.md`/layout edits hot-reload.
+- CSS `?v=` cache buster: `site.github.build_revision` on GH Pages, build time locally (via `{% assign %}` — Liquid cannot take pipes inside filter-argument parens).
+
 ## Romanization (Full Hepburn with macrons)
 
 Use full Hepburn romanization with macrons: `ō` for long o, `ū` for long u.

@@ -5,28 +5,33 @@
 
 {% seo %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
+    <meta name="theme-color" content="#161616">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="{{ 'assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+ {% assign cssv = site.github.build_revision %}
+{% unless cssv %}{% assign cssv = site.time | date: '%Y%m%d%H%M' %}{% endunless %}
+    <link rel="stylesheet" href="{{ 'assets/css/style.css?v=' | append: cssv | relative_url }}">
     {% include head-custom.html %}
   </head>
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-      <h1 class="project-name">{{ site.title }}</h1>
+      <div class="brand-row">
+        <img class="brand-apple" src="{{ '/assets/images/apple.png' | relative_url }}" alt="Little Apple Aikido apple mark" width="510" height="623">
+        <h1 class="project-name">{{ site.title }}</h1>
+      </div>
+      <p class="project-kanji">ちさいりんご合気道</p>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-      <h3>https://ksuquix.github.io/Little-Apple-Aikido-Curriculum/</h3>
-      (Under Construction)
     </header>
 
     <main id="content" class="main-content" role="main">
       {{ content }}
 
       <footer class="site-footer">
-          <span class="site-footer-owner">{{ site.github.repository_name }} is maintained by Don Eisele.</span>
+        <span class="site-footer-owner">
+          <a href="https://littleappledojo.com/">Little Apple Aikido</a> · {{ site.github.repository_name | default: 'Little-Apple-Aikido-Curriculum' }} is maintained by Don Eisele.
+        </span>
       </footer>
     </main>
   </body>

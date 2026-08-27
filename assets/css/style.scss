@@ -1,0 +1,128 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Little Apple Aikido brand layer
+   aka    赤   #b22222 firebrick red — links, headings, the main-site brand red
+   midori 緑   #008000 leaf green   — the apple leaf (in the mark itself)
+   sumi   墨   #161616 ink black    — header, text
+   shiro 白    #ffffff paper        — page background */
+
+:root {
+  --aka: #b22222;
+  --aka-deep: #6f1010;
+  --midori: #008000;
+  --sumi: #161616;
+}
+
+::selection {
+  background: var(--aka);
+  color: #fff;
+}
+
+body {
+  color: #333;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial,
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+}
+
+a { color: var(--aka); }
+a:hover { color: var(--aka-deep); }
+
+/* ---------- header ---------- */
+
+.page-header {
+  background-color: var(--sumi);
+  background-image: linear-gradient(120deg, #0a0a0a, #2f2f2f 55%, var(--sumi));
+}
+
+@media screen and (min-width: 64em) {
+  .page-header { padding: 2.5rem 6rem; }
+}
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .page-header { padding: 2rem 4rem; }
+}
+@media screen and (max-width: 42em) {
+  .page-header { padding: 1.5rem 1rem; }
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+.brand-apple {
+  width: 4.25rem;
+  height: auto;
+  flex: none;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+}
+
+.project-name {
+  margin: 0;
+  color: #fff;
+}
+
+@media screen and (min-width: 64em) {
+  .project-name { font-size: 2.75rem; }
+}
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .project-name { font-size: 2rem; }
+}
+@media screen and (max-width: 42em) {
+  .project-name { font-size: 1.4rem; }
+  .brand-apple { width: 3rem; }
+}
+
+.project-kanji {
+  margin: 0.4rem 0 0;
+  font-family: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.project-tagline {
+  margin: 0.6rem 0 0;
+  font-weight: normal;
+  font-size: 1.05rem;
+  opacity: 0.78;
+}
+
+/* ---------- content ---------- */
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  color: var(--aka);
+}
+
+.main-content hr {
+  height: 2px;
+  border: 0;
+  background-image: linear-gradient(90deg, var(--aka), transparent);
+}
+
+.main-content table th {
+  background-color: var(--aka);
+  border-color: var(--aka);
+  color: #fff;
+}
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  padding-top: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.site-footer-owner {
+  display: block;
+  font-weight: normal;
+}
