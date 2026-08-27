@@ -204,7 +204,8 @@ That trailing slash is load-bearing: a document URL without it resolves relative
 - Brand assets in `assets/images/`: `apple.png` (header mark), `favicon-16x16.png` / `favicon-32x32.png`, `apple-touch-icon.png`. Fonts: Open Sans (theme) + Zen Old Mincho (the header line ちさいりんご合気道 — hiragana, not katakana).
 - **Custom CSS lives in `assets/css/style.scss`, NOT `style.css`**: the cayman theme also ships `assets/css/style.scss` (front matter + `@import 'jekyll-theme-cayman'`), which compiles to the same output `assets/css/style.css`, and in that collision the THEME file wins — a user `style.css` is never emitted (built file is pure theme CSS, no error). Naming the user file `style.scss` shadows the theme file at the source path, so there is no collision.
 - `scripts/rebuild.sh` — stop the server (`.jekyll-serve.pid`, then `pkill -f 'jekyll[s]erve'`; the bracket trick keeps pkill from matching the script's own cmdline), clean `jekyll build`, detached `jekyll serve` (setsid, log `.jekyll-serve.log`), curl-verify the subpath URL. Config changes need a restart; `.md`/layout edits hot-reload.
-- CSS `?v=` cache buster: `site.github.build_revision` on GH Pages, build time locally (via `{% assign %}` — Liquid cannot take pipes inside filter-argument parens).
+- CSS `?v=` cache buster: `site.github.build_revision` on GH Pages, build time locally (via a Liquid `assign` tag — Liquid cannot take pipes inside filter-argument parens).
+- CLAUDE.md is itself a rendered page: Liquid tags written literally in it are rendered (a stray one fails the GH Pages build, while local jekyll 4 only warns). Avoid them, or wrap such text in a raw block.
 
 ## Romanization (Full Hepburn with macrons)
 
