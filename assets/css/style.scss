@@ -126,3 +126,12 @@ a:hover { color: var(--aka-deep); }
   display: block;
   font-weight: normal;
 }
+
+/* ---------- stance figures ---------- */
+
+@media screen and (max-width: 42em) {
+  .stance-figure {
+    width: var(--sw, 100%);
+    height: auto;
+  }
+}

@@ -1,3 +1,5 @@
+[← Back to top](../../)
+
 # Sword Stances
 
 ### Chūdan-no-Kamae 中段の構え (Middle Stance)
@@ -30,23 +32,23 @@
 <table>
 <tr>
 <td style="text-align:center; vertical-align:bottom">
-<img src="../../assets/figures/stance/chudan-side-cropped.svg" height="153" alt="Chūdan-no-kamae">
+<img class="stance-figure" src="../../assets/figures/stance/chudan-side-cropped.svg" height="153" alt="Chūdan-no-kamae">
 <br>Chūdan-no-kamae<br>中段の構え
 </td>
 <td style="text-align:center; vertical-align:bottom">
-<img src="../../assets/figures/stance/jodan-side-cropped.svg" height="200" alt="Jōdan-no-kamae">
+<img class="stance-figure" style="--sw:59.93%" src="../../assets/figures/stance/jodan-side-cropped.svg" height="200" alt="Jōdan-no-kamae">
 <br>Jōdan-no-kamae<br>上段の構え
 </td>
 <td style="text-align:center; vertical-align:bottom">
-<img src="../../assets/figures/stance/gedan-side-cropped.svg" height="153" alt="Gedan-no-kamae">
+<img class="stance-figure" style="--sw:93.97%" src="../../assets/figures/stance/gedan-side-cropped.svg" height="153" alt="Gedan-no-kamae">
 <br>Gedan-no-kamae<br>下段の構え
 </td>
 <td style="text-align:center; vertical-align:bottom">
-<img src="../../assets/figures/stance/hasso-side-cropped.svg" height="172" alt="Hassō-no-kamae">
+<img class="stance-figure" style="--sw:59.93%" src="../../assets/figures/stance/hasso-side-cropped.svg" height="172" alt="Hassō-no-kamae">
 <br>Hassō-no-kamae<br>八相の構え
 </td>
 <td style="text-align:center; vertical-align:bottom">
-<img src="../../assets/figures/stance/waki-side-cropped.svg" height="153" alt="Waki-gamae">
+<img class="stance-figure" style="--sw:63.12%" src="../../assets/figures/stance/waki-side-cropped.svg" height="153" alt="Waki-gamae">
 <br>Waki-gamae<br>脇構え
 </td>
 </tr>
