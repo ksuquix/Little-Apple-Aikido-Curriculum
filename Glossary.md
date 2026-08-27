@@ -229,7 +229,7 @@
 | Hiraki-ashi | Diagonal/Open Foot / Side step | A movement to evade or create angles, where you move diagonally to the right or left, often with a slight pivot.|
 
 ## Uke-Nagashi <a id="uke-nagashi"></a>
-Note: if there are better names for these, let me know
+Note: if there are better names for these, let me know.  I'm not completely sure they are all ukenagashi, but it seems like they all are (some karate/taijutsu looking support this)
 
 | Name                       | Typical movement                               | Could be:        |
 | -------------------------- | ---------------------------------------------- | ------------------------------------------ |

@@ -209,25 +209,6 @@ That trailing slash is load-bearing: a document URL without it resolves relative
 - CSS `?v=` cache buster: `site.github.build_revision` on GH Pages, build time locally (via a Liquid `assign` tag — Liquid cannot take pipes inside filter-argument parens).
 - CLAUDE.md is itself a rendered page: Liquid tags written literally in it are rendered (a stray one fails the GH Pages build, while local jekyll 4 only warns). Avoid them, or wrap such text in a raw block.
 
-## Romanization (Full Hepburn with macrons)
+## Language (check LANGUAGE.md)
 
-Use full Hepburn romanization with macrons: `ō` for long o, `ū` for long u.
-
-### Key terms
-
-| term | romanization | notes |
-|---|---|---|
-| 正面 / 正面打ち | shōmen / shōmen-uchi | never `shomenuchi` (one word) |
-| 横面打ち | yokomen-uchi | hyphenate; never `yokomenuchi` or `Yōkumenuchi` |
-| 面打ち | men-uchi | hyphenate; never `menuchi` |
-| 中段の構え | chūdan-no-kamae | |
-| 上段の構え | jōdan-no-kamae | |
-| 肩取り面打ち | katatori-men-uchi | hyphenated in glossary entry |
-
-### Hints
-
-- Always hyphenate compound strikes: `shōmen-uchi`, `yokomen-uchi`, `men-uchi`. The `-uchi` suffix means "strike" and should be separated.
-- When `-uchi` is dropped in context (e.g. "shōmen cut"), keep `shōmen` as the level descriptor.
-- Check Glossary.md as the canonical reference — other files should match it.
-- When in doubt, verify Japanese terms on jisho.org.
-- Run `grep -r 'shomenuchi\|Shomenuchi\|menuchi\|Yokomenuchi'` to catch old-style romanization (missing hyphens).
+All language references live in `LANGUAGE.md`: romanization rules (full Hepburn with macrons), kanji for terms with the sources where each was found, and known variances. Check it before adding or verifying any Japanese term, and update it there when you learn something new.
