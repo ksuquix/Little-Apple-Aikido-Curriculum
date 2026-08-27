@@ -23,7 +23,7 @@ rm -rf _site .jekyll-cache
 bundle exec jekyll build
 
 # 3. Start detached (own session, so it survives this shell exiting).
-setsid nohup bundle exec jekyll serve --port "$PORT" > "$LOG" 2>&1 < /dev/null &
+setsid nohup bundle exec jekyll serve --port "$PORT" --watch > "$LOG" 2>&1 < /dev/null &
 
 # 4. Wait for it, then record the real listener pid and verify the page.
 UP=""
