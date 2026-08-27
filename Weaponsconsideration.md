@@ -58,3 +58,50 @@
 - [Twin Cities Aikido - extensive weapons video reference](https://www.tcaikido.com/?page_id=943)
 - [Kumitachi 1-3, Twin Cities (matches kanai)](https://www.youtube.com/watch?v=Vst9dGeYiyU)
 - [14-count Kumi jo Developed by Kanai sensei and C. Berthiaume sensei](https://www.facebook.com/watch/?v=2065038290292562)
+
+
+
+
+
+https://www.youtube.com/watch?v=8WNXeXMMqKU
+
+kiri-otoshi, suri-otoshi, suri-age -  really fast, no instruction
+
+
+https://www.facebook.com/watch/?v=3458447637539182
+
+chiba style suri-otoshi
+
+
+https://www.youtube.com/watch?v=bVvGPIP69-M
+
+another suri-otoshi, like chiba's, but more low-level
+
+
+
+https://www.youtube.com/watch?v=iEjbAK-ze6Y
+
+2p bokken chop each other:   kirikaeshi mawashi uchi
+
+
+
+https://www.youtube.com/watch?v=oPpf-zGlFsI
+
+catch and downward kirikaeshi
+
+
+
+kanai kumitachi:
+
+The 7 Kumitachi FormsKumitachi
+1: Focuses on fundamental overhead cuts and direct center-line defense.Kumitachi
+2: Integrates dynamic tai sabaki (body evasion) to step off the line of attack.Kumitachi
+3: Introduces circular deflections to redirect the opponent's momentum.Kumitachi
+4: Emphasizes thrusting attacks (tsuki) and counter-thrust responses.Kumitachi
+5: Uses advanced blending movements to neutralize aggressive strikes.Kumitachi
+6: Features complex entry techniques (irimi) to disarm or control the attacker.Kumitachi
+7: The final form, combining multiple cuts, parries, and control strategies.Core Training Principles
+
+Uchitachi: The attacking role, usually taken by the senior practitioner to drive the form.
+Uketachi: The defending role, executing the technique to neutralize the attack.
+Bokken: All 7 forms are practiced exclusively using standard wooden swords.
