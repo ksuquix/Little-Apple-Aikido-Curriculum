@@ -29,7 +29,7 @@
 
 ## Diagrams
 
-<table>
+<table class="stance-table">
 <tr>
 <td style="text-align:center; vertical-align:bottom">
 <img class="stance-figure" src="../../assets/figures/stance/chudan-side-cropped.svg" height="153" alt="Chūdan-no-kamae">

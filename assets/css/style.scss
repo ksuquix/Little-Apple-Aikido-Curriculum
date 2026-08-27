@@ -130,6 +130,10 @@ a:hover { color: var(--aka-deep); }
 /* ---------- stance figures ---------- */
 
 @media screen and (max-width: 42em) {
+  .stance-table {
+    table-layout: fixed;
+    width: 100%;
+  }
   .stance-figure {
     width: var(--sw, 100%);
     height: auto;
