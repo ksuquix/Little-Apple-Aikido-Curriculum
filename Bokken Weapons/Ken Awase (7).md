@@ -1,3 +1,5 @@
+[← Bokken](../../Bokken)
+
 # Ken Awase (Saito / Kobayashi)
 
 Uchitachi (打太刀 - Sword Attacker) initiates movements.  Instead of just receiving attacks (Uke) in grappling, this role is to provide a well placed guided attach to help teach the partner.
@@ -15,4 +17,4 @@ Shitachi/uketachi (仕太刀 - Sword performer/receiver) performs technique.
 6. Perform (3), then do ukenagashi, completing as (5).
 7. Uchitachi starts raise for shōmen-uchi.  Shitachi enters tsugi-ashi, blocking out both wrists.  Then ukenagashi, hiraki-ashi yokomen-uchi to neck.
 
-Footwork: see [Footwork](../Foundations/Footwork)
+Footwork: see [Footwork](../../Foundations/Footwork)

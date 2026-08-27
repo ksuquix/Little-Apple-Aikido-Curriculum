@@ -188,13 +188,15 @@ Poses go in the `## Diagrams` table under Base Poses in `Foundations/Sword-Stanc
 - Caption: two lines under the image, romaji over kanji: `<br>Chūdan-no-kamae<br>中段の構え`.
 - Heights: keep every figure at the SAME scale (px per local unit). Each pose's viewBox height differs (a raised sword extends it above the head), so give the reference pose `height="200"` and scale the others by viewBox height: `height = 200 × (viewBoxHeight / viewBoxHeight_ref)`. Currently: jōdan 200 (viewBox 423), chūdan 149 (316 → 200×316/423 ≈ 149.4), gedan 149 (316, same as chūdan), hassō 174 (368 → 200×368/423 ≈ 174), waki 149 (316, same as chūdan). STALE — these are the old-geometry numbers; re-derive when the new figures are embedded (review list item 5).
 
-## Image paths in Markdown (gotcha)
+## Relative paths in Markdown (gotcha)
 
 The live site is the PROJECT PAGE `https://ksuquix.github.io/Little-Apple-Aikido-Curriculum/` — the domain root (`ksuquix.github.io/`) is not this site and 404s; every live URL carries the `/Little-Apple-Aikido-Curriculum` subpath. `_config.yml` sets `url`/`baseurl` to match (canonical/og tags and theme links come out correct), and `permalink: /:path/` makes every page a DIRECTORY page (`Foundations/Footwork/index.html`) whose canonical URL ends in `/` (the no-slash form 301s to the slash form).
 
 That trailing slash is load-bearing: a document URL without it resolves relative paths one level too high — `../../assets/...` climbs out of the subpath to the domain root and 404s. So image `src` paths stay relative to the page's own directory — one `../` per level below the repo root:
 
 - Root page → `../assets/figures/...`; page in `Foundations/` → `../../assets/figures/...`.
+- The same rule governs content links, which resolve from the page's directory URL, one level BELOW its source file: a root page (`Jo.md` → `Jo/`) needs `../` to reach repo-root level (`../Jo%20Weapons/31%20Jo` — `./...` would nest under `Jo/` and 404); a one-deep page (`Jo Weapons/31 Jo.md` → `Jo Weapons/31 Jo/`) needs `../../` (`../../Jo` for its parent, `../../Foundations/Footwork` cross-tree, bare `../../` for the top page).
+- Every content page starts with a back-link above its H1 pointing at the page it is linked from: root pages `[← Back to top](../)`, Foundations `[← Back to top](../../)`, Bokken Weapons `[← Bokken](../../Bokken)`, Jo Weapons `[← Jo](../../Jo)`.
 - Paths with `../` pass through kramdown unchanged and resolve correctly on the live site. Bare `assets/figures/...` (no `../`) now rewrites under the subpath too (baseurl is set) — correct, but keep the `../` form.
 - Verify after editing: `jekyll build`, then `grep -o 'src="[^"]*"' _site/Foundations/Footwork/index.html` — every figure should show the correct relative path.
 

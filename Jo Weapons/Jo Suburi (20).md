@@ -1,3 +1,5 @@
+[← Jo](../../Jo)
+
 # Jo Suburi Text
 
 | **Tsuki No Bu**     | **Thrusting Series**        |

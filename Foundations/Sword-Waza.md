@@ -1,3 +1,5 @@
+[← Back to top](../../)
+
 # Sword Waza
 
 - [Kanai video goes through the foundational Waza, then starts Kumitachi](https://www.youtube.com/watch?v=Qpx6dIaLhlc)

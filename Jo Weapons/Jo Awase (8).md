@@ -1,3 +1,5 @@
+[← Jo](../../Jo)
+
 # Jo Awase
 
 All but #4 start in Ai-Hanmi

@@ -1,3 +1,5 @@
+[← Back to top](../)
+
 # Weapons Quick Study List
 
 - Most of the weapons curriculum is based on Iwama-style foundations.

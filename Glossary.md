@@ -1,3 +1,5 @@
+[← Back to top](../)
+
 # Glossary
 
 ## Table of Contents

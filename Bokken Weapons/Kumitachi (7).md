@@ -1,3 +1,5 @@
+[← Bokken](../../Bokken)
+
 # Kumitachi (7)
 
 1. Four basic attacks, establishing initial distance, timing, and initial parry-counter concepts.

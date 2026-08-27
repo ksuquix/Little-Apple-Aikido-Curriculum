@@ -1,3 +1,5 @@
+[← Bokken](../../Bokken)
+
 # Ken Suburi Short Text Description
 
 1. [Shōmen-uchi](https://www.youtube.com/watch?v=9h3z8bnEuws&t=4)
