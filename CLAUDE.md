@@ -190,12 +190,13 @@ Poses go in the `## Diagrams` table under Base Poses in `Foundations/Sword-Stanc
 
 ## Image paths in Markdown (gotcha)
 
-Pages are served as DIRECTORIES (clean URLs, e.g. `.../Foundations/Footwork/`), so image `src` paths in the Markdown must be relative to the page's own directory — one `../` per level below the repo root:
+The live site is the PROJECT PAGE `https://ksuquix.github.io/Little-Apple-Aikido-Curriculum/` — the domain root (`ksuquix.github.io/`) is not this site and 404s; every live URL carries the `/Little-Apple-Aikido-Curriculum` subpath. `_config.yml` sets `url`/`baseurl` to match (canonical/og tags and theme links come out correct), and `permalink: /:path/` makes every page a DIRECTORY page (`Foundations/Footwork/index.html`) whose canonical URL ends in `/` (the no-slash form 301s to the slash form).
+
+That trailing slash is load-bearing: a document URL without it resolves relative paths one level too high — `../../assets/...` climbs out of the subpath to the domain root and 404s. So image `src` paths stay relative to the page's own directory — one `../` per level below the repo root:
 
 - Root page → `../assets/figures/...`; page in `Foundations/` → `../../assets/figures/...`.
-- `assets/figures/...` (no `../`) is broken (resolves to `PAGE/assets/...`) — kramdown also rewrites it to `/assets/...` (domain root) in the built HTML, which is broken too.
-- Paths with `../` pass through kramdown unchanged and resolve correctly on the live site.
-- Verify after editing: `jekyll build`, then `grep -o 'src="[^"]*"' _site/Foundations/Footwork.html` — every figure should show the correct relative path.
+- Paths with `../` pass through kramdown unchanged and resolve correctly on the live site. Bare `assets/figures/...` (no `../`) now rewrites under the subpath too (baseurl is set) — correct, but keep the `../` form.
+- Verify after editing: `jekyll build`, then `grep -o 'src="[^"]*"' _site/Foundations/Footwork/index.html` — every figure should show the correct relative path.
 
 ## Romanization (Full Hepburn with macrons)
 

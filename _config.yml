@@ -4,6 +4,7 @@ title: Little Apple Aikido Curriculum
 email: littleappledojo@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This documents the course curriculum, test requirements, weapons curriculum, and helpful information for Little Apple Aikido.
-#baseurl: "/Little-Apple-Aikido-Curriculum" # the subpath of your site, e.g. /blog
-#url: "https://ksuquix.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/Little-Apple-Aikido-Curriculum" # the subpath of your site, e.g. /blog
+url: "https://ksuquix.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+permalink: /:path/ # pages build to directories (Foundations/Footwork/index.html) so their canonical URL ends in /
 github_username:  ksuquix
