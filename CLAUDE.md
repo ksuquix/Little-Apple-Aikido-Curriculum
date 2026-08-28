@@ -246,7 +246,6 @@ Open items found in a full consistency pass. `Glossary.md` was fixed in that pas
 - `Tanto.md` is title-only; `Weapons.md` "### Tanto" section is empty; README still lists Tanto.
 - `Bokken Weapons/Kumitachi (7).md` has prose for forms 1–4 only (5–7 are just the one-line summary list).
 - `Weaponsconsideration.md` lower half is raw pasted notes (its own commit message says "still needs massive cleaning up").
-- `Foundations/Sword-Waza.md` `## Partner striking drill (name TODO)` — was mis-titled "Shikodachi 仕込太刀"; that word is 四股立ち (horse stance, now a Glossary term). The drill (Chiba, via Davinder Bath t=451s) still needs its real name.
 
 ### Cosmetic (low priority)
 

@@ -57,10 +57,10 @@
 - Similar to suri otoshi, but more cutting downwards than sliding
 - [Chiba - Davinder Bath](https://www.youtube.com/watch?v=esZDGv3QFno&t=256s)
 
-## Partner striking drill (name TODO)
-- Partner practice taking turns striking at each other
+## Shikodachi Partner striking drill 四股立 (Horse Stance)
+- Partner practice taking turns striking at each other in horse stance
 - Theoretically could do most of the basic waza listed like this, but Chiba's versions definitely
-- Heard as "shikodachi" on the video, but 四股立ち (shiko-dachi) is the wide low horse stance — wrong name for this drill. Real name TBD.
+- 四股立(ち) shiko-dachi is the wide low sumo/karate horse stance; the drill takes its name from the stance it is done in (not 仕込太刀, an earlier mis-reading)
 - [Chiba - Davinder Bath](https://www.youtube.com/watch?v=esZDGv3QFno&t=451s)
 
 ## Uchikomi 打ち込み
