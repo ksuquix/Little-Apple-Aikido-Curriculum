@@ -39,7 +39,7 @@ Use full Hepburn romanization with macrons: `ō` for long o, `ū` for long u.
 | ukenagashi | 受流し | jisho.org — stem of `受流す / 受け流す` (uke-nagasu, "to parry"); matches Glossary.md `下段受流し` |
 | tsuki | 突き | in use throughout the repo |
 | uchikomi | 打ち込み | jisho.org — common word; `打ち込み稽古` = "training performed by an attacker and a defender, involving intentional openings" |
-| shikodachi | 仕込太刀 | user-confirmed — 仕込 (stem of 仕込む shikomu, "to train/prepare", jisho.org) + 太刀 (tachi "sword", reads -dachi in compounds) |
+| shikodachi | 四股立ち | horse stance — wide, low, sumo-style (四股 = the sumo leg-stomp; standard karate stance name). The earlier `仕込太刀` reading (仕込 shikomu "to prepare" + 太刀) was a guess and is **retracted**; it does not name a partner drill. See variances. |
 | uchidachi / shidachi | 打太刀 / 仕太刀 | Wikipedia "Kendo" — the two kata roles; pages spell them "Uchitachi" / "Shitachi" (u dropped) |
 
 ## Variances and differences
@@ -50,11 +50,11 @@ Use full Hepburn romanization with macrons: `ō` for long o, `ū` for long u.
 - **ukenagashi — 受流し vs 受け流し**: jisho lists both (受流す / 受け流す). This repo uses the compressed 受流し throughout (Sword-Waza.md `受流し`, Glossary.md `下段受流し` and the `Uke-nagashi` entry). Romaji: hyphenate as `uke-nagashi` (one word `ukenagashi` in running prose); the Glossary previously spelled the entry `Uke-Nagashi 受け流し` / rows `Uke Nagashi` — standardized 2026-08.
 - **kirikaeshi**: Sword-Waza.md had `kirikeashi`; correct Hepburn for 切返(し) is `kirikaeshi` (切り返し; Wikipedia "Kendo": Kirikaeshi 切り返し). Fixed in the Uchikomi link labels.
 - **shidachi**: pages use "Shitachi"; standard romanization is `shidachi` (仕太刀).
+- **shikodachi — 四股立ち (not 仕込太刀)**: `しこだち` is the sumo/karate horse stance 四股立ち, now a Glossary term. It was previously entered as `仕込太刀` "partner practice taking turns striking (Chiba)" on the strength of a video — that reading is retracted; "shikodachi" was almost certainly misheard/misapplied there. The Sword-Waza.md drill is now `## Partner striking drill (name TODO)` pending its real name.
 
 ## Sources
 
 - **jisho.org** (JMdict) — first stop for term verification: 切落し (variant of 切り落とし; 切落す/切落とす), 受流す/受け流す, 仕込む (shikomu), 打ち込み/打ち込み稽古, kanji 切/落/巻/受/流/木/立. Note: 木立 on jisho is "cluster of trees" — NOT the martial-arts word.
 - **Wikipedia "Kendo"** (en.wikipedia.org/wiki/Kendo) — kendo standard: 撃落し技, 刷り上げ技, 返し技, 仕掛け技, Kirikaeshi 切り返し, practice types (waza-geiko 技稽古, kakari-geiko 掛稽古, ji-geiko 地稽古, gokaku-geiko 互角稽古, hikitate-geiko 引立稽古, shiai-geiko 試合稽古), kata roles 打太刀 / 仕太刀 (kata 8-10: shidachi uses 小太刀 kodachi, a shorter sword).
 - **Glossary.md** — canonical in-repo reference: 小手 kote, 小手返し kotegaeshi, 下段受流し soto gedan uke nagashi.
-- **ALC 英辞郎** — 0 hits for しこだち (not in general dictionaries).
-- **User** — 仕込太刀 shikodachi (partner practice taking turns striking; Chiba system).
+- **User** — しこだち is 四股立ち, the horse stance (correcting an earlier `仕込太刀` "partner drill" guess, now retracted).
