@@ -217,3 +217,38 @@ That trailing slash is load-bearing: a document URL without it resolves relative
 ## Language (check LANGUAGE.md)
 
 All language references live in `LANGUAGE.md`: romanization rules (full Hepburn with macrons), kanji for terms with the sources where each was found, and known variances. Check it before adding or verifying any Japanese term, and update it there when you learn something new.
+
+## Content consistency backlog (from the 2026-08-27 sweep)
+
+Open items found in a full consistency pass. `Glossary.md` was fixed in that pass; the rest are still open. Fresh `jekyll build` is clean and every internal link/image path resolves.
+
+### Decisions needed (not clear-cut)
+
+- **Are the weapons text pages in scope for the macron standard?** `Jo Weapons/*.md`, `Bokken Weapons/*.md`, `Weapons.md`, `Bokken.md`, `local-weapons-testing.md` are wholesale ASCII (`Jodan`, `Shomen`, `Hasso`, `Happo Giri`, `Tsuki Jodan Gaeshi`, …). LANGUAGE.md says "other files should match Glossary" + macrons everywhere. Either bring them up to standard (a sweep) or carve out an explicit "informal notes, ASCII OK" exception in LANGUAGE.md.
+- **`Gemfile` and `Gemfile.lock` are git-ignored and untracked** (`.gitignore` lines 6–7) — no committed build config. GitHub Pages builds fine (its own `github-pages` gem), but a fresh clone and `scripts/rebuild.sh` depend on a `Gemfile` that isn't in the repo. Gitignoring `Gemfile` itself is unusual; consider committing at least it.
+- **`Sword-Stances.md` heading hierarchy**: jumps `#` → `###` (stances), no `##`. `Footwork.md` / `Sword-Waza.md` use `##`. Adding `## Base Poses` above the stance list would fix this *and* make CLAUDE.md's two "Base Poses section" references (this file, §"Stick figure poses" intro and §"Embedding in Markdown") accurate — that section name is referenced but does not exist.
+
+### Clear-cut fixes
+
+- **`Foundations/Sword-Waza.md`** (in scope for macrons):
+  - line 9: `peform` typo; `menuchi` → `men-uchi` (LANGUAGE.md: "never `menuchi`").
+  - line 41: `moves the attach offline` → `attack`.
+  - heading spacing inconsistent within the file: `## Suri Otoshi` / `## Uchi Otoshi` (two words) vs `## Kiriotoshi Tsuki` / `## Makiotoshi Men` (one word). LANGUAGE.md treats them as one word.
+- **Typos in the weapons pages** (regardless of the macron decision):
+  - `Geidan` → `Gedan`: `Jo Weapons/31 Jo.md:14`; `Jo Weapons/Jo Awase (8).md:11,13`.
+  - `Yokumen` → `Yokomen`: `Jo Weapons/31 Jo.md:11,13,16,36` (`Jo Suburi (20).md` has `Yokomen` right).
+  - `guided attach` → `attack`: `Bokken Weapons/Ken Awase (7).md:5`.
+  - `Two cities` → `Twin Cities`: `Bokken Weapons/Kumitachi (7).md:15,23,29` (`Weaponsconsideration.md` has it right).
+  - `Wakagamen` (`Bokken Weapons/Ken Suburi.md:7`; `Kumitachi (7).md:17`) — term used but defined nowhere (not in Glossary or LANGUAGE.md). Gloss it or correct it.
+
+### Incompleteness (not errors, just stubs)
+
+- `Tanto.md` is title-only; `Weapons.md` "### Tanto" section is empty; README still lists Tanto.
+- `Bokken Weapons/Kumitachi (7).md` has prose for forms 1–4 only (5–7 are just the one-line summary list).
+- `Weaponsconsideration.md` lower half is raw pasted notes (its own commit message says "still needs massive cleaning up").
+
+### Cosmetic (low priority)
+
+- `Footwork.md` §Diagrams: 3-col table with a single-cell middle row (3+1+3 for 7 figures).
+- `Footwork.md` cells are `<td style="text-align:center">`; `Sword-Stances.md` cells add `vertical-align:bottom`. Different diagram types, so maybe fine.
+- `Weapons.md` uses trailing-double-space hard breaks on some list items, not others.
