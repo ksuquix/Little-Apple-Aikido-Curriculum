@@ -47,6 +47,7 @@ Use full Hepburn romanization with macrons: `ō` for long o, `ū` for long u.
 - **suri — 摺 vs 刷**: 摺る (to slide) and 刷る (to brush/sweep) are homophones (suru). Kendo standard (Wikipedia) writes suriage 刷り上げ; this repo established 摺上げ (pre-existing `摺上げ面`) — keep 摺 across this site for consistency.
 - **otoshi — 落し vs 落とし**: 落とす (otosu, transitive "to drop") has stem 落とし; the kendo family of deflection techniques uses `X落し` instead (撃落し per Wikipedia; jisho lists 切落し alongside 切落とし as a variant of 切り落とし). This repo uses `X落し` throughout: 切落し, 巻落し, 撃落し, 摺落し.
 - **uchi — 撃 vs 打ち**: kendo writes uchiotoshi 撃落し (撃 "to strike"), not 打ち落とし.
+- **ukenagashi — 受流し vs 受け流し**: jisho lists both (受流す / 受け流す). This repo uses the compressed 受流し throughout (Sword-Waza.md `受流し`, Glossary.md `下段受流し` and the `Uke-nagashi` entry). Romaji: hyphenate as `uke-nagashi` (one word `ukenagashi` in running prose); the Glossary previously spelled the entry `Uke-Nagashi 受け流し` / rows `Uke Nagashi` — standardized 2026-08.
 - **kirikaeshi**: Sword-Waza.md had `kirikeashi`; correct Hepburn for 切返(し) is `kirikaeshi` (切り返し; Wikipedia "Kendo": Kirikaeshi 切り返し). Fixed in the Uchikomi link labels.
 - **shidachi**: pages use "Shitachi"; standard romanization is `shidachi` (仕太刀).
 
